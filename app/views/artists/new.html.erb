@@ -1,3 +1,6 @@
+<%= 
+render :partial => 'dashboard/current_user', :locals => {:current_user => current_user}
+%>
 <h1>New artist</h1>
 
 <%= render 'form' %>
