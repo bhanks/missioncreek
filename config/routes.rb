@@ -1,11 +1,23 @@
 Missioncreek::Application.routes.draw do
+  
+
+  resources :venues
+
+  #get "dashboard/index"
+
   devise_for :users, :path => 'users', :path_names => { :sign_in =>"login", :sign_out=>"logout"}
   resources :users
   resources :artists
+  
 
   root :to => "home#index"
   
   resources :posts
+
+  namespace :dashboard do
+    resources :artists
+    resources :venues
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
