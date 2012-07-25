@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mission Creek Admin</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<%= render :partial => 'dashboard/admin_nav', :locals => {:current_user => current_user} %>
+<div class="container">
+	<%= yield %>
+</div>
+</body>
+</html>

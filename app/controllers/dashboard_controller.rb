@@ -1,9 +1,5 @@
 class DashboardController < ApplicationController
-
-	class ArtistsController
-		def index
-		end
-	end
+	layout "dashboard.html.erb"
 
 
 end

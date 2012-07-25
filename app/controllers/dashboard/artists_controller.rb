@@ -1,8 +1,8 @@
-class Dashboard::ArtistsController < ApplicationController
+class Dashboard::ArtistsController < DashboardController
   # GET /artists
   # GET /artists.json
   before_filter :authenticate_user!
-
+  
   
   def index
     @artists = Artist.all
