@@ -8,16 +8,18 @@ Missioncreek::Application.routes.draw do
   devise_for :users, :path => 'users', :path_names => { :sign_in =>"login", :sign_out=>"logout"}
   resources :users
   resources :artists
-  
+  resources :dashboard do
+    collection do
+      get 'artists'
+    end
+  end
+
 
   root :to => "home#index"
   
   resources :posts
 
-  namespace :dashboard do
-    resources :artists
-    resources :venues
-  end
+  
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
