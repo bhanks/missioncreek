@@ -3,7 +3,9 @@
 		<div class='container'>
 			<a class='brand' href="#">Mission Creek:Admin</a>
 			<ul class='nav'>
-				<li><%= link_to "Artists", artists_path %></li>
+				<li><%= link_to "Posts", posts_dashboard_index_path %></li>
+				<li><%= link_to "Venues", venues_dashboard_index_path %></li>
+				<li><%= link_to "Artists", artists_dashboard_index_path %></li>
 			</ul>
 			<ul class='nav pull-right'>
 				<li class='navbar-text'>Logged in as <%= current_user.login %></li> 

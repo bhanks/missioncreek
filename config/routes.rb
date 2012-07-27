@@ -11,7 +11,10 @@ Missioncreek::Application.routes.draw do
   resources :dashboard do
     collection do
       get 'artists'
+      get 'posts'
+      get 'venues'
     end
+
   end
 
 
