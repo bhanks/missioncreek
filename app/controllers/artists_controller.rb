@@ -43,6 +43,7 @@ class ArtistsController < ApplicationController
 
   def edit
     @artist = Artist.find(params[:id])
+    render :layout => "dashboard"
   end
 
   def update

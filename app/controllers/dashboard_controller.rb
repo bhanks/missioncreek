@@ -4,12 +4,16 @@ class DashboardController < ApplicationController
 
 	def artists
 		@artists = Artist.all
-		render 'artists/admin_index'
+		#render 'artists/admin_index'
 	end
 
 	def venues
 		@venues = Venue.all
-		render 'venues/index'
+		#render 'venues/index'
+	end
+
+	def posts
+		@posts = Post.all
 	end
 
 end
