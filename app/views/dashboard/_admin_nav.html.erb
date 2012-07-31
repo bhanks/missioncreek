@@ -1,11 +1,11 @@
 <div class='navbar navbar-fixed-top'>
 	<div class='navbar-inner'>
 		<div class='container'>
-			<a class='brand' href="#">Mission Creek:Admin</a>
+			<a class='brand' href="<%= dashboard_index_path %>">Mission Creek:Admin</a>
 			<ul class='nav'>
-				<li><%= link_to "Posts", posts_dashboard_index_path %></li>
-				<li><%= link_to "Venues", venues_dashboard_index_path %></li>
-				<li><%= link_to "Artists", artists_dashboard_index_path %></li>
+				<li class="<%=@post_active%>"><%= link_to "Posts", posts_dashboard_index_path %></li>
+				<li class="<%=@venue_active%>"><%= link_to "Venues", venues_dashboard_index_path %></li>
+				<li class="<%=@artist_active%>"><%= link_to "Artists", artists_dashboard_index_path %></li>
 			</ul>
 			<ul class='nav pull-right'>
 				<li class='navbar-text'>Logged in as <%= current_user.login %></li> 
