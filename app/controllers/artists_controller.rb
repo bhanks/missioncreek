@@ -43,6 +43,7 @@ class ArtistsController < ApplicationController
 
   def edit
     @artist = Artist.find(params[:id])
+    @tier = tier_radio(@artist)
     render :layout => "dashboard"
   end
 
@@ -65,5 +66,17 @@ class ArtistsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to artists_dashboard_index_url }
     end
+  end
+
+  def tier_radio(artist)
+    tier = []
+    [1, 2, 3].each do |t|
+      if(artist.tier == t)
+        tier[t] = "checked"
+      else
+        tier[t] = ""
+      end
+    end
+    tier
   end
 end
