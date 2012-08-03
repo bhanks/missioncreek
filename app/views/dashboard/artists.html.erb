@@ -17,26 +17,26 @@
   <thead>
     <tr>
       <th><%= model_class.human_attribute_name(:name) %></th>
+      <th><%= model_class.human_attribute_name(:bio) %></th>
+      <th>Tier</th>
       <th><%= model_class.human_attribute_name(:official_url) %></th>
-      <th colspan="3">Images</th>
+      <th><%= model_class.human_attribute_name(:youtube_url) %></th>
+      <th><%= model_class.human_attribute_name(:soundcloud_url) %></th>
+      <th>Images</th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
-    <tr>
-      <th colspan='2'></th>
-      <th>Large</th>
-      <th>Small</th>
-      <th>Thumb</th>
-      <th></th>
-    </tr>
+
   </thead>
   <tbody>
     <% @artists.each do |artist| %>
       <tr>
         <td class='artist-name'><%= link_to artist.name, edit_artist_path(artist) %></td>
-        <td><%= artist.official_url %></td>
-        <td class='confirm-large-image'><i class='icon-ok'></i></td>
-        <td></td>
-        <td></td>
+        <td class='artist-bio'><%= raw popup(artist.bio,'popover', "Bio") %></td>
+        <td><strong><%= artist.tier %></strong></td>
+        <td><%= raw popup(artist.official_url,'tooltip')%></td>
+        <td><%= raw popup(artist.youtube_url,'tooltip')%></td>
+        <td><%= raw popup(artist.soundcloud_url,'tooltip')%></td>
+        <td class='confirm-image'></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_artist_path(artist), :class => 'btn btn-mini' %>

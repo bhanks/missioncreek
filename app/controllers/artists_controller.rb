@@ -26,19 +26,21 @@ class ArtistsController < ApplicationController
 
   def new
     @artist = Artist.new
+    @tier = tier_radio(@artist)
     render :layout => "dashboard"
   end
 
   def create
     @artist = Artist.new(params[:artist])
 
-    respond_to do |format|
-      if @artist.save
-        format.html { redirect_to artists_dashboard_index_url, notice: 'Artist was successfully created.' }
-      else
-        format.html { render action: "new" }
-      end
+    
+    if @artist.save
+      redirect_to artists_dashboard_index_url, notice: 'Artist was successfully created.'
+    else
+      @tier = tier_radio(@artist)
+      render action: "new", :layout => "dashboard" 
     end
+  
   end
 
   def edit
