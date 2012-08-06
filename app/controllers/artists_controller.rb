@@ -56,7 +56,7 @@ class ArtistsController < ApplicationController
       if @artist.update_attributes(params[:artist])
         format.html { redirect_to artists_dashboard_index_url, notice: 'Artist was successfully updated.' }
       else
-        format.html { render action: "edit" }
+        format.html { render action: "edit", :layout => 'dashboard' }
       end
     end
   end

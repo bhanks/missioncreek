@@ -1,57 +1,9 @@
-<%= form_for @artist, :html => { :class => 'form-horizontal' } do |f| %>
-  <%= render "dashboard/errors", :target => @artist %>
-  <div class="control-group">
-    <%= f.label :name, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :name, :class => 'text_field' %>
-    </div>
-  </div>
-    <div class="control-group">
-    <%= f.label :bio, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_area :bio, :rows => 7, :class => 'input-xlarge' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :official_url, "Official URL", :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :official_url, :class => 'text_field' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :youtube_url, "YouTube URL", :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :youtube_url, :class => 'text_field' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :soundcloud_url, "Soundcloud URL", :class => 'control-label' %>
-    <div class="controls">
-      <%= f.url_field :soundcloud_url, :class => 'text_field' %>
-    </div>
-  </div>
-
-
-  <div class="control-group">
-    <%= f.label :tier, "Tier", :class => 'control-label' %>
-
-    <div class="controls">
-      <% [1, 2, 3].each do |t| %>
-        <label class="radio"> <%= t %>
-          <%= f.radio_button :tier, t , :checked => @tier[t] %>
-        </label>
-      <% end %>
-      
-
-    </div>
-  </div>
-
-
-
-
-  <div class="form-actions">
-    <%= f.submit nil, :class => 'btn btn-primary' %>
-    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-                artists_dashboard_index_path, :class => 'btn' %>
-  </div>
+<%= simple_form_for @artist, :html => {:class => 'form-horizontal' } do |f| %>
+  <%= f.input :name %>
+  <%= f.input :bio, :as => :text, :input_html => { :rows => 9, :class => 'input-xlarge' }  %>
+  <%= f.input :official_url, :as => :url%>
+  <%= f.input :youtube_url, :as => :url%>
+  <%= f.input :soundcloud_url, :as => :url%>
+  <%= f.input :tier , :collection => 1..3 %>
+  <%= f.button :submit %>
 <% end %>

@@ -10,19 +10,19 @@ class DashboardController < ApplicationController
 	end
 
 	def artists
-		@artists = Artist.all
+		@artists = Artist.find(:all, :order => "tier, name")
 		@artist_active = "active"
 		#render 'artists/admin_index'
 	end
 
 	def venues
-		@venues = Venue.all
+		@venues = Venue.find(:all, :order => "name")
 		@venue_active = "active"
 		#render 'venues/index'
 	end
 
 	def posts
-		@posts = Post.all
+		@posts = Post.find(:all, :order =>"created_at DESC")
 		@post_active = "active"
 	end
 

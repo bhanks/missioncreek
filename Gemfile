@@ -13,6 +13,9 @@ group :production do
 	gem 'pg'
 end
 
+gem 'fog'
+gem 'carrierwave'
+gem 'simple_form'
 gem 'devise'
 
 # Gems used only for assets and not required
