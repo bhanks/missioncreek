@@ -14,6 +14,7 @@ group :production do
 end
 
 gem 'fog'
+gem 'rmagick'
 gem 'carrierwave'
 gem 'simple_form'
 gem 'devise'

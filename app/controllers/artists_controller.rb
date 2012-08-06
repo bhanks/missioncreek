@@ -51,6 +51,8 @@ class ArtistsController < ApplicationController
 
   def update
     @artist = Artist.find(params[:id])
+    uploader = ArtistImageUploader.new
+    uploader.store!(params[:image])
 
     respond_to do |format|
       if @artist.update_attributes(params[:artist])
