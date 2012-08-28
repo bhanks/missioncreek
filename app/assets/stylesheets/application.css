@@ -11,3 +11,43 @@
  *= require_self
  *= require_tree .
  */
+
+.top .front
+{
+	height:inherit;
+}
+
+
+.top ul
+{
+	list-style-type: none;
+	font-size: 16px;
+	text-align: center;
+	margin:0px;
+	background-color:#ddd;
+	height:inherit;
+}
+.front.tickets
+{	
+	background-color: #ddd;
+
+}
+
+.row.top
+{
+	height: 200px;
+}
+
+.front.features
+{
+	margin-top:20px;
+	height: 300px;
+	background-color: #ddd;
+}
+
+.front.sponsors
+{
+	margin-top: 20px;
+	height: 500px;
+	background-color: #ddd;
+}

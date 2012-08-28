@@ -13,7 +13,7 @@
     <% @artists.each do |artist| %>
       <tr>
         <td><%= link_to artist.name, artist_path(artist) %></td>
-        <td><%= artist.url %></td>
+        <td><%= artist.official_url %></td>
         
       </tr>
     <% end %>

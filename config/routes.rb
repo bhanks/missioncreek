@@ -18,7 +18,7 @@ Missioncreek::Application.routes.draw do
   end
 
 
-  root :to => "home#index"
+  root :to => "Base#index"
   
   resources :posts
 
