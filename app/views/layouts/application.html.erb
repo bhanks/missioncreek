@@ -10,15 +10,7 @@
 <body>
 <div class="container">
 	<%= render :partial => 'base/nav' %>
-	<div class="row top">
-		<%= render :partial => 'base/posts', :posts => @posts %>
-		<%= render :partial => 'base/artists' %>
-		<%= render :partial => 'base/tickets' %>
-	</div>
-	<div class='row'>
-		<%= render :partial => 'base/features' %>
-		<%= render :partial => 'base/sponsors' %>
-	</div>
+
 	<%= yield %>
 </div>
 </body>

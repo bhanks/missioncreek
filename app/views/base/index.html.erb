@@ -1,1 +1,14 @@
-
+<div class='hidden-phone'>
+	<div class="row top">
+		<%= render :partial => 'posts', :posts => @posts %>
+		<%= render :partial => 'artists' %>
+		<%= render :partial => 'tickets' %>
+	</div>
+	<div class='row'>
+		<%= render :partial => 'features' %>
+		<%= render :partial => 'twitter' %>
+		<%= render :partial => 'sponsors' %>
+	</div>
+</div>
+<div class='hidden-tablet hidden-desktop'>
+</div>
