@@ -51,3 +51,32 @@
 	height: 500px;
 	background-color: #ddd;
 }
+
+.banner
+{
+background-image: linear-gradient(right , rgb(219,205,189) 41%, rgb(138,132,126) 87%);
+background-image: -o-linear-gradient(right , rgb(219,205,189) 41%, rgb(138,132,126) 87%);
+background-image: -moz-linear-gradient(right , rgb(219,205,189) 41%, rgb(138,132,126) 87%);
+background-image: -webkit-linear-gradient(right , rgb(219,205,189) 41%, rgb(138,132,126) 87%);
+background-image: -ms-linear-gradient(right , rgb(219,205,189) 41%, rgb(138,132,126) 87%);
+
+background-image: -webkit-gradient(
+	linear,
+	right bottom,
+	left bottom,
+	color-stop(0.41, rgb(219,205,189)),
+	color-stop(0.87, rgb(138,132,126))
+);
+text-align: center;
+
+margin-bottom: 15px;
+color:white;
+padding: 30px 0px;
+/*display: block;
+position: absolute;
+top: 0;
+right: 0;
+bottom: 0;
+left: 0;
+content:'';*/
+}

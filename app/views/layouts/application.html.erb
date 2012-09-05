@@ -8,8 +8,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
+<%= render :partial => 'base/nav' %>
+<header class='banner container'>
+	<h1>Mission Creek Festival 2013</h1>
+	<h3>Look at Banner, Michael.</h3>
+</header>
 <div class="container">
-	<%= render :partial => 'base/nav' %>
+	
 
 	<%= yield %>
 </div>
