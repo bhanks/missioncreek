@@ -8,4 +8,29 @@ td.artist-name
 	color:black;
 }
 
+.front.artists
+{
+	background-color: red;
+}
 
+.front.artists ul
+{
+	text-align: left;
+	width:34%;
+	font-size: 14px;
+	float:left;
+
+}
+
+.front.artists img
+{
+	width:65%;
+	background-color: black;
+	height:200px;
+	float:right;
+}
+
+.front.artists ul
+{
+
+}

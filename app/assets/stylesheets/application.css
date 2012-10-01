@@ -41,14 +41,14 @@
 .front.features, .front.twitter
 {
 	margin-top:20px;
-	height: 300px;
+	height: 375px;
 	background-color: #ddd;
 }
 
 .front.sponsors
 {
 	margin-top: 20px;
-	height: 500px;
+	height: 375px;
 	background-color: #ddd;
 }
 
@@ -79,4 +79,17 @@ right: 0;
 bottom: 0;
 left: 0;
 content:'';*/
+}
+
+ul.feature-nav
+{
+	list-style-type: none;
+	margin:0;
+	width:100%;
+}
+
+ul.feature-nav li
+{
+	float:left;
+
 }

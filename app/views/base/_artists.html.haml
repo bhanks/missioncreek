@@ -1,0 +1,5 @@
+.front.artists.span8
+	%ul
+		- @artists.each do |artist|
+			%li=link_to artist.name, '#'
+	%image{'src' => 'https://s3.amazonaws.com/missioncreek-assets/static/the-englert.jpeg'}/
