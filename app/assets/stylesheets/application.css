@@ -35,13 +35,13 @@
 
 .row.top
 {
-	height: 200px;
+	height: 300px;
 }
 
 .front.features, .front.twitter
 {
 	margin-top:20px;
-	height: 375px;
+	height: 400px;
 	background-color: #ddd;
 }
 
