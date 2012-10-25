@@ -6,4 +6,6 @@ class BaseController < ApplicationController
 		render :layout => "application"
 	end
 
+
+
 end
