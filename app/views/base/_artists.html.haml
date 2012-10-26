@@ -2,4 +2,15 @@
 	%ul
 		- @artists.each do |artist|
 			%li=link_to artist.name, '#'
-	%image{'src' => 'https://s3.amazonaws.com/missioncreek-assets/static/the-englert.jpeg'}/
+	#artistCarousel.carousel.slide
+		.carousel-inner
+			.item
+				%image{'src' => 'https://s3.amazonaws.com/missioncreek-assets/static/the-englert.jpeg'}
+				.carousel-caption
+					%h4 Ex-Action Model
+			.item
+				%image{'src' => 'https://s3.amazonaws.com/missioncreek-assets/static/the-englert.jpeg'}
+:javascript
+	$(document).ready(function(){
+		$('#artistCarousel').carousel({interval:5000});
+	});

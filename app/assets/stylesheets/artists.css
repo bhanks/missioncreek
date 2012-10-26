@@ -10,13 +10,13 @@ td.artist-name
 
 .front.artists
 {
-	background-color: red;
+	background-color: black;
 }
 
 .front.artists ul
 {
 	text-align: left;
-	width:34%;
+	width:220px;
 	font-size: 14px;
 	float:left;
 
@@ -24,13 +24,17 @@ td.artist-name
 
 .front.artists img
 {
-	width:65%;
 	background-color: black;
-	height:200px;
-	float:right;
 }
 
 .front.artists ul
 {
 
+}
+
+#artistCarousel
+{
+	width: 400px;
+	height: 100%;
+	float: left;
 }
