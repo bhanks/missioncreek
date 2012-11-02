@@ -10,7 +10,10 @@
   <%= f.button :submit %>
 <% end %>
 <div class='current-images'>
-  <h3>Current Images For This Artist</h3>
-  <%= image_tag @artist.image.url %>
+  <h3>Current Images For This Artist:</h3>
+  <% if @artist.image.url %>
+  <%= image_tag @artist.image.url  %>
+  <%= image_tag @artist.image.carousel.url %>
   <%= image_tag @artist.image.thumb.url %>
+  <% end %>
 </div>

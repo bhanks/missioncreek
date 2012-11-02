@@ -37,8 +37,14 @@ class ArtistImageUploader < CarrierWave::Uploader::Base
 
   # Create different versions of your uploaded files:
   version :thumb do
-    process :resize_to_fit => [50, 50]
+    process :resize_to_fit => [100, 75]
   end
+
+  version :carousel do
+    process :resize_to_fit => [400, 300]
+  end
+
+
 
   # Add a white list of extensions which are allowed to be uploaded.
   # For images you might use something like this:

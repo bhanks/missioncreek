@@ -38,3 +38,23 @@ td.artist-name
 	height: 100%;
 	float: left;
 }
+
+li.artists
+{
+	font-size: 1.4em;
+	/*line-height: 1.9em;*/
+	margin-left: 15px;
+	&:hover{
+		cursor:pointer;
+	};
+
+}
+li.artists.more
+{
+	margin-right: 10px;
+	text-align:right;
+}
+li.artists a
+{
+
+}
