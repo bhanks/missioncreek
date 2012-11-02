@@ -14,7 +14,7 @@ group :production do
 end
 
 gem 'fog'
-gem 'rmagick'
+gem 'rmagick', "~> 2.11.1"
 gem 'carrierwave'
 gem 'simple_form'
 gem 'devise'
@@ -33,7 +33,9 @@ group :assets do
 end
 
 gem 'jquery-rails'
-
+group :local do
+	gem 'debugger'
+end
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

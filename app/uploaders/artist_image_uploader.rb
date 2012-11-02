@@ -54,8 +54,9 @@ class ArtistImageUploader < CarrierWave::Uploader::Base
 
   # Override the filename of the uploaded files:
   # Avoid using model.id or version_name here, see uploader/store.rb for details.
-  # def filename
-  #   "something.jpg" if original_filename
-  # end
+  def filename
+    ext = original_filename.match(/\.(jpg|jpeg|png)/)[1]
+    model.name.gsub(/\s/,"_")+".#{ext}"
+  end
 
 end
