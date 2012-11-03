@@ -12,6 +12,13 @@
  *= require_tree .
  */
 
+@import fonts;
+
+body
+{
+	font-family: WhitneyBook;
+}
+
 .top .front
 {
 	height:inherit;
