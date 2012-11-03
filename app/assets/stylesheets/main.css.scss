@@ -16,6 +16,16 @@ h2
 	color:$olive;
 	font-weight:normal;
 }
+
+h2 a
+{
+	color:$olive;
+	font-weight:normal;
+	&:hover{
+		color:$pool;
+		text-decoration:none;
+	};
+}
 h3
 {
 	color: $pepto;
