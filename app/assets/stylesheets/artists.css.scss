@@ -59,6 +59,7 @@ li.artists.active
 {
 	background-color: $myCurry;
 	color: black;
+	-webkit-transition: background-color .1s linear;
 }
 /*.front.artists ul:first-child
 {

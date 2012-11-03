@@ -16,4 +16,17 @@
 	$(document).ready(function()
 	{
 		$('#artistCarousel').carousel();
+		$('#artistCarousel').on("slid", function(e){
+			index = $(this).children('.carousel-inner').children('.active').index();
+			$($('li.artists')[index]).siblings(".active").removeClass("active");
+			$($('li.artists')[index]).addClass('active');
+		});
+		var artist_list = $('li.artists');
+		$.each(artist_list, function(index, item){
+			$(item).on("click", function(){
+				$(this).siblings(".active").removeClass("active");
+				$(this).addClass("active");
+				$('#artistCarousel').carousel(index);
+			});
+		});
 	});
