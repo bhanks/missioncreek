@@ -1,12 +1,14 @@
-<div class='navbar navbar-fixed-top'>
-	<div class='navbar-inner'>
-		<div class='container'>
-			<a class='brand' href="<%= root_path %>">Mission Creek Festival 2013</a>
-			<ul class='nav'>
-				<li class="<%=@post_active%>"><%= link_to "Posts", posts_path %></li>
-				<li class="<%=@venue_active%>"><%= link_to "Venues", venues_path %></li>
-				<li class="<%=@artist_active%>"><%= link_to "Artists", artists_path %></li>
-			</ul>
+<div class='navbar-wrapper container'>
+	<div class="navbar">
+		<div class='navbar-inner'>
+			<!-- <div class='container'> -->
+				<a class='brand' href="<%= root_path %>">Mission Creek Festival 2013</a>
+				<ul class='nav'>
+					<li class="<%=@post_active%>"><%= link_to "Posts", posts_path %></li>
+					<li class="<%=@venue_active%>"><%= link_to "Venues", venues_path %></li>
+					<li class="<%=@artist_active%>"><%= link_to "Artists", artists_path %></li>
+				</ul>
+			<!-- </div> -->
 		</div>
 	</div>
 </div>

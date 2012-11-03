@@ -1,0 +1,22 @@
+@import "fonts";
+@import "colors";
+body
+{
+	font-family: WhitneyBook;
+	background-color: $charcoal;
+}
+
+h1
+{
+	color:$pool;
+}
+
+h2
+{
+	color:$olive;
+	font-weight:normal;
+}
+h3
+{
+	color: $pepto;
+}

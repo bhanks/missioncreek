@@ -1,8 +1,9 @@
 .front.artists.span8
 	%ul
 		- @artists.each do |artist|
-			%li.artists{:style=>"line-height:#{14.0/(@artists.length)}em"}=artist.name
-		%li.artists.more{:style=>"line-height:2em"} See All Artists
+			- style = "height:#{21.0/(@artists.length)}em;line-height:#{21.0/(@artists.length)}em"
+			%li.artists{:style=>style}=artist.name
+		-#%li.artists.more{:style=>"line-height:1em"} See All Artists
 	#artistCarousel.carousel.slide
 		.carousel-inner
 			- @artists.each do |artist|

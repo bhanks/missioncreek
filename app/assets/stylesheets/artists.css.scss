@@ -1,3 +1,4 @@
+@import "colors";
 td.confirm-large-image
 {
 	color:green;
@@ -10,7 +11,7 @@ td.artist-name
 
 .front.artists
 {
-	background-color: black;
+	/*background-color: black;*/
 }
 
 .front.artists ul
@@ -19,6 +20,9 @@ td.artist-name
 	width:220px;
 	font-size: 14px;
 	float:left;
+	/*background-color: $linen;*/
+	color:white;
+
 
 }
 
@@ -41,14 +45,25 @@ td.artist-name
 
 li.artists
 {
-	font-size: 1.4em;
+	font-size: 1em;
 	/*line-height: 1.9em;*/
-	margin-left: 15px;
+	padding-left: 15px;
+	padding-top: 1px;
 	&:hover{
 		cursor:pointer;
+		background-color: $ice;
+		color:$charcoal;
 	};
-
 }
+li.artists.active
+{
+	background-color: $myCurry;
+	color: black;
+}
+/*.front.artists ul:first-child
+{
+	background-color: $myCurry;
+}*/
 li.artists.more
 {
 	margin-right: 10px;
