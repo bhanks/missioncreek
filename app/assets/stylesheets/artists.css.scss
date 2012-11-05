@@ -20,7 +20,7 @@ td.artist-name
 	width:220px;
 	font-size: 14px;
 	float:left;
-	/*background-color: $linen;*/
+	background-color: $eggplant;
 	color:white;
 
 
@@ -74,3 +74,20 @@ li.artists a
 {
 
 }
+
+img.artist
+{
+	box-shadow: 5px 5px 5px black;
+}
+
+p.artist_bio
+{
+	color:$ice;
+}
+.artist_media
+{
+	padding-top:50px;
+}
+
+
+
