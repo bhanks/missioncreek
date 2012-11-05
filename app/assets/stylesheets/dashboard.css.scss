@@ -1,0 +1,16 @@
+@import "bootstrap_and_overrides";
+a.dashboard-popup i.icon-ok, i.icon-ok
+{
+	color:green;
+}
+
+a.dashboard-popup i.icon-remove, i.icon-remove
+{
+	color:red;
+}
+
+a.dashboard-popup:hover
+{
+	background-color:inherit;
+	text-decoration:none;
+}

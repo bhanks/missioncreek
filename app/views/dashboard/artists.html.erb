@@ -34,8 +34,8 @@
         <td class='artist-bio'><%= raw popup(artist.bio,'popover', "Bio") %></td>
         <td><strong><%= artist.tier %></strong></td>
         <td><%= raw popup(artist.official_url,'tooltip')%></td>
-        <td><%= raw popup(artist.youtube_url,'tooltip')%></td>
-        <td><%= raw popup(artist.soundcloud_url,'tooltip')%></td>
+        <td><%= raw url_present(artist.youtube_url)%></td>
+        <td><%= raw url_present(artist.soundcloud_url)%></td>
         <td class='confirm-image'></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
