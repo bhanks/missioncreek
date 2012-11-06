@@ -83,9 +83,9 @@ GEM
       railties (>= 3.2.0, < 5.0)
       thor (~> 0.14)
     json (1.7.3)
-    less (2.2.1)
+    less (2.2.2)
       commonjs (~> 0.2.6)
-    less-rails (2.2.3)
+    less-rails (2.2.6)
       actionpack (>= 3.1)
       less (~> 2.2.0)
     libv8 (3.3.10.4)
@@ -172,11 +172,13 @@ DEPENDENCIES
   fog
   haml-rails
   jquery-rails
+  less-rails
   pg
   rails (= 3.2.6)
   rmagick (~> 2.11.1)
   sass-rails (~> 3.2.3)
   simple_form
   sqlite3
-  twitter-bootstrap-rails
+  therubyracer (= 0.10.1)
+  twitter-bootstrap-rails (= 2.1.1)
   uglifier (>= 1.0.3)
