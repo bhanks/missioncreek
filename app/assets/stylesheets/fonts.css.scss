@@ -1,14 +1,12 @@
 @font-face
 {
 	font-family:WhitneyBook;
-	src: local('☺');
 	src: asset_path('Whitney-Book.otf', font);
 	/*src: url('fonts/Whitney-Book.otf');*/
 }
 /*@font-face
 {
 	font-family:WhitneyLight;
-	src: local('☺');
 	src: url('../fonts/Whitney-Light.otf');
 }
 */
@@ -16,7 +14,6 @@
 {
 	font-family:Whitney;
 	font-weight:bold;
-	src: local('☺');
 	src: asset_path('Whitney-Bold.otf', font);
 }
 /*@include font-face(WhitneyBook, '../font/Whitney-Book.otf');*/
