@@ -19,6 +19,8 @@ gem 'carrierwave'
 gem 'simple_form'
 gem 'devise'
 gem 'haml-rails'
+gem 'twitter-bootstrap-rails' , '= 2.1.6'
+  gem 'less-rails'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
@@ -29,7 +31,7 @@ group :assets do
   gem 'therubyracer',  '= 0.10.1', :platforms => :ruby
 
   gem 'uglifier', '>= 1.0.3'
-  gem 'twitter-bootstrap-rails' , '= 2.1.1'
+
   gem 'less-rails'
 end
 
