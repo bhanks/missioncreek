@@ -16,3 +16,7 @@
 
 # Public uploads folder
 /public/uploads
+
+#assets pipeline stuff
+.sass-cache/
+public/assets/
