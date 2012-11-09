@@ -4,7 +4,7 @@ class DashboardController < ApplicationController
 
 
 	def index
-		@artists = Artist.all
+		@artists = Artist.find(:all, :order => "tier")
 		@venues = Venue.all
 		@posts = Post.all
 	end

@@ -5,6 +5,8 @@ class Artist < ActiveRecord::Base
 
   before_save :clean_urls
 
+
+
   def clean_urls
   	if !self.youtube_url.empty?
   		self.youtube_url = self.youtube_url.gsub("\"","'").match(/https?:\/\/[\S]+/)[0]
@@ -12,6 +14,10 @@ class Artist < ActiveRecord::Base
   	if !self.soundcloud_url.empty?
   		self.soundcloud_url = self.soundcloud_url.gsub("\"","'").match(/https?:\/\/[\S]+/)[0]
   	end
+  end
+
+  def self.get_by_tier(tier)
+    where(:tier => tier)
   end
   
 end

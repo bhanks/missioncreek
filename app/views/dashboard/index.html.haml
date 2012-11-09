@@ -1,0 +1,20 @@
+.row.show-grid
+  .span12
+    %h1 Dashboard
+
+%ul.nav.nav-tabs
+  %li.active
+    %a{"data-toggle" =>"tab", :href => "#artists_front_page_dashboard"} Artists:Front Page
+  %li
+    %a{"data-toggle" =>"tab", :href => "#lineup"} Lineup
+  %li
+    %a{"data-toggle" =>"tab", :href => "#features_front_page"} Features:Front Page
+
+
+.tab-content
+  #artists_front_page_dashboard.tab-pane.active
+    = render :partial => "artists_front_page", :artists => @artists
+  #lineup.tab-pane
+    = #render :partial => "lineup"
+  #features_front_page.tab-pane
+    = #render :partial => "features_front_page"
