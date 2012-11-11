@@ -83,4 +83,24 @@ class ArtistsController < ApplicationController
     end
     tier
   end
+
+  def store_front_page_artists()
+    #debugger
+    #clear out old selections
+
+    Artist.where("front_page != ?", 0) do |artist|
+      debugger
+      artist.front_page = 0
+      artist.save
+    end
+    params[:artists].each_pair do |display_order, artist_id|
+      artist = Artist.find(artist_id.first.to_i)
+      artist.front_page = display_order.to_i
+      artist.save!
+    end
+    respond_to do |format|
+      format.json { render :json => "Saved"}
+    end
+  end
+
 end

@@ -11,13 +11,13 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121109204711) do
+ActiveRecord::Schema.define(:version => 20121111211920) do
 
   create_table "artists", :force => true do |t|
     t.string   "name"
     t.string   "official_url"
-    t.datetime "created_at",                        :null => false
-    t.datetime "updated_at",                        :null => false
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
     t.integer  "tier"
     t.integer  "order"
     t.string   "soundcloud_url"
@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(:version => 20121109204711) do
     t.string   "bio"
     t.string   "image"
     t.integer  "display_order"
-    t.boolean  "front_page",     :default => false
+    t.integer  "front_page",     :default => 0
   end
 
   create_table "posts", :force => true do |t|

@@ -19,4 +19,32 @@ a.dashboard-popup:hover
 {
 	list-style-type:none;
 	display: inline-block;
+	float:left;
+	margin: 0px 15px;
+	padding-left:15px;
+	padding-right:15px;
+	width:10%;
+}
+
+#artists_front_page_dashboard ul li span
+{
+	color:black;
+	&:hover{ cursor:pointer; color:red;}
+}
+
+#artists_front_page_dashboard h3
+{
+	display:inline-block;
+	float:left;
+}
+
+#selections
+{
+	display:inline-block;
+	height:150px;
+	background-color:#eee;
+}
+.instructions
+{
+	color:#aaa;
 }

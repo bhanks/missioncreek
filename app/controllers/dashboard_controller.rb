@@ -5,6 +5,12 @@ class DashboardController < ApplicationController
 
 	def index
 		@artists = Artist.find(:all, :order => "tier")
+		@artists_fp = {}
+		@artists_fp['displayed'] = Artist.where("front_page != ?", 0)
+		@artists_fp['tier_one'] = Artist.where("tier = ? and front_page = ?", 1, 0)
+		@artists_fp['tier_two'] = Artist.where("tier = ? and front_page = ?", 2, 0)
+		@artists_fp['tier_three'] = Artist.where("tier = ? and front_page = ?", 3, 0)
+		
 		@venues = Venue.all
 		@posts = Post.all
 	end

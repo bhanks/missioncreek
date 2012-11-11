@@ -1,8 +1,53 @@
 %p Pick up to 7 artists to feature on the front page:
-%ul.artist_front_page_buttons
-	- @artists.each do |artist|
-		%li
-			%button.btn.btn-primary.btn-small Display Artist
-			%span= artist.name 
+
+%ul.tier1.artist_front_page
+	%li.instructions Tier One
+	- if !@artists_fp['tier_one'].nil?
+		- @artists_fp['tier_one'].each do |artist|
+			%li.ui-state-default
+				%span{:id =>"artist_fp_id_#{artist.id}"}= artist.name 
+
+%ul.tier2.artist_front_page
+	%li.instructions Tier Two
+	- if !@artists_fp['tier_two'].nil?
+		- @artists_fp['tier_two'].each do |artist|
+			%li.ui-state-default
+				%span{:id =>"artist_fp_id_#{artist.id}"}= artist.name 
+
+%ul.tier3.artist_front_page
+	%li.instructions Tier Three
+	- if !@artists_fp['tier_three'].nil?
+		- @artists_fp['tier_three'].each do |artist|
+			%li.ui-state-default
+				%span{:id =>"artist_fp_id_#{artist.id}"}= artist.name 
+
+%ul#selections.artist_front_page
+	%li.instructions Drop and order artists here
+	- if !@artists_fp['displayed'].nil?
+		- @artists_fp['displayed'].each do |artist|
+			%li.ui-state-default
+				%span{:id =>"artist_fp_id_#{artist.id}"}= artist.name
+
+%button#artists.btn.btn-primary.store-list Save List
+
+:javascript
+	$(function() {
+	    $( ".tier1, #selections" ).sortable({
+	    	connectWith: ".artist_front_page",
+	    	items: "li:not(.instructions)"
+	    });
+	    $( ".tier2, #selections" ).sortable({
+	    	connectWith: ".artist_front_page",
+	    	items: "li:not(.instructions)"
+	    });
+		$( ".tier3, #selections" ).sortable({
+	    	connectWith: ".artist_front_page",
+	    	items: "li:not(.instructions)"
+	    });
+		$("#artists.store-list").click(function(){
+			getFrontPageArtists('#selections');
+		});
+
+	});
 
 

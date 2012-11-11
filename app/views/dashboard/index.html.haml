@@ -13,7 +13,8 @@
 
 .tab-content
   #artists_front_page_dashboard.tab-pane.active
-    = render :partial => "artists_front_page", :artists => @artists
+
+    = render :partial => "artists_front_page", :artists_fp => @artists_fp
   #lineup.tab-pane
     = #render :partial => "lineup"
   #features_front_page.tab-pane
