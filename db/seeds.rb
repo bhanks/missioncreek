@@ -90,12 +90,99 @@ tier_three = [
 	"CANDY BREAKS"
 ]
 
+bios = [
+"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer urna risus, tristique sit amet vehicula in, tristique ac ante. Praesent id est arcu. Sed egestas fermentum nibh, posuere molestie lorem porta eget. Sed dignissim, nisi eget placerat scelerisque, ante ipsum pharetra enim, quis varius metus dui id velit. Nunc dapibus augue eu eros rhoncus at tempus nunc luctus. Nullam suscipit sodales leo sed ultrices. Maecenas mattis quam vitae est aliquet laoreet. Proin varius feugiat ligula eu ultrices. Etiam eu orci sed massa malesuada tristique. Vestibulum pulvinar dictum ante, sed aliquet diam pharetra nec. Fusce nec sollicitudin enim. Nullam nec congue ante. Proin in justo et mi pharetra interdum.",
+"Nulla consectetur sodales ipsum id faucibus. Curabitur tempor consequat faucibus. Sed eu purus vel massa porta luctus eget eu leo. Phasellus quam erat, elementum a volutpat id, suscipit eget urna. Fusce in nunc in ligula laoreet vestibulum nec ac nibh. Sed libero justo, eleifend in faucibus ut, iaculis ut neque. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.",
+"Nam nec neque ante, sit amet sollicitudin diam. Vivamus vel nunc nisl, non lacinia ligula. Mauris vehicula, lorem eget tempor tempor, urna nisi vestibulum orci, commodo lacinia est nisi at magna. Phasellus a enim vitae ante varius vehicula. Quisque nibh turpis, pulvinar et feugiat non, rutrum id dui. Aliquam egestas dolor turpis, dictum pretium justo. Duis porttitor lobortis magna.",
+"Nullam a condimentum mi. Morbi et aliquam velit. Duis convallis rhoncus lacus eget hendrerit. Suspendisse imperdiet elementum tortor, a ultricies libero sodales at. Nulla nec lorem sed elit placerat fermentum. Curabitur pulvinar odio eu lacus pellentesque ac vestibulum purus vehicula. Phasellus libero lacus, blandit quis tempor id, molestie sit amet nulla. Cras dictum, lectus eget blandit dapibus, mauris metus imperdiet turpis, a vulputate risus lacus quis ipsum. Quisque cursus quam at mauris ornare eget rhoncus risus vestibulum.",
+"Nulla facilisi. Nullam consequat fringilla justo vitae pellentesque. Donec mattis vehicula tincidunt. Sed eget felis lobortis elit laoreet vulputate. Duis aliquet placerat ipsum sed euismod. Morbi tincidunt cursus dui, at posuere lectus faucibus eu. Integer molestie tortor nec massa imperdiet ac accumsan arcu dignissim."
+]
+
+soundcloud = [
+	'<iframe width="100%" height="166" scrolling="no" frameborder="no" src="http://w.soundcloud.com/player/?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F66896659&show_artwork=true"></iframe>',
+	'<iframe width="100%" height="166" scrolling="no" frameborder="no" src="http://w.soundcloud.com/player/?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F66549792&show_artwork=true"></iframe>',
+	'<iframe width="100%" height="166" scrolling="no" frameborder="no" src="http://w.soundcloud.com/player/?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F66622510&show_artwork=true"></iframe>',
+	'<iframe width="100%" height="166" scrolling="no" frameborder="no" src="http://w.soundcloud.com/player/?url=http%3A%2F%2Fapi.soundcloud.com%2Ftracks%2F59602587&show_artwork=true"></iframe>'
+]
+
+official = [
+	"http://sunblind.net",
+	"http://houseoftomorrow.com/",
+	"http://blackmilk.biz/",
+	"http://www.subpop.com/artists/david_cross"
+]
+
+youtube = [
+	'<iframe width="420" height="315" src="http://www.youtube.com/embed/B2QqrvSryQA" frameborder="0" allowfullscreen></iframe>',
+	'<iframe width="560" height="315" src="http://www.youtube.com/embed/Ri5PpkukPQI" frameborder="0" allowfullscreen></iframe>',
+	'<iframe width="420" height="315" src="http://www.youtube.com/embed/jkjXr9SrzQE" frameborder="0" allowfullscreen></iframe>',
+	'<iframe width="560" height="315" src="http://www.youtube.com/embed/cDHUtZ4WoE4" frameborder="0" allowfullscreen></iframe>'
+
+]
+
+
 seed_images = Dir::entries("db/seed_images").reject{|i| i == "." || i == ".."}
 
 tier_one.each do |artist|
 	name = artist.downcase.split(" ").map(&:capitalize).join(" ")
 	randomize = Random.new
 	img = randomize.rand(0..seed_images.length-1)
+	bio = bios[randomize.rand(0..bios.length-1)]
+	soundcloud_url = soundcloud[randomize.rand(0..soundcloud.length-1)]
+	official_url = official[randomize.rand(0..official.length-1)]
+	youtube_url = youtube[randomize.rand(0..youtube.length-1)]
 	image = File.open("db/seed_images/#{seed_images[img]}")
-	Artist.create(:name => name, :tier => 1, :official_url => "", :display_order =>"", :soundcloud_url=>"", :youtube_url=>"",:bio=>"", :image=>image)
+	Artist.create(:name => name, 
+		:tier => 1, 
+		:official_url => official_url, 
+		:display_order =>"", 
+		:soundcloud_url=>soundcloud_url, 
+		:youtube_url=>youtube_url,
+		:bio=>bio, 
+		:image=>image)
 end
+
+tier_two.each do |artist|
+	name = artist.downcase.split(" ").map(&:capitalize).join(" ")
+	randomize = Random.new
+	img = randomize.rand(0..seed_images.length-1)
+	bio = bios[randomize.rand(0..bios.length-1)]
+	soundcloud_url = soundcloud[randomize.rand(0..soundcloud.length-1)]
+	official_url = official[randomize.rand(0..official.length-1)]
+	youtube_url = youtube[randomize.rand(0..youtube.length-1)]
+	image = File.open("db/seed_images/#{seed_images[img]}")
+	Artist.create(:name => name, 
+		:tier => 2, 
+		:official_url => official_url, 
+		:display_order =>"", 
+		:soundcloud_url=>soundcloud_url, 
+		:youtube_url=>youtube_url,
+		:bio=>bio, 
+		:image=>image)
+end
+
+tier_three.each do |artist|
+	name = artist.downcase.split(" ").map(&:capitalize).join(" ")
+	randomize = Random.new
+	img = randomize.rand(0..seed_images.length-1)
+	bio = bios[randomize.rand(0..bios.length-1)]
+	soundcloud_url = soundcloud[randomize.rand(0..soundcloud.length-1)]
+	official_url = official[randomize.rand(0..official.length-1)]
+	youtube_url = youtube[randomize.rand(0..youtube.length-1)]
+	image = File.open("db/seed_images/#{seed_images[img]}")
+	Artist.create(:name => name, 
+		:tier => 3, 
+		:official_url => official_url, 
+		:display_order =>"", 
+		:soundcloud_url=>soundcloud_url, 
+		:youtube_url=>youtube_url,
+		:bio=>bio, 
+		:image=>image)
+end
+
+
+
+
+
+
+

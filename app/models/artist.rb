@@ -9,7 +9,7 @@ class Artist < ActiveRecord::Base
 
   def clean_urls
   	if !self.youtube_url.nil? && !self.youtube_url.empty?
-  		self.youtube_url = self.youtube_url.gsub("\"","'").match(/https?:\/\/[\S]+/)[0]
+  		self.youtube_url = self.youtube_url.match(/https?:\/\/[\S]+/)[0].gsub("\"","")
   	end
   	if !self.soundcloud_url.nil? && !self.soundcloud_url.empty?
   		self.soundcloud_url = self.soundcloud_url.gsub("\"","'").match(/https?:\/\/[\S]+/)[0]
