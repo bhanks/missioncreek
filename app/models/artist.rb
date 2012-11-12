@@ -1,5 +1,5 @@
 class Artist < ActiveRecord::Base
-  attr_accessible :name, :bio, :soundcloud_url, :official_url, :youtube_url, :order, :tier, :image
+  attr_accessible :name, :bio, :soundcloud_url, :official_url, :youtube_url, :display_order, :tier, :image
   validates_presence_of :name, :tier
   mount_uploader :image, ArtistImageUploader
 
@@ -8,10 +8,10 @@ class Artist < ActiveRecord::Base
 
 
   def clean_urls
-  	if !self.youtube_url.empty?
+  	if !self.youtube_url.nil? && !self.youtube_url.empty?
   		self.youtube_url = self.youtube_url.gsub("\"","'").match(/https?:\/\/[\S]+/)[0]
   	end
-  	if !self.soundcloud_url.empty?
+  	if !self.soundcloud_url.nil? && !self.soundcloud_url.empty?
   		self.soundcloud_url = self.soundcloud_url.gsub("\"","'").match(/https?:\/\/[\S]+/)[0]
   	end
   end

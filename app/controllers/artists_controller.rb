@@ -88,8 +88,7 @@ class ArtistsController < ApplicationController
     #debugger
     #clear out old selections
 
-    Artist.where("front_page != ?", 0) do |artist|
-      debugger
+    Artist.where("front_page != ?", 0).each do |artist|
       artist.front_page = 0
       artist.save
     end

@@ -1,25 +1,11 @@
 %p Pick up to 7 artists to feature on the front page:
 
 %ul.tier1.artist_front_page
-	%li.instructions Tier One
-	- if !@artists_fp['tier_one'].nil?
-		- @artists_fp['tier_one'].each do |artist|
+	%li.instructions Undisplayed Artists
+	- if !@artists_fp['undisplayed'].nil?
+		- @artists_fp['undisplayed'].each do |artist|
 			%li.ui-state-default
-				%span{:id =>"artist_fp_id_#{artist.id}"}= artist.name 
-
-%ul.tier2.artist_front_page
-	%li.instructions Tier Two
-	- if !@artists_fp['tier_two'].nil?
-		- @artists_fp['tier_two'].each do |artist|
-			%li.ui-state-default
-				%span{:id =>"artist_fp_id_#{artist.id}"}= artist.name 
-
-%ul.tier3.artist_front_page
-	%li.instructions Tier Three
-	- if !@artists_fp['tier_three'].nil?
-		- @artists_fp['tier_three'].each do |artist|
-			%li.ui-state-default
-				%span{:id =>"artist_fp_id_#{artist.id}"}= artist.name 
+				%span{:id =>"artist_fp_id_#{artist.id}"}= artist.name
 
 %ul#selections.artist_front_page
 	%li.instructions Drop and order artists here
