@@ -26,7 +26,7 @@ a.dashboard-popup:hover
 	width:33%;
 }
 
-#artists_front_page_dashboard ul li span
+#artists_front_page_dashboard ul li.ui-state-default
 {
 	color:black;
 	&:hover{ cursor:pointer; color:red;}

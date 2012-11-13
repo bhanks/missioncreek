@@ -1,37 +1,42 @@
 %p Pick up to 7 artists to feature on the front page:
 
-%ul.tier1.artist_front_page
+%ul.undisplayed.artist_front_page
 	%li.instructions Undisplayed Artists
 	- if !@artists_fp['undisplayed'].nil?
 		- @artists_fp['undisplayed'].each do |artist|
-			%li.ui-state-default
-				%span{:id =>"artist_fp_id_#{artist.id}"}= artist.name
+			%li{:id =>"artist_fp_id_#{artist.id}", :class=>"ui-state-default tier#{artist.tier}"}=artist.name
+				
+				
 
 %ul#selections.artist_front_page
 	%li.instructions Drop and order artists here
 	- if !@artists_fp['displayed'].nil?
 		- @artists_fp['displayed'].each do |artist|
-			%li.ui-state-default
-				%span{:id =>"artist_fp_id_#{artist.id}"}= artist.name
+			%li{:id =>"artist_fp_id_#{artist.id}", :class=>"ui-state-default tier#{artist.tier}"}= artist.name
 
+%button#clear-artists.btn Clear List
 %button#artists.btn.btn-primary.store-list Save List
 
 :javascript
 	$(function() {
-	    $( ".tier1, #selections" ).sortable({
+	    $( ".undisplayed, #selections" ).sortable({
 	    	connectWith: ".artist_front_page",
 	    	items: "li:not(.instructions)"
 	    });
-	    $( ".tier2, #selections" ).sortable({
-	    	connectWith: ".artist_front_page",
-	    	items: "li:not(.instructions)"
+
+	    $("#selections").sortable({
+	    	change: function(event, ui){
+	    		if($(".store-list").hasClass("disabled"))
+	    			$(".store-list").removeClass("disabled").text("Save");
+	    	}
 	    });
-		$( ".tier3, #selections" ).sortable({
-	    	connectWith: ".artist_front_page",
-	    	items: "li:not(.instructions)"
-	    });
+
 		$("#artists.store-list").click(function(){
 			getFrontPageArtists('#selections');
+		});
+
+		$('#clear-artists').click(function(){
+			clearList('#selections', '.undisplayed');
 		});
 
 	});

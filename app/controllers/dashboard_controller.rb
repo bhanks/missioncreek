@@ -6,8 +6,8 @@ class DashboardController < ApplicationController
 	def index
 		@artists = Artist.find(:all, :order => "tier")
 		@artists_fp = {}
-		@artists_fp['displayed'] = Artist.where("front_page != ?", 0)
-		@artists_fp['undisplayed'] = Artist.where("front_page = ?", 0)
+		@artists_fp['displayed'] = Artist.where("front_page != ?", 0).order('front_page')
+		@artists_fp['undisplayed'] = Artist.where("front_page = ?", 0).order("tier, name")
 		
 		@venues = Venue.all
 		@posts = Post.all

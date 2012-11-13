@@ -98,7 +98,7 @@ class ArtistsController < ApplicationController
       artist.save!
     end
     respond_to do |format|
-      format.json { render :json => "Saved"}
+      format.json { render :text => "Saved"}
     end
   end
 
