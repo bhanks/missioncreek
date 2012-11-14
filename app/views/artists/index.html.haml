@@ -1,37 +1,12 @@
 %h1 Mission Creek Festival 2013 Lineup
 
-.row
-  .span4
-    .tier1.col= render :partial => "lineup_column", :locals => { :artists => @sorted["1"]["col1"] }
-  .span4
-    .tier1.col= render :partial => "lineup_column", :locals => { :artists => @sorted["1"]["col2"] }
-  .span4
-    .tier1.col= render :partial => "lineup_column", :locals => { :artists => @sorted["1"]["col3"] }
-  - if !@sorted["1"]['rem'].empty?
-    .row
+-[1,2,3].each do |tier_num|
+  .row
+    -[1,2,3].each do |col_num|
+      - artists = @sorted[tier_num.to_s]["col#{col_num}"]
+      .span4
+        .col{:class=>"tier#{tier_num}"}= render :partial => "lineup_column", :locals => { :artists => artists }
+    - if !@sorted[tier_num.to_s]['rem'].empty?
       .span12
-        .tier1.rem= render :partial => "lineup_column", :locals => { :artists => @sorted["1"]['rem'] }
+        .rem{:class=>"tier#{tier_num}"}= render :partial => "lineup_column", :locals => { :artists => @sorted[tier_num.to_s]['rem'] }
 
-.row
-  .span4
-    .tier2.col= render :partial => "lineup_column", :locals => { :artists => @sorted["2"]["col1"] }
-  .span4
-    .tier2.col= render :partial => "lineup_column", :locals => { :artists => @sorted["2"]["col2"] }
-  .span4
-    .tier2.col= render :partial => "lineup_column", :locals => { :artists => @sorted["2"]["col3"] }
-  - if !@sorted["2"]['rem'].empty?
-    .row
-      .span12
-        .tier2.rem= render :partial => "lineup_column", :locals => { :artists => @sorted["2"]['rem'] }
-
-.row
-  .span4
-    .tier3.col= render :partial => "lineup_column", :locals => { :artists => @sorted["3"]["col1"] }
-  .span4
-    .tier3.col= render :partial => "lineup_column", :locals => { :artists => @sorted["3"]["col2"] }
-  .span4
-    .tier3.col= render :partial => "lineup_column", :locals => { :artists => @sorted["3"]["col3"] }
-  - if !@sorted["3"]['rem'].empty?
-    .row
-      .span12
-        .tier3.rem= render :partial => "lineup_column", :locals => { :artists => @sorted["3"]['rem'] }

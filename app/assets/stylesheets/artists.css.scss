@@ -89,6 +89,10 @@ p.artist_bio
 	padding-top:50px;
 }
 
-
+.tier1 ul, .tier2 ul, .tier3 ul
+{
+	list-style-type:none;
+	color: $linen;
+}
 
 
