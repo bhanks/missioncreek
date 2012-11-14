@@ -122,7 +122,7 @@ youtube = [
 
 
 seed_images = Dir::entries("db/seed_images").reject{|i| i == "." || i == ".."}
-
+counter = 1
 tier_one.each do |artist|
 	name = artist.downcase.split(" ").map(&:capitalize).join(" ")
 	randomize = Random.new
@@ -135,13 +135,15 @@ tier_one.each do |artist|
 	Artist.create(:name => name, 
 		:tier => 1, 
 		:official_url => official_url, 
-		:display_order =>"", 
+		:display_order =>counter, 
 		:soundcloud_url=>soundcloud_url, 
 		:youtube_url=>youtube_url,
 		:bio=>bio, 
 		:image=>image)
+	counter +=1
 end
 
+counter = 1
 tier_two.each do |artist|
 	name = artist.downcase.split(" ").map(&:capitalize).join(" ")
 	randomize = Random.new
@@ -154,13 +156,14 @@ tier_two.each do |artist|
 	Artist.create(:name => name, 
 		:tier => 2, 
 		:official_url => official_url, 
-		:display_order =>"", 
+		:display_order =>counter, 
 		:soundcloud_url=>soundcloud_url, 
 		:youtube_url=>youtube_url,
 		:bio=>bio, 
 		:image=>image)
+	counter +=1
 end
-
+counter = 1
 tier_three.each do |artist|
 	name = artist.downcase.split(" ").map(&:capitalize).join(" ")
 	randomize = Random.new
@@ -173,11 +176,12 @@ tier_three.each do |artist|
 	Artist.create(:name => name, 
 		:tier => 3, 
 		:official_url => official_url, 
-		:display_order =>"", 
+		:display_order =>counter, 
 		:soundcloud_url=>soundcloud_url, 
 		:youtube_url=>youtube_url,
 		:bio=>bio, 
 		:image=>image)
+	counter +=1
 end
 
 

@@ -6,6 +6,32 @@ class ArtistsController < ApplicationController
   
   def index
     @artists = Artist.all
+    @sorted = {
+      "1"=> { "col1" => [], "col2" => [], "col3" => [], "rem"=>[] },
+      "2"=> { "col1" => [], "col2" => [], "col3" => [], "rem"=>[] },
+      "3"=> { "col1" => [], "col2" => [], "col3" => [], "rem"=>[] }
+    }
+    
+    #To keep the three columns of even height, determine when an artist should go into the 'rem' array
+    breakpoint = {"1"=>nil, "2"=>nil, "3"=>nil}
+    [1,2,3].each do |tier|
+      length = Artist.count(:conditions => "tier = #{tier}")
+      bp = length - (length % 3)
+      breakpoint[tier.to_s] = bp
+    end
+    #Save myself from a case statement while keeping sensible column numbers for css/js, map display_order%3 to column number 
+    cols = {"1"=>"1", "2"=>"2", "0"=>"3"}
+    
+    @artists.each do |artist|
+      tier = artist.tier.to_s
+      if(@sorted[tier]["col1"].length + @sorted[tier]["col2"].length + @sorted[tier]["col3"].length != breakpoint[tier] )    
+        column = cols[(artist.display_order%3).to_s]
+        @sorted[tier]["col#{column}"] << artist
+      else
+        @sorted[tier]['rem'] << artist
+      end
+    end
+    
 
     respond_to do |format|
       format.html # index.html.erb
