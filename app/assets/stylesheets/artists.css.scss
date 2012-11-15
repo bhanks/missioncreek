@@ -89,10 +89,37 @@ p.artist_bio
 	padding-top:50px;
 }
 
+@mixin artist-lists($percent)
+{
+	font-size:24px*$percent;
+	line-height:36px*$percent;
+	padding-left:6px;
+	padding-right:6px;
+	margin-bottom:15px*$percent;
+	letter-spacing:2px*$percent;
+	text-align:center;
+}
+
 .tier1 ul, .tier2 ul, .tier3 ul
 {
 	list-style-type:none;
 	color: $linen;
 }
+.tier1 ul li
+{
+	@include artist-lists(1.0);
+}
 
+.tier2 ul li
+{
+	@include artist-lists(.85);
+}
 
+.tier3 ul li
+{
+	@include artist-lists(.7);
+}
+.rem
+{
+
+}
