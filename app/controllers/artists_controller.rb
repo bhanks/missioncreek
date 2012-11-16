@@ -129,4 +129,13 @@ class ArtistsController < ApplicationController
     end
   end
 
+  def artist_thumb()
+    artist = Artist.find(params[:id]).first
+    
+    thumbnail = artist.image.thumb.to_s
+    respond_to do |format|
+      format.json { render :text => thumbnail }
+    end
+  end
+
 end

@@ -18,7 +18,8 @@ Missioncreek::Application.routes.draw do
   end
 
   match "artists/front_page_selections" => 'artists#store_front_page_artists', :via => :post
-
+  match "artists/artist_thumb" => 'artists#artist_thumb', :via => :post
+  
   root :to => "Base#index"
   
   resources :posts

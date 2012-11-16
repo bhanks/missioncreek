@@ -91,13 +91,14 @@ p.artist_bio
 
 @mixin artist-lists($percent)
 {
-	font-size:24px*$percent;
-	line-height:36px*$percent;
+	font-size:20px*$percent;
+	line-height:33px*$percent;
 	padding-left:6px;
 	padding-right:6px;
-	margin-bottom:15px*$percent;
-	letter-spacing:2px*$percent;
+	margin-bottom:12px*$percent;
+	letter-spacing:1px*$percent;
 	text-align:center;
+	height:50px*$percent;
 }
 
 .tier1 ul, .tier2 ul, .tier3 ul
@@ -119,7 +120,7 @@ p.artist_bio
 {
 	@include artist-lists(.7);
 }
-.rem
+.lineup
 {
-
+	margin-bottom:20px;
 }

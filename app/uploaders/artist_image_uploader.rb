@@ -38,7 +38,7 @@ class ArtistImageUploader < CarrierWave::Uploader::Base
 
   # Create different versions of your uploaded files:
   version :thumb do
-    process :resize_to_fit => [100, 75]
+    process :resize_to_fit => [200, 150]
   end
 
   version :carousel do

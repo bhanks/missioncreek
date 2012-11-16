@@ -1,3 +1,3 @@
 %ul
 	- artists.each do |artist|
-		%li= artist.name
+		%li{:id=>"artist_id_#{artist.id}"}= artist.name
