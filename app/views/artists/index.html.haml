@@ -1,14 +1,13 @@
-%h2 Mission Creek Festival 2013 Lineup
+%h2.lineup Mission Creek Festival 2013 Lineup
 
--[1,2,3].each do |tier_num|
-  .row.lineup
-    -[1,2,3].each do |col_num|
-      - ul_height = 50*@sorted[tier_num.to_s]["col#{col_num}"].length
-      - artists = @sorted[tier_num.to_s]["col#{col_num}"]
-      - locals = {:artists=>artists, :ul_height=>ul_height}
-      .span4
-        .col{:class=>"tier#{tier_num}"}= render :partial => "lineup_column", :locals => locals
-    - if !@sorted[tier_num.to_s]['rem'].empty?
-      .span12
-        .rem{:class=>"tier#{tier_num}"}= render :partial => "lineup_column", :locals => { :artists => @sorted[tier_num.to_s]['rem'] }
+.tier1.row
+  -@tier1.each do |artist|
+    .span4= artist.name
 
+.tier2.row
+  -@tier2.each do |artist|
+    .span4= artist.name
+
+.tier3.row
+  -@tier3.each do |artist|
+    .span4= artist.name

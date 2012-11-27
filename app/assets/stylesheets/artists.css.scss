@@ -100,27 +100,41 @@ p.artist_bio
 	text-align:center;
 	height:50px*$percent;
 }
+@mixin artist-divs($percent)
+{
+	font-size:24px*$percent;
+	line-height:33px*$percent;
+	text-align:center;
+	margin-bottom:10px;
+	margin-top:5px;
 
-.tier1 ul, .tier2 ul, .tier3 ul
-{
-	list-style-type:none;
-	color: $linen;
-}
-.tier1 ul li
-{
-	@include artist-lists(1.0);
-}
-
-.tier2 ul li
-{
-	@include artist-lists(.85);
 }
 
-.tier3 ul li
+h2.lineup
 {
-	@include artist-lists(.7);
+	text-align:center;
 }
-.lineup
+.tier1, .tier2
 {
-	margin-bottom:20px;
+	margin-top:25px;
+	margin-bottom: 25px;
 }
+.tier1 div
+{
+	@include artist-divs(1.0);
+	color:$linen;
+}
+.tier2 div
+{
+	@include artist-divs(.85);
+	color:$pepto;
+}
+
+.tier3 div
+{
+	@include artist-divs(.7);
+	color:$ice;
+}
+
+
+
