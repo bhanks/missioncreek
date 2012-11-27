@@ -1,9 +1,5 @@
-.front.artists.span8
-	%ul
-		- @artists.each do |artist|
-			- style = "height:#{21.0/(@artists.length)}em;line-height:#{21.0/(@artists.length)}em"
-			%li.artists{:style=>style}=artist.name
-		-#%li.artists.more{:style=>"line-height:1em"} See All Artists
+.front.artists
+
 	#artistCarousel.carousel.slide
 		.carousel-inner
 			- @artists.each do |artist|
@@ -12,6 +8,12 @@
 						%image{'src' => artist.image.carousel.url}
 					.carousel-caption
 						%h4="#{artist.name}"
+		%ul
+			- @artists.each do |artist|
+				-style = "height:#{21.0/(@artists.length)}em;line-height:#{21.0/(@artists.length)}em"
+				- #style = ""
+				%li.artists{:style=>style}=artist.name
+		-#%li.artists.more{:style=>"line-height:1em"} See All Artists
 
 :javascript
 	$(document).ready(function()

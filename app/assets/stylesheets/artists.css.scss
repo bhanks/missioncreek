@@ -17,11 +17,12 @@ td.artist-name
 .front.artists ul
 {
 	text-align: left;
-	width:220px;
+	/*width:220px;*/
 	font-size: 14px;
-	float:left;
+	/*float:left;*/
 	background-color: $eggplant;
 	color:white;
+	list-style-type:none;
 
 
 }
@@ -38,7 +39,7 @@ td.artist-name
 
 #artistCarousel
 {
-	width: 400px;
+	/*width: 400px;*/
 	height: 100%;
 	float: left;
 }

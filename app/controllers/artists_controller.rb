@@ -13,7 +13,6 @@ class ArtistsController < ApplicationController
     }
     @tier1 = Artist.find_all_by_tier(1)
     @tier2 = Artist.find_all_by_tier(2)
-    debugger
     @tier3 = Artist.find_all_by_tier(3)
 
     #To keep the three columns of even length, determine when an artist should go into the 'rem' array

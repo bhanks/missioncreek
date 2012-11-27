@@ -1,14 +1,12 @@
-<div class=' hidden-tablet'>
-	<div class="row">
+<div class=''>
+	<div class="row-fluid">
 		<div class="span8">
 			<h2><%= link_to raw("ARTISTS&raquo;"), artists_path%></h2>
-		</div>
-		<div class="span4">
-			<h2>TICKET INFO&raquo;</h2>
+			<%= render :partial => 'artists' %>
 		</div>
 	</div>
-	<div class="row top">
-		<%= render :partial => 'artists' %>
+	<div class="row-fluid top">
+		
 		<%= render :partial => 'tickets' %>
 	</div>
 	<div class='row'>
