@@ -23,6 +23,8 @@ td.artist-name
 	background-color: $eggplant;
 	color:white;
 	list-style-type:none;
+	margin:0;
+	width:auto;
 
 
 }
@@ -39,9 +41,10 @@ td.artist-name
 
 #artistCarousel
 {
-	/*width: 400px;*/
-	height: 100%;
+	width: auto;
+	/*height: 100%;*/
 	float: left;
+	box-shadow: 5px 5px 10px black;
 }
 
 li.artists
@@ -50,6 +53,7 @@ li.artists
 	/*line-height: 1.9em;*/
 	padding-left: 15px;
 	padding-top: 1px;
+	/*display:inline;*/
 	&:hover{
 		cursor:pointer;
 		background-color: $ice;
@@ -58,6 +62,7 @@ li.artists
 }
 li.artists.active
 {
+	/*display:inline;*/
 	background-color: $myCurry;
 	color: black;
 	-webkit-transition: background-color .1s linear;

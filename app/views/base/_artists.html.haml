@@ -1,7 +1,7 @@
 .front.artists
-
 	#artistCarousel.carousel.slide
 		.carousel-inner
+			= image_tag "black.jpg", :class => "remove_me"
 			- @artists.each do |artist|
 				.item
 					%a{:href=>artist_path(artist)}
@@ -10,7 +10,7 @@
 						%h4="#{artist.name}"
 		%ul
 			- @artists.each do |artist|
-				-style = "height:#{21.0/(@artists.length)}em;line-height:#{21.0/(@artists.length)}em"
+				-style = "height:#{12.0/(@artists.length)}em;line-height:#{12.0/(@artists.length)}em"
 				- #style = ""
 				%li.artists{:style=>style}=artist.name
 		-#%li.artists.more{:style=>"line-height:1em"} See All Artists
@@ -19,7 +19,12 @@
 	$(document).ready(function()
 	{
 		$('#artistCarousel').carousel();
+		$('#artistCarousel').on("slide", function(e){
+
+		});
 		$('#artistCarousel').on("slid", function(e){
+			if($('.remove_me')!= [])
+				$('.remove_me').detach();
 			index = $(this).children('.carousel-inner').children('.active').index();
 			$($('li.artists')[index]).siblings(".active").removeClass("active");
 			$($('li.artists')[index]).addClass('active');
