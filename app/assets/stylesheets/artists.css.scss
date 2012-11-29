@@ -9,8 +9,9 @@ td.artist-name
 	color:black;
 }
 
-.front.artists
+.artists
 {
+	overflow:hidden;
 	/*background-color: black;*/
 }
 
@@ -45,6 +46,7 @@ td.artist-name
 	/*height: 100%;*/
 	float: left;
 	box-shadow: 5px 5px 10px black;
+	margin-right: 10px;
 }
 
 li.artists

@@ -1,0 +1,39 @@
+/ <div class=''>
+/ 	<div class="row-fluid">
+/ 		<div class="span5">
+/ 			<h2><%= link_to raw("ARTISTS&raquo;"), artists_path%></h2>
+/ 			<%= render :partial => 'artists' %>
+
+/ 		</div>
+/ 		<div class="span7">
+/ 			<h2>Features</h2>
+/ 			<%= render :partial => 'features' %>
+/ 		</div>
+/ 	</div>
+/ 	<div class="row-fluid top">
+		
+		
+/ 	</div>
+/ 	<div class='row'>
+/ 		<% #render :partial => 'twitter' %>
+/ 		<%= render :partial => 'tickets' %>
+		
+
+/ 	</div>
+/ 	<div class='row'>
+/ 		<%= render :partial => 'sponsors' %>
+/ 	</div>
+/ </div>
+
+.row-fluid
+	.span5
+		%h2.front=link_to raw("ARTISTS&raquo;"), artists_path
+		= render :partial => 'artists'
+	.span7
+		%h2.front Announcements
+		= render :partial => 'announcements'
+		%h2.front Ticket Information
+		= render :partial => 'tickets'
+.row-fluid
+	.span7
+		

@@ -26,7 +26,7 @@ body
 	height:inherit;
 }
 
-.front
+div.shadow
 {
 	box-shadow: 5px 5px 10px black;
 }
@@ -39,11 +39,6 @@ body
 	margin:0px;
 	/*background-color:#ddd;*/
 	height:inherit;
-}
-.front.tickets
-{	
-	background-color: #ddd;
-
 }
 
 .row.top
@@ -105,4 +100,20 @@ ul.feature-nav li
 {
 	float:left;
 
+}
+
+h2.front
+{
+	font-size: 1.5em;
+	line-height: 1em;
+}
+
+div.announcements, div.tickets
+{
+	background-color:$eggplant;
+}
+div.announcements p, div.tickets p
+{
+	padding:5px;
+	color:$linen;
 }
