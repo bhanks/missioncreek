@@ -120,4 +120,23 @@ div.announcements p, div.tickets p
 	padding:5px;
 	color:$linen;
 	height:197px;
+	min-height:197px;
+	width:90%;
+	margin-left:12px;
+	text-align:justify;
+}
+
+div.tickets p
+{
+	height:206px;
+}
+div.announcements
+{
+	overflow:hidden;
+	max-height:197px;
+}
+.scroll-hider
+{
+	width:105%;
+	overflow-y:scroll;
 }
