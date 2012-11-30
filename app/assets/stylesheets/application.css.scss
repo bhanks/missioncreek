@@ -26,11 +26,15 @@ body
 	height:inherit;
 }
 
-div.shadow
+div.shadow, .twitter-timeline
 {
 	box-shadow: 5px 5px 10px black;
 }
-
+.twitter-timeline
+{
+	width: 100%;
+	
+}
 .top ul
 {
 	list-style-type: none;
@@ -48,9 +52,7 @@ div.shadow
 
 .front.features, .front.twitter
 {
-	margin-top:20px;
-	height: 400px;
-	background-color: #ddd;
+
 }
 
 .front.sponsors
@@ -111,9 +113,11 @@ h2.front
 div.announcements, div.tickets
 {
 	background-color:$eggplant;
+	margin-right: 10px;
 }
 div.announcements p, div.tickets p
 {
 	padding:5px;
 	color:$linen;
+	height:197px;
 }
