@@ -121,15 +121,19 @@ div.announcements p, div.tickets p
 	color:$linen;
 	height:197px;
 	min-height:197px;
+	width:90%;
+	margin-left:12px;
+	text-align:justify;
 }
 
-div.announcements p
+div.tickets p
 {
-
+	height:206px;
 }
 div.announcements
 {
 	overflow:hidden;
+	max-height:197px;
 }
 .scroll-hider
 {
