@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121111211920) do
+ActiveRecord::Schema.define(:version => 20121130191211) do
 
   create_table "artists", :force => true do |t|
     t.string   "name"
@@ -22,10 +22,10 @@ ActiveRecord::Schema.define(:version => 20121111211920) do
     t.integer  "order"
     t.string   "soundcloud_url"
     t.string   "youtube_url"
-    t.string   "bio"
     t.string   "image"
     t.integer  "display_order"
     t.integer  "front_page",     :default => 0
+    t.text     "bio"
   end
 
   create_table "posts", :force => true do |t|
