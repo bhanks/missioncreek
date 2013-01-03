@@ -8,6 +8,8 @@
   %li
     %a{"data-toggle" =>"tab", :href => "#lineup"} Lineup
   %li
+    %a{"data-toggle" =>"tab", :href => "#announcments"} Announcements
+  %li
     %a{"data-toggle" =>"tab", :href => "#features_front_page"} Features:Front Page
 
 
@@ -19,3 +21,5 @@
     = #render :partial => "lineup"
   #features_front_page.tab-pane
     = #render :partial => "features_front_page"
+  #announcments.tab-pane
+    = render :partial => "announcments"
