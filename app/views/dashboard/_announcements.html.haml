@@ -1,0 +1,29 @@
+%h2 Announcements
+
+.new_post.span6
+	%h3 Make a Post
+	%label Title
+	%input.new_title{:type=>"text"}
+	%textarea.new_post{:rows=>5}
+	%button#create_post.btn Save
+
+.prev_posts.span5
+	%h3 Previous Posts
+	%ul
+		- @posts.each do |post|
+			%li.post
+				%div.title=post.title
+				%div.date=post.date
+				%div.body=post.body
+
+
+
+:javascript
+	$(function(){
+		$("#create_post").click(function(){
+			createPost();
+		});
+
+	});
+
+

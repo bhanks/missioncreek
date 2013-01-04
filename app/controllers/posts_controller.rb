@@ -40,15 +40,24 @@ class PostsController < ApplicationController
   # POST /posts
   # POST /posts.json
   def create
+    debugger
     @post = Post.new(params[:post])
 
+    # if format == "html"
+    #   if @post.save
+    #     redirect_to posts_dashboard_index_url, notice: 'Post was successfully created.'
+    #   else
+    #     render action: "new" 
+    #   end
+    # elsif format == "json"
     if @post.save
-      redirect_to posts_dashboard_index_url, notice: 'Post was successfully created.'
-    else
-      render action: "new" 
+      render json: @post
     end
     
+      
+    
   end
+
 
   # PUT /posts/1
   # PUT /posts/1.json

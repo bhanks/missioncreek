@@ -49,13 +49,19 @@ a.dashboard-popup:hover
 	color:#aaa;
 }
 
-textarea.new_announcement
+textarea.new_post
 {
 	width: 90%;
 
 }
-.new_announcement h3
+.new_post h3, .prev_posts h3
 {
 	font-size: 18px;
 	line-height: 20px;
 }
+
+.prev_posts ul
+{
+	background-color:#A3B1CF;
+}
+
