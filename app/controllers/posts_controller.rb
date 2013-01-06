@@ -40,7 +40,6 @@ class PostsController < ApplicationController
   # POST /posts
   # POST /posts.json
   def create
-    debugger
     @post = Post.new(params[:post])
 
     # if format == "html"
@@ -51,7 +50,7 @@ class PostsController < ApplicationController
     #   end
     # elsif format == "json"
     if @post.save
-      render json: @post
+      render :json=> @post.attributes.merge({:date=>@post.date})
     end
     
       
@@ -79,7 +78,7 @@ class PostsController < ApplicationController
   def destroy
     @post = Post.find(params[:id])
     @post.destroy
-    redirect_to posts_dashboard_index_url
+    render :json => true
 
   end
 end

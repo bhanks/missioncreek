@@ -9,12 +9,14 @@
 
 .prev_posts.span5
 	%h3 Previous Posts
-	%ul
+	%ul.prev_posts
 		- @posts.each do |post|
-			%li.post
+			%li.post{:id => "post_#{post.id}"}
 				%div.title=post.title
 				%div.date=post.date
 				%div.body=post.body
+				%button.btn-mini.btn-warning.edit_post Edit
+				%button.btn-mini.btn-danger.delete_post Delete
 
 
 
@@ -23,7 +25,9 @@
 		$("#create_post").click(function(){
 			createPost();
 		});
-
+		$(".delete_post").click(function(){
+			deletePost(this);
+		})
 	});
 
 

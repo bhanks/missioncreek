@@ -63,5 +63,30 @@ textarea.new_post
 .prev_posts ul
 {
 	background-color:#A3B1CF;
+	list-style-type: none;
+	display: block;
+	margin: 0;
+	padding: 15px;
 }
 
+.prev_posts ul > li
+{
+	background-color: white;
+	padding: 3px;
+	border-radius: 3px;
+	font-size: 12px;
+	margin-bottom:5px;
+}
+.prev_posts .title, .prev_posts .date
+{
+	display: inline;
+}
+.prev_posts .title
+{
+	font-weight:bold;
+}
+.prev_posts .date
+{
+	margin-left: 15px;
+	color: grey;
+} 

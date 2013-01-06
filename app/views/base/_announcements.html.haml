@@ -1,3 +1,7 @@
 .front.announcements.shadow
 	.scroll-hider
-		%p Oh, hi! It’s been awhile. Yes, we know. First off, we just want to say THANK YOU to everyone who supported Mission Creek Festival 2012. We survived another year and had some great times. We are going to do another one in Spring 2013. Good news, yes? Dates to follow shortly. Later this summer we will be posting some very beautiful photo galleries from this past year’s festival. In the meantime, keep your eyes posted as we have several Mission Creek Presents shows on the horizon. Oh, hi! It’s been awhile. Yes, we know. First off, we just want to say THANK YOU to everyone who supported Mission Creek Festival 2012. We survived another year and had some great times. We are going to do another one in Spring 2013. Good news, yes? Dates to follow shortly. Later this summer we will be posting some very beautiful photo galleries from this past year’s festival. In the meantime, keep your eyes posted as we have several Mission Creek Presents shows on the horizon.Oh, hi! It’s been awhile. Yes, we know. First off, we just want to say THANK YOU to everyone who supported Mission Creek Festival 2012. We survived another year and had some great times. We are going to do another one in Spring 2013. Good news, yes? Dates to follow shortly. Later this summer we will be posting some very beautiful photo galleries from this past year’s festival. In the meantime, keep your eyes posted as we have several Mission Creek Presents shows on the horizon.
+		- @posts.each do |post|
+			.post{:id=>post.id}
+				.post_title= post.title
+				.post_date= post.date
+				.post_body= post.body

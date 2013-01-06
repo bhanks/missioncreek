@@ -18,9 +18,14 @@
 body
 {
 	font-family: WhitneyBook;
-	background-color: $charcoal;
+	/*background-color: $charcoal;*/
+	background-image:url('bg-repeat.jpg')
 }
-
+.container.main
+{
+	background-color: rgba(255, 255, 255, 0.6);
+	padding-left: 12px;
+}
 .top .front
 {
 	height:inherit;
@@ -112,13 +117,13 @@ h2.front
 
 div.announcements, div.tickets
 {
-	background-color:$eggplant;
+	background-color:$linen;
 	margin-right: 10px;
 }
 div.announcements p, div.tickets p
 {
 	padding:5px;
-	color:$linen;
+	color:$charcoal;
 	height:197px;
 	min-height:197px;
 	width:90%;
@@ -133,7 +138,7 @@ div.tickets p
 div.announcements
 {
 	overflow:hidden;
-	max-height:197px;
+	height:197px;
 }
 .scroll-hider
 {
