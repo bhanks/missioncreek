@@ -19,11 +19,12 @@ body
 {
 	font-family: WhitneyBook;
 	/*background-color: $charcoal;*/
-	background-image:url('bg-repeat.jpg')
+	background-image:url('bg-repeat.jpg');
 }
 .container.main
 {
-	background-color: rgba(255, 255, 255, 0.6);
+	/*background-color: rgba(255, 255, 255, 0.6);*/
+	background-image:url('white.png');
 	padding-left: 12px;
 }
 .top .front
@@ -31,13 +32,13 @@ body
 	height:inherit;
 }
 
-div.shadow, .twitter-timeline
+div.shadow
 {
 	box-shadow: 5px 5px 10px black;
 }
 .twitter-timeline
 {
-	width: 100%;
+	width: 95%;
 	
 }
 .top ul
@@ -117,13 +118,13 @@ h2.front
 
 div.announcements, div.tickets
 {
-	background-color:$linen;
+	background-color:$charcoal;
 	margin-right: 10px;
 }
 div.announcements p, div.tickets p
 {
 	padding:5px;
-	color:$charcoal;
+	color:$linen;
 	height:197px;
 	min-height:197px;
 	width:90%;

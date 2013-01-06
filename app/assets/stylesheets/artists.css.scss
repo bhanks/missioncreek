@@ -21,8 +21,8 @@ td.artist-name
 	/*width:220px;*/
 	font-size: 14px;
 	/*float:left;*/
-	background-color: $linen;
-	color:$charcoal;
+	background-color: $charcoal;
+	color:$linen;
 	list-style-type:none;
 	margin:0;
 	width:auto;
@@ -45,7 +45,7 @@ td.artist-name
 	width: auto;
 	/*height: 100%;*/
 	float: left;
-	box-shadow: 5px 5px 10px black;
+	/*box-shadow: 5px 5px 10px black;*/
 	margin-right: 10px;
 }
 
@@ -85,7 +85,7 @@ li.artists a
 
 img.artist
 {
-	box-shadow: 5px 5px 5px black;
+	/*box-shadow: 5px 5px 5px black;*/
 }
 
 p.artist_bio
