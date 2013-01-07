@@ -146,3 +146,31 @@ div.announcements
 	width:105%;
 	overflow-y:scroll;
 }
+a.logo
+{
+	float:left;
+}
+a.uiccu
+{
+	float:right;
+}
+img.dates
+{
+	display:block;
+	margin:auto;
+	padding-bottom: 15px;
+}
+@media all and (max-width:550px)
+{
+	a.logo, a.uiccu, a.uiccu >img
+	{
+		float:none;
+		display:block;
+		margin:auto;
+	}
+	a.uiccu > img
+	{
+		margin-top: 20px;
+		padding-right: 15px;
+	}
+}

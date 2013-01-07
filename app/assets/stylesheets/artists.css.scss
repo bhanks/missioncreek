@@ -127,21 +127,21 @@ h2.lineup
 	margin-top:25px;
 	margin-bottom: 25px;
 }
-.tier1 div
+.tier1 div, .tier1 div > a 
 {
 	@include artist-divs(1.0);
-	color:$linen;
+	color:$pool;
 }
-.tier2 div
+.tier2 div, .tier2 div > a
 {
 	@include artist-divs(.85);
 	color:$pepto;
 }
 
-.tier3 div
+.tier3 div, .tier3 div
 {
 	@include artist-divs(.7);
-	color:$ice;
+	color:$kelly;
 }
 
 

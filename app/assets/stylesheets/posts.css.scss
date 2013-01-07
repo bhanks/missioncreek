@@ -16,14 +16,22 @@
 {
 	display:inline-block;
 	font-size:1.3em;
+	color: $ice;
 }
 
 .post_date
 {
 	display:inline-block;
+	color: $smoke;
 }
 
 .post_body
 {
 	margin-bottom: 5px;
+	color: $linen;
+	height: 197px;
+min-height: 197px;
+width: 90%;
+margin-left: 12px;
+text-align: justify;
 }
