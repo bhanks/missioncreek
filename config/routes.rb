@@ -8,11 +8,13 @@ Missioncreek::Application.routes.draw do
   devise_for :users, :path => 'users', :path_names => { :sign_in =>"login", :sign_out=>"logout"}
   resources :users
   resources :artists
+  resources :pages
   resources :dashboard do
     collection do
       get 'artists'
       get 'posts'
       get 'venues'
+      get 'pages'
     end
 
   end

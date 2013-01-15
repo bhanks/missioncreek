@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121204184518) do
+ActiveRecord::Schema.define(:version => 20130115155833) do
 
   create_table "artists", :force => true do |t|
     t.string   "name"
@@ -26,6 +26,14 @@ ActiveRecord::Schema.define(:version => 20121204184518) do
     t.integer  "display_order"
     t.integer  "front_page",     :default => 0
     t.text     "bio"
+  end
+
+  create_table "pages", :force => true do |t|
+    t.string   "title"
+    t.text     "body"
+    t.integer  "display_order"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
   end
 
   create_table "posts", :force => true do |t|
