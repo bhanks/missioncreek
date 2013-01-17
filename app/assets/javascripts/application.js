@@ -15,5 +15,6 @@
 //= require jquery.ui.sortable
 //= require twitter/bootstrap
 //= require_tree .
+//= require ckeditor/init
 
 

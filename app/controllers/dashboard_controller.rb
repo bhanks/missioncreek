@@ -30,4 +30,9 @@ class DashboardController < ApplicationController
 		@post_active = "active"
 	end
 
+	def pages
+		@pages = Page.all
+		@page_active = 'active'
+	end
+
 end
