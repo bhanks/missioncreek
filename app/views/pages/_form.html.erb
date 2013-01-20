@@ -1,4 +1,4 @@
-<%= simple_form_for @page, :html => { :class => 'form-horizontal' } do |f| %>
+<%= form_for @page, :html => { :class => 'form-horizontal' } do |f| %>
   <div class="control-group">
     <%= f.label :title, :class => 'control-label' %>
     <div class="controls">
@@ -8,7 +8,7 @@
   <div class="control-group">
     <%= f.label :body, :class => 'control-label' %>
     <div class="controls">
-      <%= f.text_field :body, :class => 'text_field' %>
+      <%= f.text_area :body, :class => 'page_body', :rows => 20 %>
     </div>
   </div>
 

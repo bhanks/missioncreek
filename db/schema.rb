@@ -31,7 +31,8 @@ ActiveRecord::Schema.define(:version => 20130115155833) do
   create_table "pages", :force => true do |t|
     t.string   "title"
     t.text     "body"
-    t.integer  "display_order"
+    t.integer  "nav_order"
+    t.integer  "feature_order"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
   end

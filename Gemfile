@@ -15,7 +15,7 @@ end
 
 gem 'fog'
 gem 'rmagick', "~> 2.11.1"
-gem 'ckeditor'
+gem 'RedCloth'
 gem 'carrierwave'
 gem 'simple_form'
 gem 'devise'
