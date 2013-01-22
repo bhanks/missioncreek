@@ -1,15 +1,26 @@
 @font-face
 {
-	font-family:WhitneyBook;
+	font-family:Whitney;
+	font-style:italic;
+	font-weight:normal;
+	src: asset_path('Whitney-LightItalic.otf', font);
+}
+@font-face
+{
+	font-family:Whitney;
+	font-weight:normal;
 	src: asset_path('Whitney-Book.otf', font);
 	/*src: url('fonts/Whitney-Book.otf');*/
 }
-/*@font-face
+@font-face
 {
-	font-family:WhitneyLight;
-	src: url('../fonts/Whitney-Light.otf');
+	font-family:Whitney;
+	font-weight:lighter;
+	src: asset_path('Whitney-Light-Pro.otf', font);
+	/*src: url('fonts/Whitney-Book.otf');*/
 }
-*/
+
+
 @font-face
 {
 	font-family:Whitney;

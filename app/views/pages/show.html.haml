@@ -1,2 +1,8 @@
-%h1=@page.title
-.page
+.carousel
+	.carousel_inner
+		.item.active
+			%img{:src => asset_path("page-bg.jpg")}
+			.carousel-caption
+				%h1#page_title=@page.title
+.page=raw @page.formatted_body
+

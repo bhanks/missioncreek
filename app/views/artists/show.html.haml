@@ -1,17 +1,18 @@
-.row
-  .span6
-    %img.artist{:src => @artist.image.url}
-  .span6
-    %h2=@artist.name
-    %p.artist_bio=@artist.bio
-.row
-  .span12
-    - if @artist.official_url
-      %a{:href=>@artist.official_url}="#{@artist.name} on the web"
-.row.artist_media
-  .span6
-    %iframe.youtube{:width => "460", :height=> "315", :src=> @artist.youtube_url, :frameborder => "0"}
-  .span6
-    %iframe{:width=>"100%", :height=>"166", :frameborder => "no", :src=>@artist.soundcloud_url}
+.padding 
+  .row
+    .span6
+      %img.artist{:src => @artist.image.url}
+    .span6
+      %h2=@artist.name
+      %p.artist_bio=@artist.bio
+  .row
+    .span12
+      - if @artist.official_url
+        %a{:href=>@artist.official_url}="#{@artist.name} on the web"
+  .row.artist_media
+    .span6
+      %iframe.youtube{:width => "460", :height=> "315", :src=> @artist.youtube_url, :frameborder => "0"}
+    .span6
+      %iframe{:width=>"100%", :height=>"166", :frameborder => "no", :src=>@artist.soundcloud_url}
 
 

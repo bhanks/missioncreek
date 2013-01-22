@@ -17,6 +17,7 @@ class PagesController < ApplicationController
   # GET /pages/1.json
   def show
     @page = Page.find(params[:id])
+    @no_dates = true
 
     respond_to do |format|
       format.html # show.html.erb
@@ -58,7 +59,7 @@ class PagesController < ApplicationController
   # PUT /pages/1
   # PUT /pages/1.json
   def update
-    @page = page.find(params[:id])
+    @page = Page.find(params[:id])
 
 
     if @page.update_attributes(params[:page])

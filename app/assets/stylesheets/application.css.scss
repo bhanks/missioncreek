@@ -17,7 +17,7 @@
 
 body
 {
-	font-family: WhitneyBook;
+
 	/*background-color: $charcoal;*/
 	background-image:url('bg-repeat.jpg');
 }
@@ -25,7 +25,11 @@ body
 {
 	/*background-color: rgba(255, 255, 255, 0.6);*/
 	background-image:url('white.png');
-	padding-left: 12px;
+	/*padding: 0px 12px;*/
+}
+.padding
+{
+	padding:0px 12px;
 }
 .top .front
 {
@@ -160,7 +164,7 @@ img.dates
 	margin:auto;
 	padding-bottom: 15px;
 }
-@media all and (max-width:550px)
+@media all and (max-width:640px)
 {
 	a.logo, a.uiccu, a.uiccu >img
 	{
