@@ -165,6 +165,12 @@ img.dates
 	margin:auto;
 	padding-bottom: 15px;
 }
+
+label.email
+{
+	display:inline-block;
+}
+
 @media all and (max-width:640px)
 {
 	a.logo, a.uiccu, a.uiccu >img

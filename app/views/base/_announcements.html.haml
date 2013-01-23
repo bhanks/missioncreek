@@ -1,7 +1,6 @@
 .front.announcements
-	.scroll-hider
-		- @posts.each do |post|
-			%p.post{:id=>post.id}
-				%span.post_title= post.title
-				%span.post_date= post.date
-				%span.post_body= post.body
+	- @posts.each do |post|
+		%p.post{:id=>post.id}
+			%span.post_title= post.title
+			%span.post_date= post.date
+			%span.post_body= post.body
