@@ -20,6 +20,7 @@
 	<%= image_tag("dates.png", :class=>"dates") unless @no_dates %>
 
 	<%= yield %>
+	<%= render :partial => 'base/sponsors' %>
 </div>
 </body>
 </html>
