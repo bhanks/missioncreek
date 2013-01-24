@@ -9,10 +9,12 @@
 			%h2.front Ticket Information
 			= render :partial => 'tickets'
 	.row-fluid
-		.span12
-			= render :partial => 'mailchimp'
-	.row-fluid
-		.span5
+		.span4
 			%h2.front Twitter
 			=render :partial => 'twitter'
+		.span3
+			= render :partial => 'mailchimp'
+	.row-fluid
+		.span12
+			=render :partial => 'sponsors'
 		

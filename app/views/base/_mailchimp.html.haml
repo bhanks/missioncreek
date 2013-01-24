@@ -1,5 +1,26 @@
 #mc_embed_signup
+	.email_info
+		%p Sign up to receive Mission Creek Festival news:
 	%form#mc-embedded-subscribe-form{:action => "http://missionfreak.us4.list-manage.com/subscribe/post?u=f1315fe04847b80e18a6d573f&amp;id=8cd3e1e60d", :method =>"post", :target=>"_blank"}
 		%label.email{:for=>"mce-EMAIL"}Email Signup
 		%input#mce-EMAIL.email{:type=>"email", :value=>"", :name=>"EMAIL",:placeholder=>"email address"}
 		%input{:type=>"submit", :value=>"Subscribe", :name=>"subscribe", :id=>"mc-embedded-subscribe"}
+	#fb-root
+	:javascript
+		(function(d, s, id) {
+			  var js, fjs = d.getElementsByTagName(s)[0];
+			  if (d.getElementById(id)) return;
+			  js = d.createElement(s); js.id = id;
+			  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=289110794448407";
+			  fjs.parentNode.insertBefore(js, fjs);
+			}(document, 'script', 'facebook-jssdk'));
+
+
+/ 	<div id="fb-root"></div>
+/ <script>(function(d, s, id) {
+/   var js, fjs = d.getElementsByTagName(s)[0];
+/   if (d.getElementById(id)) return;
+/   js = d.createElement(s); js.id = id;
+/   js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=289110794448407";
+/   fjs.parentNode.insertBefore(js, fjs);
+/ }(document, 'script', 'facebook-jssdk'));</script>

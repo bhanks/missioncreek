@@ -171,6 +171,37 @@ label.email
 	display:inline-block;
 }
 
+.sponsors
+{
+	background-color:#f2f0dc;
+}
+h3.sponsors
+{
+	text-align:center;
+	color:#a0a191;
+	font-size:13px;
+	margin-bottom:5px;
+}
+
+h3.james
+{
+	text-align:center;
+	font-size:13px;
+	margin: 5px 0px;
+}
+
+.sponsors ul
+{
+	list-style-type:none;
+	margin:auto;
+	display:block;
+	text-align:center;
+}
+.sponsors ul li
+{
+	display:inline-block;
+}
+
 @media all and (max-width:640px)
 {
 	a.logo, a.uiccu, a.uiccu >img
