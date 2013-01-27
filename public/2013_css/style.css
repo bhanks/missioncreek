@@ -1,0 +1,75 @@
+body
+{
+	background-color:#414042;
+}
+@font-face
+{
+	font-family:WhitneyBook;
+	
+	src: url('Whitney-Book.otf');*/
+}
+.container
+{
+	margin:auto;
+	margin-top:20px;
+	height:700px;
+	width:900px;
+	background-image:url('../2013_img/full.jpg');
+	background-repeat: no-repeat;
+	border: solid 3px white;
+}
+.body
+{
+	height:580px;
+	width:900px;
+}
+.footer
+{
+	height:120px;
+	width:900px;
+	background-image: url("../2013_img/bottom.png");
+	background-repeat: no-repeat;
+}
+.sponsors
+{
+	margin-left: 245px;
+}
+
+.links
+{
+	font-family: WhitneyBook;
+	color:#d7d4b0;
+	font-size: 18px;
+	margin-top: 15px;
+	padding-left: 200px;
+}
+.links a
+{
+	margin-left: 10px;
+	color: #a7d6dd;
+}
+.links a:hover
+{
+	color:#f4ac38;
+	text-decoration: none;
+}
+
+#credit_union
+{
+	display:inline-block;
+	color: transparent;
+	margin-left: 814px;
+	margin-top: 138px;
+	height: 74px;
+}
+
+#fest_passes
+{
+	display: inline-block;
+	height: 25px;
+	margin-left: 533px;
+	margin-top: 310px;
+	color: transparent;
+	width: 75px;
+}
+
