@@ -57,3 +57,52 @@ function deletePost(button)
 
 	}
 }
+
+
+function switchPost(location)
+{
+	if(location == 'next' || location == 'previous')
+	{
+		if(location == 'next')
+		{
+			active = $('a.marker.active')[0]
+			if($("a.marker.active").next("a.marker")[0] != undefined)
+			{
+				next = $('a.marker.active + a.marker')[0]
+				$(active).attr("class","marker inactive")
+				$(next).attr("class", "marker active")
+			}
+		}
+		else
+		{
+			active = $('a.marker.active')[0]
+			if($("a.marker.active").prev("a.marker")[0] != undefined)
+			{
+				prev = $("a.marker.active").prev("a.marker")[0]
+				$(active).attr("class","marker inactive")
+				$(prev).attr("class", "marker active")
+			}
+
+		}
+	}
+	else
+	{
+
+	}
+	return false;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

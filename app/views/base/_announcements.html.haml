@@ -1,6 +1,17 @@
 .front.announcements
-	- @posts.each do |post|
-		%p.post{:id=>post.id}
-			%span.post_title= post.title
-			%span.post_date= post.date
-			%span.post_body= post.body
+	.posts
+		- post_ids = []
+		- @posts.each do |post|
+			- post_ids << post.id
+			%p.post{:id=>post.id}
+				%span.post_title= post.title
+				%span.post_date= post.date
+				%span.post_body= post.body
+	.post_switch
+		%a.prev{:onclick=>"switchPost('previous'); return false;" }= raw "&laquo;"
+		- first = true
+		- post_ids.each do |id|
+			%a{:onclick=>"switchPost('post_#{id}')", :class=>"marker #{(first) ? 'active' : 'inactive' }", :id => "post_#{id}"}= raw "&#9679;"
+			-first = false
+		
+		%a.next{:onclick=>"switchPost('next'); return false;"}= raw "&raquo;"

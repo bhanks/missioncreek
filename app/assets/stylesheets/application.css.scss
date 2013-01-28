@@ -128,18 +128,20 @@ div.announcements, div.tickets
 }
 div.announcements p, div.tickets p
 {
-	padding:5px;
+
 	color:$linen;
-	height:197px;
-	min-height:197px;
-	width:90%;
-	margin-left:12px;
+
 	text-align:justify;
 }
-
+div.announcements p
+{
+	height:160px;
+	margin:8px;
+	display:inline-block;
+}
 div.tickets p
 {
-	height:206px;
+	
 }
 div.announcements
 {
@@ -201,7 +203,35 @@ h3.james
 {
 	display:inline-block;
 }
-
+.announcements .posts
+{
+	height:170px;
+	overflow:hidden;
+	position:relative;
+}
+.post_switch
+{
+	text-align:center;
+}
+.post_switch a
+{
+	color:$ice;
+	font-size:25px;
+	&:hover
+	{
+		text-decoration:none;
+		cursor: pointer;
+	}
+}
+.post_switch a.marker
+{
+	vertical-align:top;
+	font-size:15px;
+}
+.post_switch a.active
+{
+	color:$pool;
+}
 @media all and (max-width:640px)
 {
 	a.logo, a.uiccu, a.uiccu >img
