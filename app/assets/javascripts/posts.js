@@ -70,10 +70,10 @@ function switchPost(location)
 	else if(location == 'previous') 
 		targetMarker = $("a.marker.active").prev("a.marker")[0]
 	else
-		targetMarker = $('a#'+location)
+		targetMarker = $("a[data-target="+location+"]")[0]
 		
 
-		
+	console.log(targetMarker)	
 	if(targetMarker != undefined)
 	{
 		data = ($(targetMarker).attr("data-target"))
