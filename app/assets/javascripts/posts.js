@@ -61,34 +61,33 @@ function deletePost(button)
 
 function switchPost(location)
 {
-	if(location == 'next' || location == 'previous')
-	{
-		if(location == 'next')
-		{
-			active = $('a.marker.active')[0]
-			if($("a.marker.active").next("a.marker")[0] != undefined)
-			{
-				next = $('a.marker.active + a.marker')[0]
-				$(active).attr("class","marker inactive")
-				$(next).attr("class", "marker active")
-			}
-		}
-		else
-		{
-			active = $('a.marker.active')[0]
-			if($("a.marker.active").prev("a.marker")[0] != undefined)
-			{
-				prev = $("a.marker.active").prev("a.marker")[0]
-				$(active).attr("class","marker inactive")
-				$(prev).attr("class", "marker active")
-			}
 
-		}
-	}
+	activeMarker = $('a.marker.active')[0]
+	activePost = $('p.active')[0]
+	
+	if(location == 'next')
+		targetMarker = $("a.marker.active").next("a.marker")[0]
+	else if(location == 'previous') 
+		targetMarker = $("a.marker.active").prev("a.marker")[0]
 	else
-	{
+		targetMarker = $('a#'+location)
+		
 
+		
+	if(targetMarker != undefined)
+	{
+		data = ($(targetMarker).attr("data-target"))
+		targetPost = $("#"+data)
+		$(activeMarker).attr("class","marker inactive")
+		$(targetMarker).attr("class", "marker active")
+		$(activePost).fadeOut(500, function(){
+			$(activePost).attr("class","post")
+			$(targetPost).attr("class","post active")
+			$(targetPost).fadeIn(500)
+		})
 	}
+
+
 	return false;
 }
 

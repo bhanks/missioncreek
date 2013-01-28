@@ -128,20 +128,27 @@ div.announcements, div.tickets
 }
 div.announcements p, div.tickets p
 {
-
 	color:$linen;
-
 	text-align:justify;
 }
 div.announcements p
 {
-	height:160px;
-	margin:8px;
-	display:inline-block;
+	height: 160px;
+	margin: 8px;
+	width: 96%;
+	display: inline-block;
+}
+div.announcements p:not(:first-child) {
+    display:none;
+}
+div.tickets
+{
+	height:207px;
 }
 div.tickets p
 {
-	
+	display:inline-block;
+	margin:12px;	
 }
 div.announcements
 {
@@ -208,6 +215,7 @@ h3.james
 	height:170px;
 	overflow:hidden;
 	position:relative;
+	display:inline-block;
 }
 .post_switch
 {
