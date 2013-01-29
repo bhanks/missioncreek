@@ -86,12 +86,32 @@ li.artists a
 img.artist
 {
 	/*box-shadow: 5px 5px 5px black;*/
+	border: 3px solid;
+	border-color: $charcoal;
+	max-width: 98%;
+	margin: auto;
+	display: block;
 }
 
 p.artist_bio
 {
-	color:$ice;
+	color:$charcoal;
+	margin-top: 15px;
+	text-align:justify;
 }
+
+h2.artist_name
+{
+	padding: 10px;
+	background-color:white;
+	background-color: rgba(255,255,255,.8);
+
+	color:$pepto;
+	margin-top:0px;
+	font-size:1.4em;
+	line-height: 1.5em;
+}
+
 .artist_media
 {
 	padding-top:50px;
@@ -121,6 +141,8 @@ p.artist_bio
 h2.lineup
 {
 	text-align:center;
+	margin: 0px;
+	color:$eggplant;
 }
 .tier1, .tier2
 {
@@ -144,5 +166,76 @@ h2.lineup
 	color:$kelly;
 }
 
+h2.lineup
+{
+	font-size:1.6em;
+}
 
+@mixin artist-ul($percent)
+{
+	font-size:1.2em*$percent;
+	line-height:1.2em*$percent;
+	text-align:center;
+	margin: 10px 15px;
 
+}
+
+ul.tier1
+{
+	@include artist-ul(1.0);
+}
+
+ul.tier2
+{
+	@include artist-ul(0.95);
+}
+ul.tier3
+{
+	@include artist-ul(0.9);
+}
+
+ul.tier1 > li, ul.tier2 > li, ul.tier3 > li
+{
+	display:inline-block;
+	&:hover
+	{
+		color:$truck;
+	}
+} 
+
+ul.tier1 > li a, ul.tier2 > li a, ul.tier3 > li a
+{
+	text-transform:uppercase;
+	line-height:1.2em;
+	&:hover
+	{
+		text-decoration:none;
+		color:$pool;
+	}
+}
+ul.tier1 > li a
+{	
+	color:$truck;
+}
+ul.tier2 > li a
+{
+	color:$kelly;
+}
+ul.tier3 > li a
+{
+	color:$eggplant;
+}
+i.artist_spacer
+{
+	color:$smoke;
+}
+
+div.artist
+{
+	margin-top:15px;
+}
+
+div.artist > .span6
+{
+	margin-top: 10px;
+}

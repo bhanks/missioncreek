@@ -1,13 +1,31 @@
 %h2.lineup Mission Creek Festival 2013 Lineup
 
-.tier1.row
-  -@tier1.each do |artist|
-    .span4= link_to artist.name, artist_path(artist.id)
+%ul.tier1
+	-@tier1.each_with_index do |artist, index|
+		%li= link_to artist.name, artist_path(artist.id)
+		-unless (index+1)==@tier1.length
+			%li
+				%i.icon-chevron-right.artist_spacer
+%ul.tier2
+	-@tier2.each_with_index do |artist, index|
+		%li= link_to artist.name, artist_path(artist.id)
+		-unless (index+1)==@tier2.length
+			%li
+				%i.icon-chevron-right.artist_spacer
+%ul.tier3
+	-@tier3.each_with_index do |artist, index|
+		%li= link_to artist.name, artist_path(artist.id)
+		-unless (index+1)==@tier3.length
+			%li
+				%i.icon-chevron-right.artist_spacer
+/ .tier1.row
+/   -@tier1.each do |artist|
+/     .span4= link_to artist.name, artist_path(artist.id)
 
-.tier2.row
-  -@tier2.each do |artist|
-    .span4= link_to artist.name, artist_path(artist.id)
+/ .tier2.row
+/   -@tier2.each do |artist|
+/     .span4= link_to artist.name, artist_path(artist.id)
 
-.tier3.row
-  -@tier3.each do |artist|
-    .span4= link_to artist.name, artist_path(artist.id)
+/ .tier3.row
+/   -@tier3.each do |artist|
+/     .span4= link_to artist.name, artist_path(artist.id)

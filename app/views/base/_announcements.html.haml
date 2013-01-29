@@ -7,7 +7,7 @@
 			%p.post{:id=>"post_#{post.id}", :class=>"#{(first) ? 'active' : 'inactive' }"}
 				%span.post_title= post.title
 				%span.post_date= post.date
-				%span.post_body= post.body
+				%span.post_body= raw post.body
 	.post_switch
 		%a.prev{:onclick=>"switchPost('previous'); return false;" }= raw "&laquo;"
 		- first = true

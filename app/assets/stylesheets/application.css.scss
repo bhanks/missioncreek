@@ -115,10 +115,22 @@ ul.feature-nav li
 
 }
 
+
 h2.front
 {
-	font-size: 1.5em;
+	font-size: 1.1em;
 	line-height: 1em;
+	text-transform: uppercase;
+}
+
+h3.front
+{
+	color:$olive;
+	font-size: 1.1em;
+	line-height: 1em;
+	text-transform:uppercase;
+	font-weight:normal;
+	margin-top:0px;
 }
 
 div.announcements, div.tickets

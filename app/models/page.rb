@@ -3,9 +3,6 @@ class Page < ActiveRecord::Base
 
   def formatted_body
   	RedCloth.new(self.body).to_html
-  	
-
-
   end
   
 end
