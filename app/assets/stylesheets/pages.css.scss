@@ -21,3 +21,27 @@ h1#page_title
 {
 	text-align:justify;
 }
+
+img.bordered
+{
+	opacity: .75;
+	padding-bottom: 10px;
+	border-bottom: 1px dotted;
+}
+
+
+
+.feature > h3
+{
+	margin-bottom: 0px;
+}
+.feature > h3 > a
+{
+	font-weight:normal;
+	color:$pepto;
+	padding-bottom: 0px;
+	&:hover
+	{
+		cursor:pointer;
+	}
+}
