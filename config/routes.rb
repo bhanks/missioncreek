@@ -23,6 +23,8 @@ Missioncreek::Application.routes.draw do
   match "artists/artist_thumb" => 'artists#artist_thumb', :via => :post
   
   root :to => "Base#index"
+
+  match "/check" => "Base#index"
   
   resources :posts
 
