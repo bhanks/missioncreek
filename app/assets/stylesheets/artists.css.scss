@@ -239,3 +239,20 @@ div.artist > .span6
 {
 	margin-top: 10px;
 }
+@media all and (max-width:975px)
+{
+	iframe.youtube
+	{
+		width: 300px;
+		height: 236px;
+	}
+}
+
+div#widgetContainer
+{
+	left:0px;
+}
+
+
+
+

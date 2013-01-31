@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130115155833) do
+ActiveRecord::Schema.define(:version => 20130131002955) do
 
   create_table "artists", :force => true do |t|
     t.string   "name"
@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(:version => 20130115155833) do
     t.integer  "display_order"
     t.integer  "front_page",     :default => 0
     t.text     "bio"
+    t.string   "spotify_url"
   end
 
   create_table "pages", :force => true do |t|
