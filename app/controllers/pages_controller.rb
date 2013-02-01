@@ -17,8 +17,16 @@ class PagesController < ApplicationController
   # GET /pages/1.json
   def show
     @page = Page.find(params[:id])
+    if(@page.parent)
+      parent = Page.find(@page.parent)
+      @splash_image = parent.splash_image
+    else
+      @splash_image = @page.splash_image
+    end
     @no_dates = true
-
+    if request.path != page_path(@page)
+      redirect_to @page, status: :moved_permanently
+    end
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @page }
@@ -29,12 +37,14 @@ class PagesController < ApplicationController
   # GET /pages/new.json
   def new
     @page = Page.new
+    @pages = Page.all
     render :layout => "dashboard"
   end
 
   # GET /pages/1/edit
   def edit
     @page = Page.find(params[:id])
+    @pages = Page.all_except(@page.id)
     render :layout => "dashboard"
   end
 

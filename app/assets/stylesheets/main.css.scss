@@ -31,3 +31,11 @@ h3
 	color: $pepto;
 }
 
+a
+{
+	color:$ice;
+	&:hover
+	{
+		color:$pepto
+	}
+}

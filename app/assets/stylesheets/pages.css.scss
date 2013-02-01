@@ -21,11 +21,15 @@ h1#page_title
 {
 	text-align:justify;
 }
-
-img.bordered
+.feature img
 {
 	opacity: .75;
 	padding-bottom: 10px;
+}
+
+img.bordered
+{
+
 	border-bottom: 1px dotted;
 }
 
@@ -45,3 +49,4 @@ img.bordered
 		cursor:pointer;
 	}
 }
+

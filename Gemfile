@@ -21,6 +21,7 @@ gem 'simple_form'
 gem 'devise'
 gem 'haml-rails'
 gem 'debugger'
+gem 'friendly_id'
 gem 'twitter-bootstrap-rails' , '= 2.1.6'
   gem 'less-rails'
 # Gems used only for assets and not required

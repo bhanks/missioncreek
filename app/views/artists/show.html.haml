@@ -16,6 +16,6 @@
       - if @artist.spotify_url
         %iframe.spotify{:width=>"100%", :height=>"336", :frameborder => "no", :src=>"https://embed.spotify.com/?uri=#{@artist.spotify_url}", :allowtransparency=>'true'}
       - elsif @artist.soundcloud_url
-        %iframe{:width=>"200px", :height=>"380px", :frameborder => "no", :src=>@artist.soundcloud_url}
+        %iframe{:width=>"100%", :height=>"380px", :frameborder => "no", :src=>@artist.soundcloud_url}
 
 

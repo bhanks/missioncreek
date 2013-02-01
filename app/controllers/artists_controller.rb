@@ -14,27 +14,6 @@ class ArtistsController < ApplicationController
     @tier1 = Artist.find_all_by_tier(1)
     @tier2 = Artist.find_all_by_tier(2)
     @tier3 = Artist.find_all_by_tier(3)
-
-    #To keep the three columns of even length, determine when an artist should go into the 'rem' array
-    # breakpoint = {"1"=>nil, "2"=>nil, "3"=>nil}
-    # [1,2,3].each do |tier|
-    #   length = Artist.count(:conditions => "tier = #{tier}")
-    #   bp = length - (length % 3)
-    #   breakpoint[tier.to_s] = bp
-    # end
-    # #Save myself from a case statement while keeping sensible column numbers for css/js, map display_order%3 to column number 
-    # column_map = {"1"=>"1", "2"=>"2", "0"=>"3"}
-    
-    # @artists.each do |artist|
-    #   tier = artist.tier.to_s
-      
-    #   if(@sorted[tier]["col1"].length + @sorted[tier]["col2"].length + @sorted[tier]["col3"].length != breakpoint[tier] )    
-    #     column = column_map[(artist.display_order%3).to_s]
-    #     @sorted[tier]["col#{column}"] << artist
-    #   else
-    #     @sorted[tier]['rem'] << artist
-    #   end
-    # end
     
 
     respond_to do |format|
@@ -43,8 +22,6 @@ class ArtistsController < ApplicationController
     end
   end
 
-  # GET /artists/1
-  # GET /artists/1.json
   def show
     @artist = Artist.find(params[:id])
     @no_dates = true

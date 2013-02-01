@@ -115,7 +115,11 @@ ul.feature-nav li
 
 }
 
-
+h2.front, h2.front > a, h3.front
+{
+	font-weight:bold;
+	color:$pepto;
+}
 h2.front
 {
 	font-size: 1.1em;
@@ -125,11 +129,9 @@ h2.front
 
 h3.front
 {
-	color:$olive;
 	font-size: 1.1em;
 	line-height: 1em;
 	text-transform:uppercase;
-	font-weight:normal;
 	margin-top:0px;
 }
 
@@ -160,7 +162,9 @@ div.tickets
 div.tickets p
 {
 	display:inline-block;
-	margin:12px;	
+	margin:12px;
+	line-height:1.3em;
+	font-size:1.1em;	
 }
 div.announcements
 {
@@ -251,6 +255,49 @@ h3.james
 {
 	color:$pool;
 }
+
+
+.row-fluid.second
+{
+	margin-top:15px;
+}
+input#mce-EMAIL
+{
+	width: 85%;
+	padding: 5px;
+	line-height: 1em;
+	font-size:12px;
+}
+header.banner.container
+{
+	margin-bottom:0px;
+}
+ul.nav
+{
+	margin:auto;
+	text-align:center;
+	padding:0px 12px;
+}
+ul.nav li
+{
+	display:inline-block
+}
+ul.nav li > a
+{
+	color:$pool;
+	text-transform:uppercase;
+	font-size:13px;
+	&:hover
+	{
+		background-color:transparent;
+		color:$olive;
+	}
+}
+i.nav
+{
+	color:$pepto;
+}
+
 @media all and (max-width:640px)
 {
 	a.logo, a.uiccu, a.uiccu >img
@@ -264,16 +311,12 @@ h3.james
 		margin-top: 20px;
 		padding-right: 15px;
 	}
-}
-
-.row-fluid.second
-{
-	margin-top:15px;
-}
-input#mce-EMAIL
-{
-	width: 85%;
-	padding: 5px;
-	line-height: 1em;
-	font-size:12px;
+	div.tickets
+	{
+		height:315px;
+	}
+	div.tickets p
+	{
+		height:300px;
+	}
 }
