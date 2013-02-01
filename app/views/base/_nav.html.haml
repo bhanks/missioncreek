@@ -1,24 +1,24 @@
 /About / Lineup / Literature / Food / Artists-in-Residence / Schedule
 %ul.nav
   %li
-    %a{:href=>"#{page_path(Page.first)}"} About
+    %a{:href=>"#{@nav_paths[:about]}"} About
   %li
     %i.icon-stop.nav
   %li	
-    %a{:href=>"#{page_path(Page.first)}"} Lineup
+    %a{:href=>"#{artists_path()}"} Lineup
   %li
     %i.icon-stop.nav
   %li
-    %a{:href=>"#{page_path(Page.first)}"} Literature
+    %a{:href=>"#{@nav_paths[:lit]}"} Literature
   %li
     %i.icon-stop.nav
   %li
-    %a{:href=>"#{page_path(Page.first)}"} Food
+    %a{:href=>"#{@nav_paths[:food]}"} Food
   %li
     %i.icon-stop.nav
   %li
-    %a{:href=>"#{page_path(Page.first)}"} Artists-in-Residence
+    %a{:href=>"#{@nav_paths[:residency]}"} Artists-in-Residence
   %li
     %i.icon-stop.nav
   %li	
-    %a{:href=>"#{page_path(Page.first)}"} Schedule
+    %a{:href=>"#{@nav_paths[:schedule]}"} Schedule

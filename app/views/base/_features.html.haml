@@ -1,14 +1,14 @@
 .features
 	.feature
 		%h3 
-			%a Music
-		%img.bordered{:src => asset_path("page-bg.jpg")}
+			%a{:href=>page_path(@feature_one)}= @feature_one.title
+		%img.bordered{:src => @feature_one.splash_image}
 	.feature
 		%h3 
-			%a Food
-		%img.bordered{:src => asset_path("page-bg.jpg")}
+			%a{:href=>page_path(@feature_two)}= @feature_two.title
+		%img.bordered{:src => @feature_two.splash_image}
 	.feature
 		%h3 
-			%a Lit
-		%img{:src => asset_path("page-bg.jpg")}
+			%a{:href=>page_path(@feature_three)}= @feature_three.title
+		%img{:src => @feature_three.splash_image}
 

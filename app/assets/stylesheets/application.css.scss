@@ -196,6 +196,12 @@ label.email
 	display:inline-block;
 }
 
+div.sponsors
+{
+	border-top: 3px white solid;
+	border-bottom: 3px white solid;
+}
+
 .sponsors
 {
 	background-color:#f2f0dc;
@@ -297,7 +303,10 @@ i.nav
 {
 	color:$pepto;
 }
-
+#mc_embed_signup
+{
+	margin-bottom:20px;
+}
 @media all and (max-width:640px)
 {
 	a.logo, a.uiccu, a.uiccu >img
