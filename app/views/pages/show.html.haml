@@ -4,5 +4,6 @@
 			%img{:src => @splash_image}
 			.carousel-caption
 				%h1#page_title=@page.title
+=render :partial => 'base/nav'
 .page=raw @page.formatted_body
 
