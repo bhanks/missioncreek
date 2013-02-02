@@ -6,4 +6,11 @@
 				%h1#page_title=@page.title
 =render :partial => 'base/nav'
 .page=raw @page.formatted_body
+.children
+	- if @children.present?
+		%ul
+			- @children.each do |child|
+				%li
+					%a{:href=>page_path(child)}=child.title
+
 

@@ -17,6 +17,8 @@ class PagesController < ApplicationController
   # GET /pages/1.json
   def show
     @page = Page.find(params[:id])
+    @children = Page.children(@page.id)
+    @meta_title = @page.title + ":"
     if(@page.parent)
       parent = Page.find(@page.parent)
       @splash_image = parent.splash_image
@@ -84,9 +86,9 @@ class PagesController < ApplicationController
   # DELETE /pages/1
   # DELETE /pages/1.json
   def destroy
-    @page = page.find(params[:id])
+    @page = Page.find(params[:id])
     @page.destroy
-    render :json => true
-
+    #render :json => true
+    render action: "edit"
   end
 end

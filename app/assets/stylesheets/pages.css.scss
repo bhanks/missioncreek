@@ -50,3 +50,25 @@ img.bordered
 	}
 }
 
+.children ul
+{
+	list-style-type:none;
+	margin: 0px 0px 12px 0px;
+	text-align:center;
+}
+
+.children a
+{
+	background-color:$pepto;
+	color:white;
+	font-size: 1.2em;
+	line-height: 1.5em;
+	padding: 2px 12px;
+	&:hover
+	{
+		text-decoration:none;
+		background-color:$pool;
+
+	}
+}
+

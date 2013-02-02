@@ -6,11 +6,7 @@ class ArtistsController < ApplicationController
   
   def index
     @artists = Artist.all
-    @sorted = {
-      "1"=> { "col1" => [], "col2" => [], "col3" => [], "rem"=>[] },
-      "2"=> { "col1" => [], "col2" => [], "col3" => [], "rem"=>[] },
-      "3"=> { "col1" => [], "col2" => [], "col3" => [], "rem"=>[] }
-    }
+    @meta_title = "Lineup : "
     @tier1 = Artist.find_all_by_tier(1)
     @tier2 = Artist.find_all_by_tier(2)
     @tier3 = Artist.find_all_by_tier(3)
@@ -25,6 +21,7 @@ class ArtistsController < ApplicationController
   def show
     @artist = Artist.find(params[:id])
     @no_dates = true
+    @meta_title = @artist.name + " @ "
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @artist }

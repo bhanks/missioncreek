@@ -1,11 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Mission Creek Festival 2013</title>
+  <title><%= @meta_title %>Mission Creek Festival 2013</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <% if(request.domain == 'missionfreak.com') %>
+		<%= render :partial => 'base/analytics' %>
+	<% end %>
+	<meta property="og:image" content="https://fbcdn-sphotos-d-a.akamaihd.net/hphotos-ak-prn1/17765_504597752914278_1596419420_n.jpg"/>
+  <meta name="description" property="og:description" content="The Mission Creek Festival returns to Iowa City April 2 - April 7 2013."/>
+  <meta name="title" property="og:title" content="<%= @meta_title %>Mission Creek Festival"/>
 </head>
 <body>
 

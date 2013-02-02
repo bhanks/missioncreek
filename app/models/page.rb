@@ -12,4 +12,8 @@ class Page < ActiveRecord::Base
   	where("id != ?", id)
   end
   
+  def self.children(id)
+  	where("parent = ?", id)
+  end
+
 end
