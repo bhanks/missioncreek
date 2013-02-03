@@ -86,9 +86,10 @@ class PagesController < ApplicationController
   # DELETE /pages/1
   # DELETE /pages/1.json
   def destroy
-    @page = Page.find(params[:id])
+    @page = Page.where("slug = ?",params[:id]).first
     @page.destroy
+    @pages = Page.all
     #render :json => true
-    render action: "edit"
+    redirect_to "dashboard/pages"
   end
 end
