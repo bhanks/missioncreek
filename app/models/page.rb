@@ -1,7 +1,7 @@
 class Page < ActiveRecord::Base
   extend FriendlyId
   friendly_id :title, use: [:slugged, :history]
-  attr_accessible :body, :display_order, :title, :splash_image, :parent
+  attr_accessible :body, :display_order, :title, :splash_image, :parent, :feature_order
 	mount_uploader :splash_image, PageImageUploader
 
   def formatted_body

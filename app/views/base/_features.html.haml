@@ -1,14 +1,10 @@
 .features
-	.feature
-	/ 	%h3 
-	/ 		%a{:href=>page_path(@feature_one)}= @feature_one.title
-	/ 	%img.bordered{:src => @feature_one.splash_image}
-	/ .feature
-	/ 	%h3 
-	/ 		%a{:href=>page_path(@feature_two)}= @feature_two.title
-	/ 	%img.bordered{:src => @feature_two.splash_image}
-	/ .feature
-	/ 	%h3 
-	/ 		%a{:href=>page_path(@feature_three)}= @feature_three.title
-	/ 	%img{:src => @feature_three.splash_image}
+	- @features.each do |feature|
+		.feature
+			%h3 
+				%a{:href=>page_path(feature)}= feature.title
+			%img.bordered{:src => feature.splash_image}			
+
+:javascript
+	$(".bordered").last().removeClass("bordered")
 
