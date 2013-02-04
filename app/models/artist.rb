@@ -5,9 +5,11 @@ class Artist < ActiveRecord::Base
   validates_presence_of :name, :tier
   mount_uploader :image, ArtistImageUploader
 
-  before_save :clean_urls
+  # before_save :clean_urls
 
-
+  def get_image
+    self.image.url ||= asset_path("no-image.png")
+  end
 
   def clean_urls
   	if !self.youtube_url.nil? && !self.youtube_url.empty?
@@ -23,4 +25,6 @@ class Artist < ActiveRecord::Base
     where(:tier => tier)
   end
   
+
+
 end

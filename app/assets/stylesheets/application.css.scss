@@ -329,3 +329,10 @@ i.nav
 		height:300px;
 	}
 }
+@media all and (max-width:975px)
+{
+	div.tickets, div.announcements, .announcements .posts, div.announcements p
+	{
+		height:auto;
+	}
+}

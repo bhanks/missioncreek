@@ -15,11 +15,13 @@ h1#page_title
 .page
 {
 	padding:20px;
+	padding-top:0px;
 
 }
 .page > p
 {
 	text-align:justify;
+	margin-top:20px;
 }
 .feature img
 {
@@ -56,7 +58,10 @@ img.bordered
 	margin: 0px 0px 12px 0px;
 	text-align:center;
 }
-
+.children ul li
+{
+	display:inline-block;
+}
 .children a
 {
 	background-color:$pepto;
@@ -71,4 +76,14 @@ img.bordered
 
 	}
 }
-
+.page_sponsor
+{
+	text-align:center !important;
+	margin:0px !important;
+}
+h3.page_sponsor
+{
+	font-size:1.3em;
+	text-transform:uppercase;
+	margin:0px;
+}

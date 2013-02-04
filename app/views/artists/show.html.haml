@@ -1,7 +1,8 @@
 .padding 
   .row-fluid.artist
     .span6
-      %img.artist{:src => @artist.image.url}
+      - image_url = (@artist.image.url) ? @artist.image.url : asset_path("no-image.png")
+      %img.artist{:src => image_url}
     .span6
       %h2.artist_name=@artist.name
       - if @artist.official_url
@@ -13,7 +14,7 @@
       - if @artist.youtube_url
         %iframe.youtube{:width => "400", :height =>"315", :src=> @artist.youtube_url, :frameborder => "0"}
     .span6
-      - if @artist.spotify_url
+      - if @artist.spotify_url != ""
         %iframe.spotify{:width=>"100%", :height=>"336", :frameborder => "no", :src=>"https://embed.spotify.com/?uri=#{@artist.spotify_url}", :allowtransparency=>'true'}
       - elsif @artist.soundcloud_url
         %iframe{:width=>"100%", :height=>"380px", :frameborder => "no", :src=>@artist.soundcloud_url}
