@@ -5,7 +5,7 @@
       %img.artist{:src => image_url}
     .span6
       %h2.artist_name=@artist.name
-      - if @artist.official_url
+      - if @artist.official_url != ""
         %a{:href=>@artist.official_url}="#{@artist.name} on the web"
       %p.artist_bio=@artist.bio
 
