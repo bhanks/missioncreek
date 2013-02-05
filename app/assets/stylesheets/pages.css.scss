@@ -23,6 +23,12 @@ h1#page_title
 	text-align:justify;
 	margin-top:20px;
 }
+
+.page > p > a
+{
+	color:$olive;
+}
+
 .feature img
 {
 	opacity: .75;

@@ -2,19 +2,19 @@
 
 %ul.tier1
 	-@tier1.each_with_index do |artist, index|
-		%li= link_to artist.name, artist_path(artist.id)
+		%li= link_to artist.name, artist_path(artist)
 		-unless (index+1)==@tier1.length
 			%li
 				%i.icon-chevron-right.artist_spacer
 %ul.tier2
 	-@tier2.each_with_index do |artist, index|
-		%li= link_to artist.name, artist_path(artist.id)
+		%li= link_to artist.name, artist_path(artist)
 		-unless (index+1)==@tier2.length
 			%li
 				%i.icon-chevron-right.artist_spacer
 %ul.tier3
 	-@tier3.each_with_index do |artist, index|
-		%li= link_to artist.name, artist_path(artist.id)
+		%li= link_to artist.name, artist_path(artist)
 		-unless (index+1)==@tier3.length
 			%li
 				%i.icon-chevron-right.artist_spacer
