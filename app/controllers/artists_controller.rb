@@ -7,9 +7,9 @@ class ArtistsController < ApplicationController
   def index
     @artists = Artist.all
     @meta_title = "Lineup : "
-    @tier1 = Artist.find_all_by_tier(1)
-    @tier2 = Artist.find_all_by_tier(2)
-    @tier3 = Artist.find_all_by_tier(3)
+    @tier1 = Artist.where(:tier=>1).order("created_at")
+    @tier2 = Artist.where(:tier=>2).order("created_at")
+    @tier3 = Artist.where(:tier=>3).order("created_at")
     
 
     respond_to do |format|
