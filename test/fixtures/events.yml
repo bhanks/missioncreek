@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  title: MyString
+  date: 2013-02-11
+  door_time: 2013-02-11 13:59:24
+  start_time: 2013-02-11 13:59:24
+  free: false
+  soldout: false
+  price_advance: 1
+  price_dayof: 1
+  ticket_url: MyString
+  description: MyText
+
+two:
+  title: MyString
+  date: 2013-02-11
+  door_time: 2013-02-11 13:59:24
+  start_time: 2013-02-11 13:59:24
+  free: false
+  soldout: false
+  price_advance: 1
+  price_dayof: 1
+  ticket_url: MyString
+  description: MyText
