@@ -11,8 +11,7 @@
     %a{"data-toggle" =>"tab", :href => "#lineup_two"} Lineup:Tier 2
   %li
     %a{"data-toggle" =>"tab", :href => "#announcements"} Announcements
-  %li
-    %a{"data-toggle" =>"tab", :href => "#features_front_page"} Features:Front Page
+
 
 
 .tab-content
@@ -23,7 +22,5 @@
     = render :partial => "lineup_one"
   #lineup_two.tab-pane
     = render :partial => "lineup_two"
-  #features_front_page.tab-pane
-    = #render :partial => "features_front_page"
   #announcements.tab-pane
     = render :partial => "announcements"

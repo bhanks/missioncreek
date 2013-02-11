@@ -103,7 +103,7 @@ textarea.new_post
 
 ul.tier_one_order, ul.tier_two_order
 {
-	list-style-type:none
+	list-style-type:none;
 	&:hover
 	{
 		cursor:pointer;
