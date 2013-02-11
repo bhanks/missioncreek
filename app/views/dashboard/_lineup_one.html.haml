@@ -1,0 +1,24 @@
+%ul.tier_one_order
+	%li.instructions Tier 1 Display Order
+	- if @tier1.present?
+		- @tier1.each do |artist|
+			%li{:id =>"tier_one_id_#{artist.id}", :class=>"ui-state-default tier#{artist.tier}"}=artist.name
+				
+%button#tier_one.btn.btn-primary.store-list Save List
+
+:javascript
+	$(function() {
+
+	    $(".tier_one_order").sortable({
+	    	items: "li:not(.instructions)",
+	    	change: function(event, ui){
+	    		if($("#tier_one.store-list").hasClass("disabled"))
+	    			$("#tier_one.store-list").removeClass("disabled").text("Save");
+	    	}
+	    });
+
+		$("#tier_one.store-list").click(function(){
+			storeDisplayOrder("one");
+		});
+
+	});

@@ -100,3 +100,12 @@ textarea.new_post
 	width:600px;
 	height: 400px;
 }
+
+ul.tier_one_order, ul.tier_two_order
+{
+	list-style-type:none
+	&:hover
+	{
+		cursor:pointer;
+	}
+}

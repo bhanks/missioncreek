@@ -9,6 +9,10 @@ class DashboardController < ApplicationController
 		@artists_fp['displayed'] = Artist.where("front_page != ?", 0).order('front_page')
 		@artists_fp['undisplayed'] = Artist.where("front_page = ?", 0).order("tier, name")
 		
+		@tier1 = Artist.where(:tier => 1).order("display_order")
+		@tier2 = Artist.where(:tier => 2).order("display_order")
+
+
 		@venues = Venue.all
 		@posts = Post.all
 	end

@@ -6,7 +6,9 @@
   %li.active
     %a{"data-toggle" =>"tab", :href => "#artists_front_page_dashboard"} Artists:Front Page
   %li
-    %a{"data-toggle" =>"tab", :href => "#lineup"} Lineup
+    %a{"data-toggle" =>"tab", :href => "#lineup_one"} Lineup:Tier 1
+  %li
+    %a{"data-toggle" =>"tab", :href => "#lineup_two"} Lineup:Tier 2
   %li
     %a{"data-toggle" =>"tab", :href => "#announcements"} Announcements
   %li
@@ -17,8 +19,10 @@
   #artists_front_page_dashboard.tab-pane.active
 
     = render :partial => "artists_front_page", :artists_fp => @artists_fp
-  #lineup.tab-pane
-    = #render :partial => "lineup"
+  #lineup_one.tab-pane
+    = render :partial => "lineup_one"
+  #lineup_two.tab-pane
+    = render :partial => "lineup_two"
   #features_front_page.tab-pane
     = #render :partial => "features_front_page"
   #announcements.tab-pane

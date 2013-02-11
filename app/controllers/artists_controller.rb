@@ -7,8 +7,8 @@ class ArtistsController < ApplicationController
   def index
     @artists = Artist.all
     @meta_title = "Lineup : "
-    @tier1 = Artist.where(:tier=>1).order("created_at")
-    @tier2 = Artist.where(:tier=>2).order("created_at")
+    @tier1 = Artist.where(:tier=>1).order("display_order")
+    @tier2 = Artist.where(:tier=>2).order("display_order")
     @tier3 = Artist.where(:tier=>3).order("created_at")
     
 
@@ -99,6 +99,18 @@ class ArtistsController < ApplicationController
     params[:artists].each_pair do |display_order, artist_id|
       artist = Artist.find(artist_id.first.to_i)
       artist.front_page = display_order.to_i
+      artist.save!
+    end
+    respond_to do |format|
+      format.json { render :text => "Saved"}
+    end
+  end
+  def store_display_order()
+    #debugger
+
+    params[:artists].each_pair do |display_order, artist_id|
+      artist = Artist.find(artist_id.first.to_i)
+      artist.display_order = display_order.to_i
       artist.save!
     end
     respond_to do |format|

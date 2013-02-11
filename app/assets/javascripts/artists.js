@@ -13,11 +13,33 @@ function getFrontPageArtists()
 		data: data,
 		dataType: "text",
 		success: function(msg){
-			$(".store-list").addClass("disabled").text(msg);
+			$("#artists.store-list").addClass("disabled").text(msg);
 
 		}
 	});
 }
+
+function storeDisplayOrder(tier)
+{
+	data = new Object;
+	artists = new Object;
+	$('.tier_'+tier+'_order').children(':not(.instructions)').each(function(index, el){
+		artists[index+1]= $(el).attr("id").match(/\d+/);
+	});
+	data["artists"] = artists;
+//	console.log(data)
+	$.ajax({
+		url: 'artists/store_display_order',
+		type: "POST",
+		data: data,
+		dataType: "text",
+		success: function(msg){
+			$("#tier_"+tier+".store-list").addClass("disabled").text(msg);
+
+		}
+	});
+}
+
 
 function clearList(list, undisplayed)
 {
