@@ -13,6 +13,7 @@ group :production do
 	gem 'pg'
 end
 
+gem 'json', '= 1.7.7'
 gem 'fog'
 gem 'rmagick', "~> 2.11.1"
 gem 'RedCloth'

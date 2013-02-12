@@ -76,6 +76,32 @@ class ArtistsController < ApplicationController
     end
   end
 
+  def match_artists_with_events
+    @artists = Artist.all
+
+    render "match", :layout => "dashboard"
+  end
+
+  def update_artists_events
+    @artists = Artist.find(params[:artist_ids])
+    render "update_with_event", :layout =>"dashboard"
+  end
+
+  def update_events
+    @artists = Artist.find(params[:artist_ids])
+    headliners = params[:headliner_ids].map(&:to_i)
+    @artists.each do |artist|
+      artist.event_id = params[:artist][:event_id]
+      if(headliners.include?(artist.id))
+        artist.headliner = true
+      end
+      artist.save!
+    end
+    redirect_to artists_dashboard_index_url
+  end
+
+
+
   def tier_radio(artist)
     tier = []
     [1, 2, 3].each do |t|

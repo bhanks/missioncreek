@@ -10,7 +10,13 @@ Missioncreek::Application.routes.draw do
 
   devise_for :users, :path => 'users', :path_names => { :sign_in =>"login", :sign_out=>"logout"}
   resources :users
-  resources :artists
+  resources :artists do
+    collection do
+      put "update_artists_events"
+      put "update_events"
+    end
+  end
+
   resources :pages
   resources :dashboard do
     collection do
@@ -19,9 +25,11 @@ Missioncreek::Application.routes.draw do
       get 'venues'
       get 'pages'
       get 'events'
+      match "match_artists_with_events" => "artists#match_artists_with_events", :via => :get
     end
 
   end
+
 
   match "artists/front_page_selections" => 'artists#store_front_page_artists', :via => :post
   match "artists/store_display_order" => 'artists#store_display_order', :via => :post

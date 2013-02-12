@@ -1,7 +1,7 @@
 class Artist < ActiveRecord::Base
   extend FriendlyId
   friendly_id :name, use: [:slugged, :history]
-  attr_accessible :name, :bio, :soundcloud_url, :official_url, :youtube_url, :display_order, :tier, :image, :spotify_url
+  attr_accessible :name, :bio, :soundcloud_url, :official_url, :youtube_url, :display_order, :tier, :image, :spotify_url, :headliner, :event_id
   validates_presence_of :name, :tier
   belongs_to :event
   mount_uploader :image, ArtistImageUploader

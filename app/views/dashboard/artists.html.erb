@@ -3,7 +3,7 @@
 <div class="page-header">
   <h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
 </div>
-
+<%= link_to "Match Artists with Event", match_artists_with_events_dashboard_index_path %>
 <%- if flash[:notice] -%>
   <div class="span4">  
     <div class="alert alert-success">

@@ -1,0 +1,19 @@
+%p Select artists to match to an existing event
+= form_for :artist, :url => update_artists_events_artists_path, :html => { :method => :put } do |f|
+	%table.table-bordered.table-striped
+		%tr
+			%th Update
+			%th Artist
+			%th Event
+			%th Headliner
+
+		- @artists.each do |artist|
+			%tr
+				%td= check_box_tag "artist_ids[]", artist.id
+				%td= artist.name
+				%td= (artist.event) ? artist.event.title : ""
+				%td= artist.headliner
+
+	.actions
+		= f.submit 'Proceed to Update'
+	

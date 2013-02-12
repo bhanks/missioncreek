@@ -32,9 +32,7 @@ class EventsController < ApplicationController
   # GET /events/1/edit
   def edit
     @event = Event.find(params[:id])
-    if(@event.artists = [])
-      @event.artists.build
-    end
+
     render :layout => "dashboard"
   end
 
@@ -45,10 +43,10 @@ class EventsController < ApplicationController
 
     respond_to do |format|
       if @event.save
-        format.html { redirect_to @event, notice: 'Event was successfully created.' }
+        format.html { redirect_to events_dashboard_index_url, notice: 'Event was successfully created.' }
         format.json { render json: @event, status: :created, location: @event }
       else
-        format.html { render action: "new" }
+        format.html { render action: "new", :layout => 'dashboard' }
         format.json { render json: @event.errors, status: :unprocessable_entity }
       end
     end
@@ -60,20 +58,14 @@ class EventsController < ApplicationController
   def update
     @event = Event.find(params[:id])
 
-    artists = params[:event][:artists_attributes]
-    artists.each do |artist|
-      record = Artist.find(artist[:id].to_i)
-      record.event = @event.id
-      record.save!
-    end
-    params[:event].delete(:artists_attributes)
+    debugger
 
     respond_to do |format|
       if @event.update_attributes(params[:event])
         format.html { redirect_to @event, notice: 'Event was successfully updated.' }
         format.json { head :no_content }
       else
-        format.html { render action: "edit" }
+        format.html { render action: "edit", :layout => 'dashboard' }
         format.json { render json: @event.errors, status: :unprocessable_entity }
       end
     end
@@ -87,7 +79,7 @@ class EventsController < ApplicationController
     @event.destroy
 
     respond_to do |format|
-      format.html { redirect_to events_url }
+      format.html { redirect_to events_dashboard_index_url }
       format.json { head :no_content }
     end
   end

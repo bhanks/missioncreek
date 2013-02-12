@@ -8,13 +8,12 @@
       %ul
         - @event.errors.full_messages.each do |msg|
           %li= msg
-
+  .field
+    = f.label :title
+    = f.text_field :title
   .field
     = f.label Venue
     = f.collection_select :venue_id, Venue.all, :id, :name
-  .field
-    = f.fields_for :artists do |builder|
-      = render "artist_fields", :f=>builder
   .field
     = f.label :date
     = f.select :date, options_for_select(days, @event.date.to_s)
@@ -39,9 +38,6 @@
   .field
     = f.label :ticket_url
     = f.text_field :ticket_url
-  .field
-    = f.label :title
-    = f.text_field :title
   .field
     = f.label :description
     = f.text_area :description

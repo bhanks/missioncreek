@@ -1,0 +1,18 @@
+= form_for :artist, :url => update_events_artists_path, :html => { :method => :put } do |f|
+	%p The following artists will be associated with the event you select:
+	%table
+		%tr
+			%th{:style =>"text-align:left"} Artist
+			%th{:style =>"text-align:left"} Is Headlining
+		-@artists.each do |artist|
+			%tr
+				= hidden_field_tag "artist_ids[]", artist.id
+				%td= artist.name
+				%td= check_box_tag "headliner_ids[]", artist.id
+
+	.field
+		=f.label "Event"
+		=f.collection_select :event_id, Event.all, :id, :title
+
+	.actions
+		= f.submit 'Update Event'
