@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130201100449) do
+ActiveRecord::Schema.define(:version => 20130211225556) do
 
   create_table "artists", :force => true do |t|
     t.string   "name"
@@ -28,9 +28,27 @@ ActiveRecord::Schema.define(:version => 20130201100449) do
     t.text     "bio"
     t.string   "spotify_url"
     t.string   "slug"
+    t.integer  "event_id"
+    t.boolean  "headliner"
   end
 
   add_index "artists", ["slug"], :name => "index_artists_on_slug"
+
+  create_table "events", :force => true do |t|
+    t.integer  "venue_id"
+    t.string   "title"
+    t.date     "date"
+    t.time     "door_time"
+    t.time     "start_time"
+    t.boolean  "free"
+    t.boolean  "soldout"
+    t.integer  "price_advance"
+    t.integer  "price_dayof"
+    t.string   "ticket_url"
+    t.text     "description"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
+  end
 
   create_table "friendly_id_slugs", :force => true do |t|
     t.string   "slug",                         :null => false

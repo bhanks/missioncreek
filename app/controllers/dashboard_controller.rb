@@ -39,4 +39,9 @@ class DashboardController < ApplicationController
 		@page_active = 'active'
 	end
 
+	def events
+		@events = Event.all
+		@events_active = "active"
+	end
+
 end

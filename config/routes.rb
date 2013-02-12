@@ -18,6 +18,7 @@ Missioncreek::Application.routes.draw do
       get 'posts'
       get 'venues'
       get 'pages'
+      get 'events'
     end
 
   end

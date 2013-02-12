@@ -3,6 +3,7 @@ class Artist < ActiveRecord::Base
   friendly_id :name, use: [:slugged, :history]
   attr_accessible :name, :bio, :soundcloud_url, :official_url, :youtube_url, :display_order, :tier, :image, :spotify_url
   validates_presence_of :name, :tier
+  belongs_to :event
   mount_uploader :image, ArtistImageUploader
 
   # before_save :clean_urls

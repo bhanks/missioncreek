@@ -17,10 +17,10 @@ module DashboardHelper
     #just return the html for an icon if a url is present or not
     def url_present(field)
     	icon = ''
-		if(field != "")
-			icon = "icon-ok"
-		else
+		if(field == "" || field == nil)
 			icon = "icon-remove"
+		else
+			icon = "icon-ok"
 		end
 
 

@@ -25,16 +25,17 @@ class EventsController < ApplicationController
   # GET /events/new.json
   def new
     @event = Event.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @event }
-    end
+    @event.artists.build
+    render :layout => "dashboard"
   end
 
   # GET /events/1/edit
   def edit
     @event = Event.find(params[:id])
+    if(@event.artists = [])
+      @event.artists.build
+    end
+    render :layout => "dashboard"
   end
 
   # POST /events
@@ -51,12 +52,21 @@ class EventsController < ApplicationController
         format.json { render json: @event.errors, status: :unprocessable_entity }
       end
     end
+
   end
 
   # PUT /events/1
   # PUT /events/1.json
   def update
     @event = Event.find(params[:id])
+
+    artists = params[:event][:artists_attributes]
+    artists.each do |artist|
+      record = Artist.find(artist[:id].to_i)
+      record.event = @event.id
+      record.save!
+    end
+    params[:event].delete(:artists_attributes)
 
     respond_to do |format|
       if @event.update_attributes(params[:event])
@@ -67,6 +77,7 @@ class EventsController < ApplicationController
         format.json { render json: @event.errors, status: :unprocessable_entity }
       end
     end
+
   end
 
   # DELETE /events/1
@@ -80,4 +91,7 @@ class EventsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+
+
 end

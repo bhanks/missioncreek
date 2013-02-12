@@ -36,7 +36,7 @@
         <td><%= raw popup(artist.official_url,'tooltip')%></td>
         <td><%= raw url_present(artist.youtube_url)%></td>
         <td><%= raw url_present(artist.soundcloud_url)%></td>
-        <td class='confirm-image'></td>
+        <td class='confirm-image'><%= raw url_present(artist.image.url)%></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_artist_path(artist), :class => 'btn btn-mini' %>

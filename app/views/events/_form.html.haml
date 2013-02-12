@@ -1,3 +1,6 @@
+- days = [["Tuesday 04/02",Date.parse("02/04/2013")],["Wednesday 04/03",Date.parse("03/04/2013")]]
+- dates = [Date.parse("02/04/2013"),Date.parse("03/04/2013")]
+
 = form_for @event do |f|
   - if @event.errors.any?
     #error_explanation
@@ -7,17 +10,20 @@
           %li= msg
 
   .field
-    = f.label :title
-    = f.text_field :title
+    = f.label Venue
+    = f.collection_select :venue_id, Venue.all, :id, :name
+  .field
+    = f.fields_for :artists do |builder|
+      = render "artist_fields", :f=>builder
   .field
     = f.label :date
-    = f.date_select :date
+    = f.select :date, options_for_select(days, @event.date.to_s)
   .field
     = f.label :door_time
-    = f.time_select :door_time
+    = f.time_select :door_time, :value => :start_time, :default => Time.parse("20:00"), :ampm => true
   .field
     = f.label :start_time
-    = f.time_select :start_time
+    = f.time_select :start_time, :value => :start_time, :default => Time.parse("21:00"), :ampm => true
   .field
     = f.label :free
     = f.check_box :free
@@ -25,14 +31,17 @@
     = f.label :soldout
     = f.check_box :soldout
   .field
-    = f.label :price_advance
+    = f.label "Advance Price"
     = f.number_field :price_advance
   .field
-    = f.label :price_dayof
+    = f.label "Day of Ticket Price"
     = f.number_field :price_dayof
   .field
     = f.label :ticket_url
     = f.text_field :ticket_url
+  .field
+    = f.label :title
+    = f.text_field :title
   .field
     = f.label :description
     = f.text_area :description

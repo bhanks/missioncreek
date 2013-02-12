@@ -1,0 +1,7 @@
+.field
+	= f.label Artist
+	= f.collection_select :id, Artist.all, :id, :name
+.field
+	= f.label :headliner
+	= f.check_box :headliner
+= f.hidden_field :event_id, :value => @event.id
