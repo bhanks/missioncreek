@@ -1,8 +1,8 @@
 class ArtistsController < ApplicationController
   # GET /artists
   # GET /artists.json
-  before_filter :authenticate_user!, :only => [:new, :edit, :update, :destroy]
-
+  #before_filter :authenticate_user!, :only => [:new, :edit, :update, :destroy]
+  before_filter :authenticate_user!, :except => [:index, :show]
   
   def index
     @artists = Artist.all

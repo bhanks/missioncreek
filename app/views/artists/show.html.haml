@@ -11,7 +11,7 @@
 
   .row-fluid.artist_media
     .span6
-      - if @artist.youtube_url
+      - if @artist.youtube_url != ""
         %iframe.youtube{:width => "400", :height =>"315", :src=> @artist.youtube_url, :frameborder => "0"}
     .span6
       - if @artist.spotify_url != ""
