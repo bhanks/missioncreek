@@ -25,4 +25,28 @@ class Event < ActiveRecord::Base
   	self.date.strftime("%A %b %e")
   end
 
+  def no_headliner?
+    !self.artists.map(&:headliner).reduce(&:|)
+  end
+  
+  # def header
+  #   unless(self.display_title || self.no_headliner?)
+  #     self.artists.map()
+  #   elsif(self.display_title)
+  #     self.title
+  #   end
+  # end
+
+  def headliners
+    artists = self.artists
+    headliners = self.artists.partition{|a| a.headliner}
+    sorted =  headliners[0].sort{|a,b| a[:display_order] <=> b[:display_order]}
+  end
+
+  def support
+    artists = self.artists
+    support = self.artists.partition{|a| a.headliner}
+    sorted =  support[1].sort{|a,b| a[:display_order] <=> b[:display_order]}
+  end
+
 end

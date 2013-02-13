@@ -1,20 +1,22 @@
 // Place all the styles related to the Events controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import "colors";
 
-.schedule
+.container.main.schedule
 {
+	//background-image:url('black.png');
+	background-image:none;
 	background-color:rgba(0,0,0,.7);
 }
-.container.main
-{
-	background-image:none;
-}
 
 .schedule
 {
+	text-align:center;
+	color:$linen;
 	h2
 	{
 		text-align:center;
+		font-size:2em;
 	}
 }

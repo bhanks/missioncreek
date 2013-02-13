@@ -2,7 +2,20 @@ class EventsController < ApplicationController
   # GET /events
   # GET /events.json
   def index
-    @events = Event.all
+    @events = {}
+    days = {
+      "monday" => Date.parse("01/04/2013"),
+      "tuesday" => Date.parse("02/04/2013"),
+      "wednesday" => Date.parse("03/04/2013"),
+      "thursday " => Date.parse("04/04/2013"),
+      "friday " => Date.parse("05/04/2013"),
+      "saturday " => Date.parse("06/04/2013"),
+      "sunday " => Date.parse("07/04/2013")
+    }
+    
+    days.each_key do |key|
+      @events[key] = Event.where(:date => days[key]).order(:door_time)
+    end
 
     respond_to do |format|
       format.html {render :layout =>"schedule"}
