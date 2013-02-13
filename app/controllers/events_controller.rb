@@ -5,7 +5,7 @@ class EventsController < ApplicationController
     @events = Event.all
 
     respond_to do |format|
-      format.html # index.html.erb
+      format.html {render :layout =>"schedule"}
       format.json { render json: @events }
     end
   end
@@ -58,11 +58,9 @@ class EventsController < ApplicationController
   def update
     @event = Event.find(params[:id])
 
-    debugger
-
     respond_to do |format|
       if @event.update_attributes(params[:event])
-        format.html { redirect_to @event, notice: 'Event was successfully updated.' }
+        format.html { redirect_to events_dashboard_index_url, notice: 'Event was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit", :layout => 'dashboard' }

@@ -1,4 +1,4 @@
-- days = [["Tuesday 04/02",Date.parse("02/04/2013")],["Wednesday 04/03",Date.parse("03/04/2013")]]
+- days = [["Monday 04/01",Date.parse("01/04/2013")],["Tuesday 04/02",Date.parse("02/04/2013")],["Wednesday 04/03",Date.parse("03/04/2013")],["Thursday 04/04",Date.parse("04/04/2013")],["Friday 04/05",Date.parse("05/04/2013")],["Saturday 04/06",Date.parse("06/04/2013")],["Sunday 04/07",Date.parse("07/04/2013")]]
 - dates = [Date.parse("02/04/2013"),Date.parse("03/04/2013")]
 
 = form_for @event do |f|
@@ -11,6 +11,9 @@
   .field
     = f.label :title
     = f.text_field :title
+  .field
+    = f.label "Display with Title (otherwise displays with selected headliners)"
+    = f.check_box :show_title
   .field
     = f.label Venue
     = f.collection_select :venue_id, Venue.all, :id, :name

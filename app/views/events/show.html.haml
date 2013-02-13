@@ -1,17 +1,21 @@
 %p#notice= notice
+%h2 Artists:
+%ul
+  - @event.artists.each do |artist|
+    %li=artist.name
 
 %p
   %b Title:
   = @event.title
 %p
   %b Date:
-  = @event.date
+  = @event.format_date
 %p
   %b Door time:
-  = @event.door_time
+  = @event.format_door_time
 %p
   %b Start time:
-  = @event.start_time
+  = @event.format_start_time
 %p
   %b Free:
   = @event.free
@@ -20,10 +24,10 @@
   = @event.soldout
 %p
   %b Price advance:
-  = @event.price_advance
+  = "$#{@event.price_advance}"
 %p
   %b Price dayof:
-  = @event.price_dayof
+  = "$#{@event.price_dayof}"
 %p
   %b Ticket url:
   = @event.ticket_url
