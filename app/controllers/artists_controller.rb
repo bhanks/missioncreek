@@ -88,16 +88,32 @@ class ArtistsController < ApplicationController
   end
 
   def update_events
-    @artists = Artist.find(params[:artist_ids])
-    headliners = params[:headliner_ids].map(&:to_i)
-    @artists.each do |artist|
-      artist.event_id = params[:artist][:event_id]
-      if(headliners.include?(artist.id))
-        artist.headliner = true
-      end
+
+    event = Event.find(params[:artist][:event_id])
+
+    event.artists.each do |artist|
+      artist.headliner = false
+      puts "Setting headliner for #{artist.name} to false "
       artist.save!
     end
-    redirect_to artists_dashboard_index_url
+
+    @artists = Artist.find(params[:artist_ids])
+    event.artists = @artists
+    event.save!
+    #debugger
+    headliners = params[:headliner_ids].map(&:to_i)
+    @artists.each do |artist|
+
+      if(headliners.include?(artist.id))
+        artist.headliner = true
+      else
+        artist.headliner = false
+      end   
+    end
+    @artists.map(&:save!)
+    puts "#{event.artists.map(&:name).join(' ')}"
+    #debugger
+    redirect_to match_artists_with_events_dashboard_index_url
   end
 
 

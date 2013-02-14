@@ -1,6 +1,6 @@
 %p Select artists to match to an existing event
 = form_for :artist, :url => update_artists_events_artists_path, :html => { :method => :put } do |f|
-	%table.table-bordered.table-striped
+	%table.table-bordered.table-striped{:style=>"width:60%"}
 		%tr
 			%th Update
 			%th Artist

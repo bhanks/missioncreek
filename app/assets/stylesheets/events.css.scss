@@ -3,6 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import "colors";
 
+
 .container.main.schedule
 {
 	//background-image:url('black.png');
@@ -10,13 +11,36 @@
 	background-color:rgba(0,0,0,.7);
 }
 
+$border: 6px;
+
 .schedule
 {
 	text-align:center;
-	color:$linen;
+	color:white;
 	h2
 	{
 		text-align:center;
-		font-size:2em;
+		font-size:1.3em;
+	}
+	.event
+	{	
+		width:175px;
+		background-color:$charcoal;
+		display:inline-block;
+		margin-right:5px;
+		margin-bottom:5px;
+		border: 1px solid $linen;
+	}
+	.top
+	{
+		height:75px;
+	}
+	.bottom
+	{
+		height:20px;
+	}
+	.name
+	{
+		color:$pepto;
 	}
 }

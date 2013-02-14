@@ -7,11 +7,12 @@
 			@
 			.venue= event.venue.name
 %h2 Tuesday, April 2
-- @events["tuesday"].each do |event|
-	.span12.event
-		= render "event_macro", :event => event
-		/ - name = (event.show_title) ? event.title : event.headliners.map(&:name).join(" & ")
-		/ .name_venue="<span class='name'>#{name}</span> @ <span class='venue'>#{event.venue.name}</span>" 
+%ul.events.tuesday
+	- @events["tuesday"].each do |event|
+		%li.event
+			= render "event_macro", :event => event
+			/ - name = (event.show_title) ? event.title : event.headliners.map(&:name).join(" & ")
+			/ .name_venue="<span class='name'>#{name}</span> @ <span class='venue'>#{event.venue.name}</span>" 
 			
 %h2 Wednesday, April 3
 %h2 Thursday, April 4
