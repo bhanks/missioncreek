@@ -29,14 +29,6 @@ class Event < ActiveRecord::Base
     !self.artists.map(&:headliner).reduce(&:|)
   end
   
-  # def header
-  #   unless(self.display_title || self.no_headliner?)
-  #     self.artists.map()
-  #   elsif(self.display_title)
-  #     self.title
-  #   end
-  # end
-
   def headliners
     artists = self.artists
     headliners = self.artists.partition{|a| a.headliner}
