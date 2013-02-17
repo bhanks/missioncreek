@@ -44,3 +44,42 @@ $border: 6px;
 		color:$pepto;
 	}
 }
+.event-detail
+{
+	h2
+	{
+		font-size:2.2em;
+
+	}
+	.date, .time, .cost
+	{
+		font-size:1.6em;
+		color: $pepto;
+		margin:10px;
+	}
+	.event-tickets
+	{
+		font-size:2em;
+		line-height:1.5em;
+		margin:10px;
+	}
+	.more ul
+	{
+		list-style-type:none;
+	}
+	.more ul li
+	{
+		display:inline-block;
+		font-size:1.3em;
+		margin-right:15px;
+	}
+}
+
+
+
+
+
+
+
+
+

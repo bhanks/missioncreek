@@ -2,7 +2,7 @@ class PagesController < ApplicationController
   # GET /pages
   # GET /pages.json
 
-  before_filter :authenticate_user!, :only => [:new, :edit, :update, :destroy]
+  before_filter :authenticate_user!, :except => [:index, :show]
 
   def index
     @pages = page.all

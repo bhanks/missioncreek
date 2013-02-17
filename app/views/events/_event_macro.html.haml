@@ -1,6 +1,5 @@
 %li.event
 	- name = (event.show_title) ? event.title : event.headliners.map(&:name).join(" & ")
-	/.name_venue="#{name} @ #{event.venue.name}" 
 	.image
 		%a{:href=>event_path(event)}
 			%img{:src=>event.headliners.first.image}
@@ -10,6 +9,6 @@
 		%a.venue{:href=>"#{event.venue.url}", :target=>"_other"}=event.venue.name
 		.support="W/ #{event.support.map(&:name).join(', ')}"
 	.bottom
-		%a{:href=>event_path(event)}More Info
+		%a{:href=>event_path(event)}Details
 		|
-		%a{:href=>event.ticket_url, :target=>"_other"}Get Tickets
+		%a{:href=>"http://www.midwestix.com/organizations/mission-creek-festival", :target=>"_other"}Get Tickets

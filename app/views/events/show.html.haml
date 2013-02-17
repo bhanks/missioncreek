@@ -1,40 +1,25 @@
-%p#notice= notice
-%h2 Artists:
-%ul
-  - @event.artists.each do |artist|
-    %li=artist.name
+- name = (@event.show_title) ? @event.title : @event.headliners.map(&:name).join(" & ")
+.event-detail
+  %h1="#{name} @ #{@event.venue.name}"
+  %h2.support="w/ #{@event.support.map(&:name).join(', ')}"
+  .date=@event.format_date
+  .time="Doors at #{@event.format_door_time}, Show at #{@event.format_start_time}"
+  -if !(@event.soldout || @event.free)
+    .cost="$#{@event.price_advance} Adv/$#{@event.price_dayof} Door"
+  -elsif @event.soldout
+    .cost SOLD OUT
+  -elsif @event.free
+    .cost FREE
+  -unless @event.description == '' || @event.description == nil
+    .description=@event.description
+  -if !(@event.soldout || @event.free)
+    .event-tickets
+      %a{:href=>@event.ticket_url}TICKETS
+  .more
+    %h3 Read more about:
+    %ul
+      -@event.artists.each do |artist|
+        %li
+          %a{:href=>artist_path(artist)}=artist.name
 
-%p
-  %b Title:
-  = @event.title
-%p
-  %b Date:
-  = @event.format_date
-%p
-  %b Door time:
-  = @event.format_door_time
-%p
-  %b Start time:
-  = @event.format_start_time
-%p
-  %b Free:
-  = @event.free
-%p
-  %b Soldout:
-  = @event.soldout
-%p
-  %b Price advance:
-  = "$#{@event.price_advance}"
-%p
-  %b Price dayof:
-  = "$#{@event.price_dayof}"
-%p
-  %b Ticket url:
-  = @event.ticket_url
-%p
-  %b Description:
-  = @event.description
 
-= link_to 'Edit', edit_event_path(@event)
-\|
-= link_to 'Back', events_path
