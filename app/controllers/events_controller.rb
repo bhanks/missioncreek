@@ -39,7 +39,7 @@ class EventsController < ApplicationController
   # GET /events/new.json
   def new
     @event = Event.new
-    @event.artists.build
+    
     render :layout => "dashboard"
   end
 
