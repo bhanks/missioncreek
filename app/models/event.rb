@@ -38,7 +38,7 @@ class Event < ActiveRecord::Base
   def support
     artists = self.artists
     support = self.artists.partition{|a| a.headliner}
-    sorted =  support[1].sort{|a,b| a[:display_order] <=> b[:display_order]}
+    sorted =  support[1].sort{|a,b| a[:tier] <=> b[:tier]}
   end
 
 end
