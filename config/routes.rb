@@ -30,7 +30,7 @@ Missioncreek::Application.routes.draw do
 
   end
 
-
+  match "schedule" => "events#index", :via => :get
   match "artists/front_page_selections" => 'artists#store_front_page_artists', :via => :post
   match "artists/store_display_order" => 'artists#store_display_order', :via => :post
   match "artists/artist_thumb" => 'artists#artist_thumb', :via => :post
