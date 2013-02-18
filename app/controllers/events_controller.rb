@@ -13,7 +13,7 @@ class EventsController < ApplicationController
       "saturday" => Date.parse("06/04/2013"),
       "sunday" => Date.parse("07/04/2013")
     }
-    debugger
+    
     days.each_key do |key|
       @events[key] = Event.where(:date => days[key]).order(:door_time)
     end

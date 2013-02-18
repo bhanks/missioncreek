@@ -1,7 +1,8 @@
 - name = (@event.show_title) ? @event.title : @event.headliners.map(&:name).join(" & ")
 .event-detail
   %h1="#{name} @ #{@event.venue.name}"
-  %h2.support="w/ #{@event.support.map(&:name).join(', ')}"
+  - unless @event.support.empty?
+    %h2.support="w/ #{@event.support.map(&:name).join(', ')}"
   .date=@event.format_date
   .time="Doors at #{@event.format_door_time}, Show at #{@event.format_start_time}"
   -if !(@event.soldout || @event.free)

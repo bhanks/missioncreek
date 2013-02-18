@@ -7,7 +7,8 @@
 		.name=name
 		@
 		%a.venue{:href=>"#{event.venue.url}", :target=>"_other"}=event.venue.name
-		.support="W/ #{event.support.map(&:name).join(', ')}"
+		- unless event.support.empty?
+			.support="w/ #{event.support.map(&:name).join(', ')}"
 	.bottom
 		%a{:href=>event_path(event)}Details
 		|
