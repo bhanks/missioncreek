@@ -308,6 +308,15 @@ i.nav
 	margin-bottom:20px;
 }
 
+h2.tickets, h2.tickets a
+{
+	margin:0px;
+	text-align:center;
+	font-size:1.2em;
+	line-height:1.2em;
+	font-style:italic;
+	color:$olive;
+}
 
 
 @media all and (max-width:640px)

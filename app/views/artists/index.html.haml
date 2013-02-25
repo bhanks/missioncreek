@@ -1,3 +1,5 @@
+%h2.tickets
+	%a{:href=>"http://www.midwestix.com/organizations/mission-creek-festival", :target=> "_other"}GET TICKETS
 %ul.tier1
 	-@tier1.each_with_index do |artist, index|
 		%li= link_to artist.name, artist_path(artist)
