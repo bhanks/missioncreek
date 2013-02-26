@@ -1,0 +1,39 @@
+%p#notice= notice
+
+%p
+  %b Title:
+  = @simple_event.title
+%p
+  %b Date:
+  = @simple_event.date
+%p
+  %b Start:
+  = @simple_event.start
+%p
+  %b Free:
+  = @simple_event.free
+%p
+  %b Soldout:
+  = @simple_event.soldout
+%p
+  %b Description:
+  = @simple_event.description
+%p
+  %b Type:
+  = @simple_event.type
+%p
+  %b Image:
+  = @simple_event.image
+%p
+  %b Price:
+  = @simple_event.price
+%p
+  %b Ticket url:
+  = @simple_event.ticket_url
+%p
+  %b Venue:
+  = @simple_event.venue_id
+
+= link_to 'Edit', edit_simple_event_path(@simple_event)
+\|
+= link_to 'Back', simple_events_path

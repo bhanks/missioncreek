@@ -44,4 +44,9 @@ class DashboardController < ApplicationController
 		@events_active = "active"
 	end
 
+	def simple_events
+		@simple_events = SimpleEvent.all
+		@simple_events_active = "active"
+	end
+
 end

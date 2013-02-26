@@ -1,6 +1,9 @@
 Missioncreek::Application.routes.draw do
   
 
+  resources :simple_events
+
+
   resources :events
 
 
@@ -25,6 +28,7 @@ Missioncreek::Application.routes.draw do
       get 'venues'
       get 'pages'
       get 'events'
+      get 'simple_events'
       match "match_artists_with_events" => "artists#match_artists_with_events", :via => :get
     end
 
