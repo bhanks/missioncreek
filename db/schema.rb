@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130226200747) do
+ActiveRecord::Schema.define(:version => 20130301200643) do
 
   create_table "artists", :force => true do |t|
     t.string   "name"
@@ -67,11 +67,12 @@ ActiveRecord::Schema.define(:version => 20130226200747) do
     t.text     "body"
     t.integer  "nav_order"
     t.integer  "feature_order"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
+    t.datetime "created_at",            :null => false
+    t.datetime "updated_at",            :null => false
     t.string   "slug"
     t.string   "splash_image"
     t.integer  "parent"
+    t.string   "simple_event_category"
   end
 
   add_index "pages", ["slug"], :name => "index_pages_on_slug"
@@ -90,13 +91,13 @@ ActiveRecord::Schema.define(:version => 20130226200747) do
     t.boolean  "free"
     t.boolean  "soldout"
     t.text     "description"
-    t.string   "type"
     t.string   "image"
     t.string   "price"
     t.string   "ticket_url"
     t.integer  "venue_id"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+    t.string   "category"
   end
 
   create_table "users", :force => true do |t|
