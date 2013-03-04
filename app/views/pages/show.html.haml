@@ -6,8 +6,9 @@
 				%h1#page_title=@page.title
 =render :partial => 'base/nav'
 .page=raw @page.formatted_body
-.attached_events
-	=render :partial => 'simple_events', @events => @events
+- if @events.present?
+	.attached_events
+		=render :partial => 'simple_events', @events => @events
 .children
 	- if @children.present?
 		%ul
