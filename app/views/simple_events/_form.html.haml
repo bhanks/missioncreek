@@ -1,5 +1,5 @@
 - days = [["Monday 04/01",Date.parse("01/04/2013")],["Tuesday 04/02",Date.parse("02/04/2013")],["Wednesday 04/03",Date.parse("03/04/2013")],["Thursday 04/04",Date.parse("04/04/2013")],["Friday 04/05",Date.parse("05/04/2013")],["Saturday 04/06",Date.parse("06/04/2013")],["Sunday 04/07",Date.parse("07/04/2013")]]
-= form_for @simple_event do |f|
+= form_for @simple_event, :html => {:class => 'form-horizontal', :multipart => true } do |f|
   - if @simple_event.errors.any?
     #error_explanation
       %h2= "#{pluralize(@simple_event.errors.count, "error")} prohibited this simple_event from being saved:"
@@ -33,7 +33,7 @@
     = f.select :category, options_for_select(["Lit", "Food", "Lit Crawl"])
   .field
     = f.label :image
-    = f.text_field :image
+    = f.file_field :image
   .field
     = f.label :price
     = f.text_field :price

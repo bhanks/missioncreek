@@ -1,0 +1,4 @@
+- @events.each do |event|
+	.attached_event.span12
+		%h2= event.title
+		.time_price_loc= "#{event.date.strftime("%A, %B %e")}, #{event.start.strftime("%l:%M %P")} @ #{event.venue.name}"

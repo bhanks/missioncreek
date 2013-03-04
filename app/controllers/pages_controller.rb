@@ -18,6 +18,9 @@ class PagesController < ApplicationController
   def show
     @page = Page.find(params[:id])
     @children = Page.children(@page.id)
+    if @page.simple_event_category
+      @events = SimpleEvent.find(:all, :conditions => {:category =>@page.simple_event_category}, :order => "date, start DESC")
+    end
     @meta_title = @page.title + ":"
     if(@page.parent)
       parent = Page.find(@page.parent)

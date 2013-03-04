@@ -40,12 +40,12 @@ class DashboardController < ApplicationController
 	end
 
 	def events
-		@events = Event.all
+		@events = Event.find(:all, :order => "date, start_time DESC")
 		@events_active = "active"
 	end
 
 	def simple_events
-		@simple_events = SimpleEvent.all
+		@simple_events = SimpleEvent.order("date, start DESC")
 		@simple_events_active = "active"
 	end
 

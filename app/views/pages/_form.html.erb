@@ -5,7 +5,7 @@
   <%= f.input :parent , :collection => @pages  %>
   <%= f.input :feature_order , :collection => 1..3  %>
   <%= f.input :splash_image, :as => :file %>
-
+  <%= f.input :simple_event_category, :collection => ["Lit", "Food", "Lit Crawl"] %>
   <%= f.button :submit %>
 <% end %>
 

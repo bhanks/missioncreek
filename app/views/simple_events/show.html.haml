@@ -23,7 +23,7 @@
   = @simple_event.category
 %p
   %b Image:
-  = @simple_event.image
+  %img{:src => @simple_event.image.url}
 %p
   %b Price:
   = @simple_event.price

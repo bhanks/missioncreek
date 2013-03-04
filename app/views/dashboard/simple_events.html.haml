@@ -4,13 +4,7 @@
     %th Title
     %th Date
     %th Start
-    %th Free
-    %th Soldout
-    %th Description
     %th Type
-    %th Image
-    %th Price
-    %th Ticket url
     %th Venue
     %th
     %th
@@ -19,16 +13,10 @@
   - @simple_events.each do |simple_event|
     %tr
       %td= simple_event.title
-      %td= simple_event.date
-      %td= simple_event.start
-      %td= simple_event.free
-      %td= simple_event.soldout
-      %td= simple_event.description
-      %td= simple_event.type
-      %td= simple_event.image
-      %td= simple_event.price
-      %td= simple_event.ticket_url
-      %td= simple_event.venue_id
+      %td= simple_event.date.strftime("%A")
+      %td= simple_event.start.strftime("%I:%M %P")
+      %td= simple_event.category
+      %td= simple_event.venue.name
       %td= link_to 'Show', simple_event
       %td= link_to 'Edit', edit_simple_event_path(simple_event)
       %td= link_to 'Destroy', simple_event, method: :delete, data: { confirm: 'Are you sure?' }
