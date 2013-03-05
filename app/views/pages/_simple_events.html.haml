@@ -1,4 +1,19 @@
 - @events.each do |event|
-	.attached_event.span12
+	.attached_event
 		%h2= event.title
-		.time_price_loc= "#{event.date.strftime("%A, %B %e")}, #{event.start.strftime("%l:%M %P")} @ #{event.venue.name}"
+		.time_loc= "#{event.date.strftime("%A, %B %e")}, #{event.start.strftime("%l:%M %P")} @ #{event.venue.name}"
+		.price= event.display_price
+		-unless event.ticket_url == ""
+			%a{:href=>event.ticket_url} Get Tickets
+		.media
+			%a.pull-left{:href=>"#event#{event.id}", :data=>{:toggle=>"#"}}
+				%img.media-object{:data=>{:src=>"holder.js/100x100"}}
+			.description.media-body
+				=raw RedCloth.new(event.description).to_html
+		- #Lightbox image
+		.lightbox.hide.fade{:id=>"#event",:role=>"dialog", :tabindex=>"-1"}
+			.lightbox-header
+				%button{:type=>"button", :class=>"close", :data=>{:dismiss=>"lightbox"}}
+					%i.icon-remove-circle
+			.lightbox-content
+				%img.media-object{:data=>{:src=>"holder.js/300x300"}}
