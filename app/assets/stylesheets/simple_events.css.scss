@@ -1,3 +1,47 @@
-// Place all the styles related to the SimpleEvents controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+@import "colors";
+
+cite
+{
+	font-style:italic;
+}
+
+.attached_events
+{
+	a.light
+	{
+		height:120px;
+		width:120px;
+	}
+	a.light img
+	{
+		max-width:120px;
+	}
+	.event_border
+	{
+		border-bottom:1px dotted black;
+		margin-bottom: 10px;
+	}
+	.attached_event
+	{
+		padding-bottom: 10px;
+	}
+	h2
+	{
+		font-size:1.5em;
+		line-height:1.5em;
+		margin:0px;
+	}
+	.time_loc, .price
+	{
+		font-size:1.1em;
+		line-height:1.2em;
+	}
+	.time_loc
+	{
+		color:$pepto;
+	}
+	.media
+	{
+		margin-top:8px;
+	}
+}

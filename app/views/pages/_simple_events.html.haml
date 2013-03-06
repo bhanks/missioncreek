@@ -1,19 +1,31 @@
 - @events.each do |event|
-	.attached_event
+	.attached_event.event_border
 		%h2= event.title
 		.time_loc= "#{event.date.strftime("%A, %B %e")}, #{event.start.strftime("%l:%M %P")} @ #{event.venue.name}"
 		.price= event.display_price
 		-unless event.ticket_url == ""
 			%a{:href=>event.ticket_url} Get Tickets
 		.media
-			%a.pull-left{:href=>"#event#{event.id}", :data=>{:toggle=>"#"}}
-				%img.media-object{:data=>{:src=>"holder.js/100x100"}}
+			%a.pull-left.light{:href=>"#event_#{event.id}", :data=>{:toggle=>"lightbox"}}
+				%img.media-object{:src=>event.image.url, :data=>{:src=>event.image.url}}
 			.description.media-body
 				=raw RedCloth.new(event.description).to_html
 		- #Lightbox image
-		.lightbox.hide.fade{:id=>"#event",:role=>"dialog", :tabindex=>"-1"}
+		.lightbox.hide.fade{:id=>"event_#{event.id}",:role=>"dialog", :tabindex=>"-1"}
 			.lightbox-header
 				%button{:type=>"button", :class=>"close", :data=>{:dismiss=>"lightbox"}}
 					%i.icon-remove-circle
 			.lightbox-content
-				%img.media-object{:data=>{:src=>"holder.js/300x300"}}
+				%img.media-object{:src=>event.image.url, :data=>{:src=>event.image.url}}
+
+
+/ <div id="demoLightbox" class="lightbox hide fade"  tabindex="-1" role="dialog" aria-hidden="true">
+/ 	<div class='lightbox-header'>
+/ 		<button type="button" class="close" data-dismiss="lightbox" aria-hidden="true">&times;</button>
+/ 	</div>
+/ 	<div class='lightbox-content'>
+/ 		<img src="image.png">
+/ 		<div class="lightbox-caption"><p>Your caption here</p></div>
+/ 	</div>
+/ </div>
+/ <a data-toggle="lightbox" href="#demoLightbox">Open Lightbox</a>
