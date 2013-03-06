@@ -4,7 +4,7 @@
 		.time_loc= "#{event.date.strftime("%A, %B %e")}, #{event.start.strftime("%l:%M %P")} @ #{event.venue.name}"
 		.price= event.display_price
 		-unless event.ticket_url == ""
-			%a{:href=>event.ticket_url} Get Tickets
+			%a.ticket_url{:href=>event.ticket_url} Get Tickets
 		.media
 			%a.pull-left.light{:href=>"#event_#{event.id}", :data=>{:toggle=>"lightbox"}}
 				%img.media-object{:src=>event.image.url, :data=>{:src=>event.image.url}}

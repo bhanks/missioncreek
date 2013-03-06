@@ -7,6 +7,18 @@ cite
 
 .attached_events
 {
+	a.ticket_url
+	{
+		background-color: #a7d6dd;
+		color: white;
+		padding: 3px;
+		border-radius: 3px;
+		margin-top: 4px;
+		&:hover
+		{
+			text-decoration:none;
+		}
+	}
 	a.light
 	{
 		height:120px;
@@ -35,6 +47,7 @@ cite
 	{
 		font-size:1.1em;
 		line-height:1.2em;
+		margin-bottom:5px;
 	}
 	.time_loc
 	{
