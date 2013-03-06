@@ -8,9 +8,9 @@
 .page
 	=raw @page.formatted_body
 	
-- if @events.present?
-	.attached_events
-		=render :partial => 'simple_events', @events => @events
+	- if @events.present?
+		.attached_events
+			=render :partial => 'simple_events', @events => @events
 
 .children
 	- if @children.present?
