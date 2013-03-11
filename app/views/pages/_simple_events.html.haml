@@ -1,6 +1,6 @@
 - @events.each do |event|
 	.attached_event.event_border
-		%h2= event.title
+		%h2= raw event.title
 		.time_loc= "#{event.date.strftime("%A, %B %e")}, #{event.start.strftime("%l:%M %P")} @ #{event.venue.name}"
 		.price= event.display_price
 		-unless event.ticket_url == ""
