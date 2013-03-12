@@ -29,13 +29,12 @@ cite
 	}
 	a.light
 	{
-		height:120px;
-		width:120px;
-		overflow:hidden;
+		box-shadow: 3px 3px 4px #777;
+		margin-bottom: 5px;
 	}
 	a.light img
 	{
-		max-width:120px;
+		max-width:150px;
 	}
 	.event_border
 	{
