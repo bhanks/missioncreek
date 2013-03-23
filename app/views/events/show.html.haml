@@ -17,10 +17,11 @@
     .event-tickets
       %a{:href=>@event.ticket_url}TICKETS
   .more
-    %h3 Read more about:
-    %ul
-      -@event.artists.each do |artist|
-        %li
-          %a{:href=>artist_path(artist)}=artist.name
+    -unless @event.artists.empty?  
+      %h3 Read more about:
+      %ul
+        -@event.artists.each do |artist|
+          %li
+            %a{:href=>artist_path(artist)}=artist.name
 
 

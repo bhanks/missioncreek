@@ -1,7 +1,7 @@
 %li.event
 	- name = (event.show_title) ? event.title : event.headliners.map(&:name).join(" & ")
 	.image
-		- unless event.headliners.nil?
+		- unless event.headliners.empty?
 			%a{:href=>event_path(event)}
 				%img{:src=>event.headliners.first.image}
 	.top
