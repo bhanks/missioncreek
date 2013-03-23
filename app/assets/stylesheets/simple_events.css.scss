@@ -7,6 +7,14 @@ cite
 
 .attached_events
 {
+	h2 a
+	{
+		color:$pool;
+		&:hover
+		{
+			color:$pepto;
+		}
+	}
 	a.ticket_url
 	{
 		background-color: #a7d6dd;
@@ -20,14 +28,13 @@ cite
 		}
 	}
 	a.light
-	{
-		height:120px;
-		width:120px;
-		overflow:hidden;
+	{	
+		margin-bottom: 5px;
 	}
 	a.light img
 	{
-		max-width:120px;
+		max-width:150px;
+		box-shadow: 3px 3px 4px #777;
 	}
 	.event_border
 	{
