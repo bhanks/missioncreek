@@ -27,7 +27,7 @@
 	if(!/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) && !$.cookie("overlay"))
 	{
 		var date = new Date();
-		var minutes = 10;
+		var minutes = 60;
 		date.setTime(date.getTime() + (minutes * 60 * 1000));
 		$.cookie("overlay", "true",{expires: date})
 		$("#overlay").modal()
