@@ -1,0 +1,2 @@
+class InterimEvent < Event
+end

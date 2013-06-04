@@ -15,7 +15,7 @@ class EventsController < ApplicationController
     }
     
     days.each_key do |key|
-      @events[key] = Event.where(:date => days[key]).order(:door_time)
+      @events[key] = Event.where(:date => days[key], :type => nil).order(:door_time)
     end
 
     respond_to do |format|
