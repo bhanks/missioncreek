@@ -96,6 +96,9 @@ class EventsController < ApplicationController
     end
   end
 
+  def interim_events
+    render :layout => "interim"
+  end
 
 
 end

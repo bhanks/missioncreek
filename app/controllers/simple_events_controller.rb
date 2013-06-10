@@ -1,7 +1,7 @@
 class SimpleEventsController < ApplicationController
   # GET /simple_events
   # GET /simple_events.json
-  before_filter :authenticate_user!, :except => [:index, :show]
+  before_filter :authenticate_user!, :except => [:index, :show, :interim]
   def index
     @simple_events = SimpleEvent.all
 
@@ -78,4 +78,6 @@ class SimpleEventsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+
 end

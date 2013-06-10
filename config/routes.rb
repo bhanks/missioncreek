@@ -1,6 +1,9 @@
 Missioncreek::Application.routes.draw do
   
 
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
+
   resources :simple_events
 
 
@@ -12,6 +15,7 @@ Missioncreek::Application.routes.draw do
   #get "dashboard/index"
 
   devise_for :users, :path => 'users', :path_names => { :sign_in =>"login", :sign_out=>"logout"}
+  ActiveAdmin.routes(self)
   resources :users
   resources :artists do
     collection do
@@ -38,7 +42,8 @@ Missioncreek::Application.routes.draw do
   match "artists/front_page_selections" => 'artists#store_front_page_artists', :via => :post
   match "artists/store_display_order" => 'artists#store_display_order', :via => :post
   match "artists/artist_thumb" => 'artists#artist_thumb', :via => :post
-  
+  match "interim" => "events#interim_events", :via => :get
+
   root :to => "Base#index"
 
   match "/check" => "Base#index"
