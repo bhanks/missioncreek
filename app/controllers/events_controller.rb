@@ -1,7 +1,7 @@
 class EventsController < ApplicationController
   # GET /events
   # GET /events.json
-  before_filter :authenticate_user!, :except => [:index, :show]
+  before_filter :authenticate_user!, :except => [:index, :show, :interim_events]
   def index
     @events = {}
     days = {
