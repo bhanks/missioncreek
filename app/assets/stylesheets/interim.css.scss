@@ -1,8 +1,26 @@
+@mixin type-base($scale, $color)
+{
+  font-size:64px*$scale;  
+  text-align:center;
+  font-weight:normal;
+  text-transform:uppercase;
+  line-height:70px*$scale;
+  color:$color;
+}
 body.interim
 {
   background-color:black;
   background-image:none;
 
+  .event
+  {
+    margin-bottom:20px;
+    border-bottom: 1px dotted #bbb;
+  }
+  .event.last
+  {
+    border:none;
+  }
   header 
   {
     text-align:center;
@@ -14,12 +32,28 @@ body.interim
   }
   h1
   {
-    font-size:96px;  
-    text-align:center;
-    font-family:'Alef', sans-serif;
-    font-weight:bold;
-    line-height:100px;
-    color:#eee;
+    @include type-base(1.0, #eee);
+  }
+  h2
+  {
+    @include type-base(.8, #555);
+  }
+  h3
+  {
+    @include type-base(.8, #eee);
+  }
+  h4, h4 a
+  {
+    @include type-base(.6, #555);
+    margin-bottom:20px;
+  }
+
+  h4 a
+  {
+    &:hover
+    {
+      cursor:pointer;
+    }
   }
 }
 
