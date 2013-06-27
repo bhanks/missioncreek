@@ -55,6 +55,20 @@ body.interim
       cursor:pointer;
     }
   }
+  ul
+  {
+    list-style-type:none;
+    text-align:center;
+  }
+  ul li, ul li a
+  {
+    display:inline-block;
+    @include type-base(.5,#eee);
+  }
+  ul li
+  {
+    margin: 15px;
+  }
 }
 
 
