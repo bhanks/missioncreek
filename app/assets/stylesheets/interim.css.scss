@@ -1,10 +1,10 @@
 @mixin type-base($scale, $color)
 {
-  font-size:64px*$scale;  
+  font-size:50px*$scale;  
   text-align:center;
   font-weight:normal;
   text-transform:uppercase;
-  line-height:70px*$scale;
+  line-height:54px*$scale;
   color:$color;
 }
 body.interim
