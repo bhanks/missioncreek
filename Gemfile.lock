@@ -167,7 +167,7 @@ GEM
       json (~> 1.4)
     responders (0.9.3)
       railties (~> 3.1)
-    rmagick (2.11.1)
+    rmagick (2.13.2)
     ruby-hmac (0.4.0)
     sass (3.1.20)
     sass-rails (3.2.5)
@@ -220,7 +220,7 @@ DEPENDENCIES
   less-rails
   pg
   rails (= 3.2.11)
-  rmagick (~> 2.11.1)
+  rmagick
   sass-rails (~> 3.2.3)
   simple_form
   sqlite3
