@@ -68,6 +68,11 @@ function artistPopover(){
 $(document).ready(function(){
 
 	// console.log($('.lineup').find('li'))
-	
+  if($('#artist_crop').length > 0)
+  {
+    $("#artist_crop img").Jcrop({
+      aspectRatio: 6 / 4
+    })
+  }  
 
 });

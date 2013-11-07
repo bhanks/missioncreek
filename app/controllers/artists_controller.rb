@@ -39,7 +39,11 @@ class ArtistsController < ApplicationController
 
     
     if @artist.save
-      redirect_to artists_dashboard_index_url, notice: 'Artist was successfully created.'
+      if params[:artist][:image]
+        redirect_to action: "crop", :id => @artist.id
+      else
+        redirect_to artists_dashboard_index_url, notice: 'Artist was successfully created.'
+      end 
     else
       @tier = tier_radio(@artist)
       render action: "new", :layout => "dashboard" 
@@ -80,6 +84,11 @@ class ArtistsController < ApplicationController
     @artists = Artist.all
 
     render "match", :layout => "dashboard"
+  end
+
+  def crop
+    @artist = Artist.find(params[:id])
+    render :layout => "dashboard"
   end
 
   def update_artists_events

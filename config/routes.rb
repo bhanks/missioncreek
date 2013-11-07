@@ -20,6 +20,9 @@ Missioncreek::Application.routes.draw do
       put "update_artists_events"
       put "update_events"
     end
+    member do
+      get "crop"
+    end
   end
 
   resources :pages
