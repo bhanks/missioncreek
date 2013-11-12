@@ -71,8 +71,34 @@ $(document).ready(function(){
   if($('#artist_crop').length > 0)
   {
     $("#artist_crop img").Jcrop({
-      aspectRatio: 6 / 4
+      onSelect: markCrop,
+      aspectRatio: 3 / 2
     })
-  }  
 
+
+    $("#artist_crop button").bind('click',function(){
+      minWidth = 300;//Replace with real value
+      minHeight = 200;//Replace with real value
+      width = $("#crop_w").attr('value');
+      height = $("#crop_h").attr('value');
+      if(width < minWidth || height < minHeight)
+      {
+        alert("Please select an area of at least "+minWidth+" by "+minHeight+" (w X h)");
+        return false;
+      }
+    });  
+
+  } 
 });
+
+function markCrop(img)
+{
+  $("#crop_x1").attr('value',img.x);
+  $("#crop_y1").attr('value',img.y);
+  $("#crop_x2").attr('value',img.x2);
+  $("#crop_y2").attr('value',img.y2);
+  $("#crop_w").attr('value',img.w);
+  $("#crop_h").attr('value',img.h);
+  $("#selection").text("Current Selection (w X h): "+img.w+" X "+img.h);
+}
+

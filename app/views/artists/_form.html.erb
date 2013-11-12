@@ -9,10 +9,8 @@
 <% end %>
 <div class='current-images'>
   <h3>Current Images For This Artist:</h3>
-  <p>Images will upload to <%= "artist/#{ENV['MEDIA_LOCATION']}" %>
+  <h4>Images will upload to <%= "artist/#{ENV['MEDIA_LOCATION']}" %></h4>
   <% if @artist.image.url %>
-  <%= image_tag @artist.image.url  %>
-  <%= image_tag @artist.image.carousel.url %>
-  <%= image_tag @artist.image.thumb.url %>
+  <%= image_tag @artist.image.medium.url %>
   <% end %>
 </div>

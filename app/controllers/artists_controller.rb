@@ -61,6 +61,12 @@ class ArtistsController < ApplicationController
     @artist = Artist.find(params[:id])
     uploader = ArtistImageUploader.new
     uploader.store!(params[:image])
+    if(params[:crop])
+      @artist.crop_x = params[:crop][:x1]
+      @artist.crop_y = params[:crop][:y1]
+      @artist.crop_w = params[:crop][:w]
+      @artist.crop_h = params[:crop][:h]
+    end
 
     respond_to do |format|
       if @artist.update_attributes(params[:artist])
@@ -91,6 +97,7 @@ class ArtistsController < ApplicationController
     render :layout => "dashboard"
   end
 
+  
   def update_artists_events
     @artists = Artist.find(params[:artist_ids])
     render "update_with_event", :layout =>"dashboard"

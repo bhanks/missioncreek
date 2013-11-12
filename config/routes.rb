@@ -22,6 +22,7 @@ Missioncreek::Application.routes.draw do
     end
     member do
       get "crop"
+      post "perform_crop"
     end
   end
 

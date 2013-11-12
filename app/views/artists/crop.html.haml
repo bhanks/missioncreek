@@ -1,3 +1,14 @@
-%h1 Crop Image
 #artist_crop
+  %h1 Crop Image
   = image_tag @artist.image.url
+
+  %h4 Minimum Size: 300x200
+  #selection Current Selection (w X h):
+  =form_for @artist do
+    =hidden_field(:crop, :x1)
+    =hidden_field(:crop, :y1)
+    =hidden_field(:crop, :x2)
+    =hidden_field(:crop, :y2)
+    =hidden_field(:crop, :w)
+    =hidden_field(:crop, :h)
+    %button.btn{:type=>"submit"} Crop

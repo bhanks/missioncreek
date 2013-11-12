@@ -38,14 +38,20 @@ class ArtistImageUploader < CarrierWave::Uploader::Base
 
   # Create different versions of your uploaded files:
   version :thumb do
-    process :resize_to_fit => [200, 150]
+    process :crop
+    process :resize_to_fit => [150, 100]
   end
 
-  version :carousel do
-    process :resize_to_fit => [400, 300]
+  version :large do
+    process :crop
+    process :resize_to_fit => [600, 400]
   end
 
 
+  version :medium do
+    process :crop
+    process :resize_to_fit => [450, 300]
+  end
 
   # Add a white list of extensions which are allowed to be uploaded.
   # For images you might use something like this:
@@ -59,6 +65,18 @@ class ArtistImageUploader < CarrierWave::Uploader::Base
     if original_filename
       ext = original_filename.match(/\.(jpg|jpeg|png)/)[1]
       model.name.gsub(/\s/,"_")+".#{ext}"
+    end
+  end
+
+  def crop
+    if model.crop_x.present?
+      manipulate! do |img|
+        x = model.crop_x.to_i
+        y = model.crop_y.to_i
+        w = model.crop_w.to_i
+        h = model.crop_h.to_i
+        img.crop!(x,y,w,h)
+      end
     end
   end
 
