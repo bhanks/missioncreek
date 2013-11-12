@@ -11,7 +11,6 @@ class Artist < ActiveRecord::Base
   # before_save :clean_urls
 
   def perform_crop
-    debugger
     image.recreate_versions! if crop_x.present?
   end
   def get_image
