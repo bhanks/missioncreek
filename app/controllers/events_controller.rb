@@ -53,6 +53,9 @@ class EventsController < ApplicationController
   # POST /events
   # POST /events.json
   def create
+    params[:event].parse_time_select! :start_time
+    params[:event].parse_time_select! :door_time
+
     @event = Event.new(params[:event])
 
     respond_to do |format|
@@ -70,6 +73,8 @@ class EventsController < ApplicationController
   # PUT /events/1
   # PUT /events/1.json
   def update
+    params[:event].parse_time_select! :start_time
+    params[:event].parse_time_select! :door_time
     @event = Event.find(params[:id])
 
     respond_to do |format|

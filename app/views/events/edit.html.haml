@@ -1,7 +1,5 @@
-%h1 Editing event
+%h1.col-md-12 Editing Event
+%h2.col-md-12
+  = link_to 'Back', events_dashboard_index_path,:class=>"btn btn-primary" 
 
 = render 'form'
-
-= link_to 'Show', @event
-\|
-= link_to 'Back', events_path
