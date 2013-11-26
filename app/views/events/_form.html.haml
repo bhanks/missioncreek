@@ -8,41 +8,60 @@
       %ul
         - @event.errors.full_messages.each do |msg|
           %li= msg
-  .field
+  .field.form-group
     = f.label :title
-    = f.text_field :title
-  .field
+    = f.text_field :title, :class=>"form-control"
+  .field.form-group
     = f.label "Display with Title (otherwise displays with selected headliners)"
-    = f.check_box :show_title
-  .field
+    = f.check_box :show_title, :class=>"form-control"
+  .field.form-group
     = f.label Venue
-    = f.collection_select :venue_id, Venue.all, :id, :name
-  .field
+    = f.collection_select :venue_id, Venue.all, :id, :name, {}, {:class=>"form-control"}
+  .field.form-group
     = f.label :date
-    = f.select :date, options_for_select(days, @event.date.to_s)
-  .field
+    = f.select :date, options_for_select(days, @event.date.to_s),{}, {:class=>"form-control"}
+  .field.form-group
     = f.label :door_time
-    = f.time_select :door_time, :value => :start_time, :default => Time.parse("20:00"), :ampm => true
-  .field
+    = f.time_select :door_time,
+      {:value => :start_time,
+      :combined=>true, 
+      :minute_interval=>30,
+      :start_hour => 9,
+      :start_minute => 0,
+      :end_hour => 22,
+      :end_minute => 0,
+      :default => Time.parse("20:00"),
+      :ampm => true},
+      {:class=> 'form-control'}
+  .field.form-group
     = f.label :start_time
-    = f.time_select :start_time, :value => :start_time, :default => Time.parse("21:00"), :ampm => true
-  .field
+    = f.time_select :start_time,
+      {:value => :start_time, 
+      :combined=>true, 
+      :minute_interval=>30,
+      :start_hour => 9,
+      :start_minute => 0,
+      :end_hour => 22,
+      :end_minute => 0,
+      :default => Time.parse("21:00"), :ampm => true},
+      {:class=>'form-control'}
+  .field.form-group
     = f.label :free
-    = f.check_box :free
-  .field
+    = f.check_box :free, :class=>"form-control"
+  .field.form-group
     = f.label :soldout
-    = f.check_box :soldout
-  .field
+    = f.check_box :soldout, :class=>"form-control"
+  .field.form-group
     = f.label "Advance Price"
-    = f.number_field :price_advance
-  .field
+    = f.number_field :price_advance, :class=>"form-control"
+  .field.form-group
     = f.label "Day of Ticket Price"
-    = f.number_field :price_dayof
-  .field
+    = f.number_field :price_dayof, :class=>"form-control"
+  .field.form-group
     = f.label :ticket_url
-    = f.text_field :ticket_url
-  .field
+    = f.text_field :ticket_url, :class=>"form-control"
+  .field.form-group
     = f.label :description
-    = f.text_area :description
+    = f.text_area :description, :class=>"form-control"
   .actions
     = f.submit 'Save'

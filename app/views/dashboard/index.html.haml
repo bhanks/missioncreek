@@ -1,4 +1,5 @@
-.row.show-grid
-  .span12
-    %h1 Dashboard
-
+.jumbotron
+  %ul.actions
+    %li=link_to "Manage Artists", artists_dashboard_index_path, :class=>'btn btn-lrg btn-primary'
+    %li=link_to "Manage Events", events_dashboard_index_path, :class=>'btn btn-lrg btn-primary'
+    %li=link_to "Manage Venues", venues_dashboard_index_path, :class=>'btn btn-lrg btn-primary'

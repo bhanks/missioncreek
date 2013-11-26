@@ -1,8 +1,35 @@
 /*
  *= require jquery.Jcrop
 */
-@import "bootstrap_and_overrides.css.less";
+@import 'bootstrap';
 
+.container.content
+{
+  padding-top:50px;
+  padding-bottom:50px;
+  .jumbotron{
+    text-align:center;
+  }
+  form
+  {
+    display:inline-block;
+  }
+}
+
+ul.actions
+{
+  list-style-type: none;
+  display:inline-block;
+  li{
+    margin-bottom:7px;
+  }
+  li a{
+    font-size:1.5em;
+    width:100%;
+  }
+}
+
+//2013
 a.dashboard-popup i.icon-ok, i.icon-ok
 {
 	color:green;
