@@ -7,6 +7,7 @@ gem 'rails', '3.2.11'
 
 group :development do
 	gem 'sqlite3'
+  gem 'debugger-ruby_core_source', '~> 1.2.3'
 	gem 'debugger'
 end
 
@@ -15,7 +16,6 @@ group :production do
 end
 
 
-gem 'activeadmin'
 gem 'json', '= 1.7.7'
 gem 'fog'
 gem 'rmagick'
