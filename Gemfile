@@ -1,7 +1,7 @@
 ruby "1.9.3"
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.11'
+gem 'rails', '3.2.15'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -21,18 +21,19 @@ gem 'json', '= 1.7.7'
 gem 'fog'
 gem 'rmagick'
 gem 'RedCloth'
+gem "combined_time_select", "~> 1.0.1"
 gem 'carrierwave'
 gem 'simple_form'
 gem 'devise'
+gem 'jcrop-rails-v2'
 gem 'haml-rails'
 gem 'debugger'
 gem 'friendly_id'
-gem 'twitter-bootstrap-rails' , '= 2.1.6'
-  gem 'less-rails'
+gem 'bootstrap-sass', '~> 3.0.2.0'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  gem 'sass-rails',   '~> 3.2.3'
+  gem 'sass-rails'
   gem 'coffee-rails', '~> 3.2.1'
   gem 'jquery-ui-rails'
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes

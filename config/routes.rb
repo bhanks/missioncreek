@@ -1,7 +1,6 @@
 Missioncreek::Application.routes.draw do
   
 
-  devise_for :admin_users, ActiveAdmin::Devise.config
 
   resources :simple_events
 
@@ -19,6 +18,10 @@ Missioncreek::Application.routes.draw do
     collection do
       put "update_artists_events"
       put "update_events"
+    end
+    member do
+      get "crop"
+      post "perform_crop"
     end
   end
 

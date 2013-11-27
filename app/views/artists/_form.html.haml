@@ -1,0 +1,14 @@
+.col-md-6.col-sm-9
+  = form_for @artist, :html => {:class => 'form-horizontal', :multipart => true } do |f|
+    - if @artist.errors.any?
+      #error_explanation
+        %h2= "#{pluralize(@event.errors.count, "error")} prohibited this event from being saved:"
+        %ul
+          - @event.errors.full_messages.each do |msg|
+            %li= msg
+    .field.form-group
+      = f.label :name
+      = f.text_field :name, :class=>"form-control"
+    .field.form-group
+      = f.label :bio
+      = f.text_area :bio, {:class=>"form-control", :rows=>"20"}

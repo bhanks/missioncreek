@@ -2,12 +2,17 @@ class Artist < ActiveRecord::Base
   extend FriendlyId
   friendly_id :name, use: [:slugged, :history]
   attr_accessible :name, :bio, :soundcloud_url, :official_url, :youtube_url, :display_order, :tier, :image, :spotify_url, :headliner, :event_id
+  attr_accessor :crop_x, :crop_y, :crop_w, :crop_h
   validates_presence_of :name, :tier
   belongs_to :event
   mount_uploader :image, ArtistImageUploader
 
+  after_update :perform_crop
   # before_save :clean_urls
 
+  def perform_crop
+    image.recreate_versions! if crop_x.present?
+  end
   def get_image
     self.image.url ||= asset_path("no-image.png")
   end

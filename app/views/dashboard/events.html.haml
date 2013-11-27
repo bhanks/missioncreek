@@ -1,37 +1,30 @@
 %h1 Listing events
 
-%table.table-bordered.table-striped
+%table.table.table-bordered.table-striped
   %tr
     %th Title
     %th Date
-    %th Door time
     %th Start time
-    %th Free
-    %th Soldout
     %th Adv Price
     %th Door Price
     %th Ticket url
     %th Description
-    %th
-    %th
-    %th
+    %th Actions
 
   - @events.each do |event|
     %tr
       %td= event.title
       %td= event.date.strftime("%A")
-      %td= event.door_time.strftime("%I:%M %P")
       %td= event.start_time.strftime("%I:%M %P")
-      %td= event.free
-      %td= event.soldout
       %td= raw url_present(event.price_advance)
       %td= raw url_present(event.price_dayof)
       %td= raw url_present(event.ticket_url)
       %td= raw url_present(event.description)
-      %td= link_to 'Show', event
-      %td= link_to 'Edit', edit_event_path(event)
-      %td= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' }
+      %td
+        = link_to 'Show', event
+        = link_to 'Edit', edit_event_path(event)
+        = link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' }
 
 %br
 
-= link_to 'New Event', new_event_path
+= link_to 'New Event', new_event_path, :class=>"btn btn-primary"

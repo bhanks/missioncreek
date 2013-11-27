@@ -1,26 +1,5 @@
-.row.show-grid
-  .span12
-    %h1 Dashboard
-
-%ul.nav.nav-tabs
-  %li.active
-    %a{"data-toggle" =>"tab", :href => "#artists_front_page_dashboard"} Artists:Front Page
-  %li
-    %a{"data-toggle" =>"tab", :href => "#lineup_one"} Lineup:Tier 1
-  %li
-    %a{"data-toggle" =>"tab", :href => "#lineup_two"} Lineup:Tier 2
-  %li
-    %a{"data-toggle" =>"tab", :href => "#announcements"} Announcements
-
-
-
-.tab-content
-  #artists_front_page_dashboard.tab-pane.active
-
-    = render :partial => "artists_front_page", :artists_fp => @artists_fp
-  #lineup_one.tab-pane
-    = render :partial => "lineup_one"
-  #lineup_two.tab-pane
-    = render :partial => "lineup_two"
-  #announcements.tab-pane
-    = render :partial => "announcements"
+.jumbotron
+  %ul.actions
+    %li=link_to "Manage Artists", artists_dashboard_index_path, :class=>'btn btn-lrg btn-primary'
+    %li=link_to "Manage Events", events_dashboard_index_path, :class=>'btn btn-lrg btn-primary'
+    %li=link_to "Manage Venues", venues_dashboard_index_path, :class=>'btn btn-lrg btn-primary'

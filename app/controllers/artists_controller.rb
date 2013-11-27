@@ -39,7 +39,11 @@ class ArtistsController < ApplicationController
 
     
     if @artist.save
-      redirect_to artists_dashboard_index_url, notice: 'Artist was successfully created.'
+      if params[:artist][:image]
+        redirect_to action: "crop", :id => @artist.id
+      else
+        redirect_to artists_dashboard_index_url, notice: 'Artist was successfully created.'
+      end 
     else
       @tier = tier_radio(@artist)
       render action: "new", :layout => "dashboard" 
@@ -57,6 +61,12 @@ class ArtistsController < ApplicationController
     @artist = Artist.find(params[:id])
     uploader = ArtistImageUploader.new
     uploader.store!(params[:image])
+    if(params[:crop])
+      @artist.crop_x = params[:crop][:x1]
+      @artist.crop_y = params[:crop][:y1]
+      @artist.crop_w = params[:crop][:w]
+      @artist.crop_h = params[:crop][:h]
+    end
 
     respond_to do |format|
       if @artist.update_attributes(params[:artist])
@@ -82,6 +92,12 @@ class ArtistsController < ApplicationController
     render "match", :layout => "dashboard"
   end
 
+  def crop
+    @artist = Artist.find(params[:id])
+    render :layout => "dashboard"
+  end
+
+  
   def update_artists_events
     @artists = Artist.find(params[:artist_ids])
     render "update_with_event", :layout =>"dashboard"
