@@ -7,6 +7,7 @@ gem 'rails', '3.2.11'
 
 group :development do
 	gem 'sqlite3'
+	gem 'debugger'
 end
 
 group :production do
@@ -43,7 +44,6 @@ end
 
 gem 'jquery-rails'
 group :local do
-	gem 'debugger'
 end
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
