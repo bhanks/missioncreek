@@ -15,11 +15,13 @@
     .row
       .field.col-md-6.col-sm-6.form-group
         = f.label Venue
-        = f.collection_select :venue_id, Venue.all, :id, :name, {}, {:class=>"form-control"}
-      .field.col-md-4.col-sm-6.col-md-offset-2.form-group
+        = f.collection_select :venue_id, Venue.all, :id, :name, {:include_blank=>"Add New"}, {:class=>"form-control venue-select"}
+      .field.col-md-4
+        %button.btn.add-venue{:style=>"margin-top:24px", :data=>{:toggle=>"modal", :target=>"venue-modal"}} Add Venue
+    .row
+      .field.col-md-4.col-sm-6.form-group
         = f.label :date
         = f.select :date, options_for_select(days, @event.date.to_s),{}, {:class=>"form-control"}
-    .row
       .field.col-md-3.col-sm-6.form-group
         = f.label :door_time
         = f.time_select :door_time,
@@ -45,6 +47,7 @@
           :end_minute => 0,
           :default => Time.parse("21:00"), :ampm => true},
           {:class=>'form-control'}
+    .row
       .field.form-group.col-md-3.col-sm-6
         = f.label "Advance"
         = f.number_field :price_advance, :class=>"form-control"
@@ -69,3 +72,26 @@
       = f.text_area :description, :class=>"form-control"
     .actions
       = f.submit 'Save', :class=>"btn btn-primary"
+
+#venue-modal.modal.fade
+  .modal-dialog
+    .modal-content
+      .modal-header
+        %h2 Add Venue
+      .modal-body
+        - venue = Venue.new
+        = form_for venue do |f|
+          .field.form-group
+            = f.label :name
+            = f.text_field :name, :class=>'form-control'
+          .field.form-group
+            = f.label :address
+            = f.text_field :address, :class=>'form-control'
+          .field.form-group
+            = f.label :url
+            = f.text_field :url, :class=>'form-control'
+      .modal-footer
+        %button.btn{:data=>{:dismiss=>"modal"}}Cancel
+
+
+
