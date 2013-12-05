@@ -1,8 +1,8 @@
 - days = [["Monday 04/01",Date.parse("01/04/2013")],["Tuesday 04/02",Date.parse("02/04/2013")],["Wednesday 04/03",Date.parse("03/04/2013")],["Thursday 04/04",Date.parse("04/04/2013")],["Friday 04/05",Date.parse("05/04/2013")],["Saturday 04/06",Date.parse("06/04/2013")],["Sunday 04/07",Date.parse("07/04/2013")]]
 - dates = [Date.parse("02/04/2013"),Date.parse("03/04/2013")]
 
-.col-md-6.col-sm-9
-  = form_for @event do |f|
+= form_for @event do |f|
+  .col-md-6.col-sm-9
     - if @event.errors.any?
       #error_explanation
         %h2= "#{pluralize(@event.errors.count, "error")} prohibited this event from being saved:"
@@ -15,9 +15,13 @@
     .row
       .field.col-md-6.col-sm-6.form-group
         = f.label Venue
-        = f.collection_select :venue_id, Venue.all, :id, :name, {:include_blank=>"Add New"}, {:class=>"form-control venue-select"}
-      .field.col-md-4
-        %button.btn.add-venue{:style=>"margin-top:24px", :data=>{:toggle=>"modal", :target=>"venue-modal"}} Add Venue
+        = f.collection_select :venue_id, Venue.all, :id, :name, {}, {:class=>"form-control venue-select"}
+      .field.form-group.col-md-3.col-sm-6
+        = f.label "Advance"
+        = f.number_field :price_advance, :class=>"form-control"
+      .field.form-group.col-md-3.col-sm-6
+        = f.label "Day Of"
+        = f.number_field :price_dayof, :class=>"form-control"
     .row
       .field.col-md-4.col-sm-6.form-group
         = f.label :date
@@ -47,13 +51,6 @@
           :end_minute => 0,
           :default => Time.parse("21:00"), :ampm => true},
           {:class=>'form-control'}
-    .row
-      .field.form-group.col-md-3.col-sm-6
-        = f.label "Advance"
-        = f.number_field :price_advance, :class=>"form-control"
-      .field.form-group.col-md-3.col-sm-6
-        = f.label "Day Of"
-        = f.number_field :price_dayof, :class=>"form-control"
     .field.form-group
       = f.label :ticket_url
       = f.text_field :ticket_url, :class=>"form-control"
@@ -70,28 +67,8 @@
     .field.form-group
       = f.label :description
       = f.text_area :description, :class=>"form-control"
+  .col-md-6
+    %h2 Attach Artists
     .actions
       = f.submit 'Save', :class=>"btn btn-primary"
-
-#venue-modal.modal.fade
-  .modal-dialog
-    .modal-content
-      .modal-header
-        %h2 Add Venue
-      .modal-body
-        - venue = Venue.new
-        = form_for venue do |f|
-          .field.form-group
-            = f.label :name
-            = f.text_field :name, :class=>'form-control'
-          .field.form-group
-            = f.label :address
-            = f.text_field :address, :class=>'form-control'
-          .field.form-group
-            = f.label :url
-            = f.text_field :url, :class=>'form-control'
-      .modal-footer
-        %button.btn{:data=>{:dismiss=>"modal"}}Cancel
-
-
 

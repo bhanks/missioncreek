@@ -1,0 +1,16 @@
+<% @venues.each do |venue| %>
+  <tr>
+    <td><%= venue.name %></td>
+    <td><%= venue.address %></td>
+    <td><%= venue.url %></td>
+    <td>
+      <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                  edit_venue_path(venue), :class => 'btn btn-mini' %>
+      <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                  venue_path(venue),
+                  :method => :delete,
+                  :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')),
+                  :class => 'btn btn-mini btn-danger' %>
+    </td>
+  </tr>
+<% end %>
