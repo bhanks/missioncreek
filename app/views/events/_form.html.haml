@@ -9,6 +9,15 @@
         %ul
           - @event.errors.full_messages.each do |msg|
             %li= msg
+    .row
+      .field.col-md-6.form-group.dashboard-lookup
+        = f.label :headliners
+        %input.typeahead.headliners.form-control
+        .headliners-list
+      .field.col-md-6.form-group.dashboard-lookup
+        = f.label :support
+        %input.typeahead.support.form-control
+        .support-list
     .field.form-group
       = f.label :title
       = f.text_field :title, :class=>"form-control"
@@ -67,8 +76,6 @@
     .field.form-group
       = f.label :description
       = f.text_area :description, :class=>"form-control"
-  .col-md-6
-    %h2 Attach Artists
     .actions
       = f.submit 'Save', :class=>"btn btn-primary"
 

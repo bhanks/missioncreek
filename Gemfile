@@ -30,6 +30,9 @@ gem 'haml-rails'
 gem 'debugger'
 gem 'friendly_id'
 gem 'bootstrap-sass', '~> 3.0.2.0'
+gem 'twitter-typeahead-rails'
+gem 'hogan_assets'
+gem 'rabl'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do

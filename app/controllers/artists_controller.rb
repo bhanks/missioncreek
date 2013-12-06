@@ -10,11 +10,11 @@ class ArtistsController < ApplicationController
     @tier1 = Artist.where(:tier=>1).order("display_order")
     @tier2 = Artist.where(:tier=>2).order("display_order")
     @tier3 = Artist.where(:tier=>3).order("created_at")
-    
+     
 
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: @artists }
+      format.json  
     end
   end
 
@@ -24,7 +24,7 @@ class ArtistsController < ApplicationController
     @meta_title = @artist.name + " @ "
     respond_to do |format|
       format.html # show.html.erb
-      format.json { render json: @artist }
+      format.json 
     end
   end
 
