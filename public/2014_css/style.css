@@ -50,7 +50,7 @@ body
   position: relative;
   display: inline-block;
   top: -620px;
-  left: 400px;
+  left: 300px;
   width: 144px;
   height: 61px;
 }
@@ -89,9 +89,9 @@ body
 {
   position: relative;
   height: 76px;
-  width: 540px;
+  width: 640px;
   bottom: 80px;
-  left: 490px;
+  left: 460px;
   display: inline-block;
 }
 .sponsors a
@@ -126,6 +126,10 @@ body
 #sheraton
 {
   width:55px;
+}
+#new_belgium
+{
+  width:80px;
 }
 .info_nav
 {
