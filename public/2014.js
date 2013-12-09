@@ -6,7 +6,12 @@ $(document).ready(function(){
     $('.navigation').attr('src', '2014_img/info.png');
   });
   $('.back_nav').on('click', function(){
-    $('.primary, .general, .info_nav, #credit_union, #credit_info').toggle();
+    var current = '.';
+    if($('.general').is(':visible'))
+      current += 'general';
+    else
+      current += 'passes';
+    $('.primary, '+current+', .info_nav, #credit_union, #credit_info').toggle();
     $('.navigation').attr('src', '2014_img/first.png');
 
   });
