@@ -1,25 +1,50 @@
 - days = [["Monday 04/01",Date.parse("01/04/2013")],["Tuesday 04/02",Date.parse("02/04/2013")],["Wednesday 04/03",Date.parse("03/04/2013")],["Thursday 04/04",Date.parse("04/04/2013")],["Friday 04/05",Date.parse("05/04/2013")],["Saturday 04/06",Date.parse("06/04/2013")],["Sunday 04/07",Date.parse("07/04/2013")]]
 - dates = [Date.parse("02/04/2013"),Date.parse("03/04/2013")]
 
-.col-md-6.col-sm-9
-  = form_for @event do |f|
+= form_for @event do |f|
+  .col-md-6.col-sm-9
     - if @event.errors.any?
       #error_explanation
         %h2= "#{pluralize(@event.errors.count, "error")} prohibited this event from being saved:"
         %ul
           - @event.errors.full_messages.each do |msg|
             %li= msg
+    .row
+      .field.col-md-6.form-group.dashboard-lookup
+        = f.label :headliners
+        %input.typeahead.headliners.form-control
+        .headliners-list
+          - @headliners.each do |artist|
+            .well.well-sm.artist-added
+              %button.close{:type=>"button",:data=>{:dismiss=>"alert"}, :aria => {:hidden=>'true'}}×
+              %input{:type => 'hidden', :name => "headliners[#{artist.id}]", :id => "headliners_#{artist.id}"}
+              = artist.name
+      .field.col-md-6.form-group.dashboard-lookup
+        = f.label :support
+        %input.typeahead.support.form-control
+        .support-list
+          - @support.each do |artist|
+            .well.well-sm.artist-added
+              %button.close{:type=>"button",:data=>{:dismiss=>"alert"}, :aria => {:hidden=>'true'}}×
+              %input{:type => 'hidden', :name => "support[#{artist.id}]", :id => "support_#{artist.id}"}
+              = artist.name
     .field.form-group
       = f.label :title
       = f.text_field :title, :class=>"form-control"
     .row
       .field.col-md-6.col-sm-6.form-group
         = f.label Venue
-        = f.collection_select :venue_id, Venue.all, :id, :name, {}, {:class=>"form-control"}
-      .field.col-md-4.col-sm-6.col-md-offset-2.form-group
+        = f.collection_select :venue_id, Venue.all, :id, :name, {}, {:class=>"form-control venue-select"}
+      .field.form-group.col-md-3.col-sm-6
+        = f.label "Advance"
+        = f.number_field :price_advance, :class=>"form-control"
+      .field.form-group.col-md-3.col-sm-6
+        = f.label "Day Of"
+        = f.number_field :price_dayof, :class=>"form-control"
+    .row
+      .field.col-md-4.col-sm-6.form-group
         = f.label :date
         = f.select :date, options_for_select(days, @event.date.to_s),{}, {:class=>"form-control"}
-    .row
       .field.col-md-3.col-sm-6.form-group
         = f.label :door_time
         = f.time_select :door_time,
@@ -45,12 +70,6 @@
           :end_minute => 0,
           :default => Time.parse("21:00"), :ampm => true},
           {:class=>'form-control'}
-      .field.form-group.col-md-3.col-sm-6
-        = f.label "Advance"
-        = f.number_field :price_advance, :class=>"form-control"
-      .field.form-group.col-md-3.col-sm-6
-        = f.label "Day Of"
-        = f.number_field :price_dayof, :class=>"form-control"
     .field.form-group
       = f.label :ticket_url
       = f.text_field :ticket_url, :class=>"form-control"
@@ -69,3 +88,4 @@
       = f.text_area :description, :class=>"form-control"
     .actions
       = f.submit 'Save', :class=>"btn btn-primary"
+

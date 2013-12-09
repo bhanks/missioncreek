@@ -1,6 +1,7 @@
 class VenuesController < ApplicationController
   # GET /venues
   # GET /venues.json
+  respond_to :html, :js
   def index
     @venues = Venue.all
 
@@ -23,7 +24,11 @@ class VenuesController < ApplicationController
 
   def new
     @venue = Venue.new
-    render :layout => "dashboard"
+    respond_to do |format|
+
+      format.html {render :layout => "dashboard"}
+      format.js
+    end
   end
 
   def create
@@ -31,7 +36,9 @@ class VenuesController < ApplicationController
 
     respond_to do |format|
       if @venue.save
+        @venues = Venue.all
         format.html { redirect_to venues_dashboard_index_url, notice: 'Venue was successfully created.' }
+        format.js
       else
         format.html { render action: "new" }
       end

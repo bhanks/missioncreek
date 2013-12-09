@@ -46,7 +46,8 @@ class EventsController < ApplicationController
   # GET /events/1/edit
   def edit
     @event = Event.find(params[:id])
-
+    @headliners = Artist.where("event_id = ? and headliner = ?", @event.id, true).order(:event_order)
+    @support = Artist.where("event_id = ? and headliner = ?", @event.id, false).order(:event_order)
     render :layout => "dashboard"
   end
 
@@ -57,6 +58,8 @@ class EventsController < ApplicationController
     params[:event].parse_time_select! :door_time
 
     @event = Event.new(params[:event])
+    associate_artists(params[:headliners], @event, true) if params[:headliners]
+    associate_artists(params[:support], @event) if params[:support]
 
     respond_to do |format|
       if @event.save
@@ -76,7 +79,20 @@ class EventsController < ApplicationController
     params[:event].parse_time_select! :start_time
     params[:event].parse_time_select! :door_time
     @event = Event.find(params[:id])
+    associate_artists(params[:headliners], @event, true) if params[:headliners]
+    associate_artists(params[:support], @event) if params[:support]
 
+    current_list = []
+    current_list.concat(params[:headliners].keys) if params[:headliners]
+    current_list.concat(params[:support].keys) if params[:support]
+
+    removed_artists = Artist.where("event_id = ?", @event.id)
+    removed_artists = removed_artists.where("id NOT IN (?)", current_list) unless current_list.empty?
+
+    removed_artists.each do |artist|
+      artist.event = nil
+      artist.save!
+    end 
     respond_to do |format|
       if @event.update_attributes(params[:event])
         format.html { redirect_to events_dashboard_index_url, notice: 'Event was successfully updated.' }
@@ -105,5 +121,14 @@ class EventsController < ApplicationController
     render :layout => "interim"
   end
 
+  def associate_artists(artists, event, headliner = false)
+    artists.keys.each do |artist_id|
+      artist = Artist.find(artist_id)
+      artist.event = event
+      artist.event_order = artists[artist_id]
+      artist.headliner = headliner
+      artist.save!
+    end
+  end
 
 end

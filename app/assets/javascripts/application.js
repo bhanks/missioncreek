@@ -11,10 +11,12 @@
 // GO AFTER THE REQUIRES BELOW.
 //
 //= require jquery
+//= require jquery.ui.sortable
 //= require jquery_ujs
 //= require bootstrap
 //= require jquery.Jcrop
 //= require_tree .
-
-
+//= require twitter/typeahead.min
+//= require hogan.js
+//= require underscore-min
 

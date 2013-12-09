@@ -1,0 +1,14 @@
+.col-md-6.col-sm9
+  = form_for @venue do |f|
+    .field.form-group
+      = f.label :name
+      = f.text_field :name, :class=>'form-control'
+    .field.form-group
+      = f.label :address
+      = f.text_field :address, :class=>'form-control'
+    .field.form-group
+      = f.label :url
+      = f.text_field :url, :class=>'form-control'
+    .form-group.field
+      = f.submit 'Save', :class=>"btn btn-primary"
+    

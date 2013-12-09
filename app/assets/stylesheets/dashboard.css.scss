@@ -2,17 +2,12 @@
  *= require jquery.Jcrop
 */
 @import 'bootstrap';
-
+@import 'typeahead';
 .container.content
 {
   padding-top:50px;
-  padding-bottom:50px;
   .jumbotron{
     text-align:center;
-  }
-  form
-  {
-    margin:auto;
   }
 }
 
@@ -27,6 +22,23 @@ ul.actions
     font-size:1.5em;
     width:100%;
   }
+}
+.dashboard-lookup .tt-hint
+{
+  color:white;
+}
+.headliners-list, .support-list
+{
+  margin-top:10px;
+  .well
+  {
+    margin-bottom:10px
+  }
+}
+
+.initial
+{
+  font-style:italic;
 }
 
 //2013

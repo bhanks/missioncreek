@@ -1,0 +1,156 @@
+@font-face
+{
+	font-family:Whitney;
+	font-weight:normal;
+	src: url('Whitney-Light.otf');
+}
+body
+{
+  background-color:black;
+  font-family: Whitney;
+}
+.general
+{
+  display:none;
+  position: relative;
+  color: white;
+  width: 600px;
+  text-align: center;
+  top: 245px;
+  left: 153px;
+  line-height: 1.4em;
+}
+.general h2
+{
+  color:#e75066;
+}
+.passes
+{
+  display:none;
+  position: relative;
+  color: white;
+  width: 800px;
+  text-align: center;
+  top: 215px;
+  left: 52px;
+  line-height: 1.4em;
+  font-size: .8em;
+}
+.passes h2
+{
+  color:#3ab052;
+}
+
+.passes p, .passes h3
+{
+  margin: 5px 0px;
+}
+#credit_union
+{
+  position: relative;
+  display: inline-block;
+  top: -620px;
+  left: 400px;
+  width: 144px;
+  height: 61px;
+}
+#credit_info
+{
+  position: relative;
+  display: none;
+  width: 144px;
+  height: 61px;
+  top: -725px;
+  left: 940px;
+}
+.container{
+  background-image:url('../2014_img/base.jpg');
+  background-repeat: no-repeat; 
+  width:900px;
+  height:700px;
+  margin:auto;
+
+}
+#more_info
+{
+  position: relative;
+  display: inline-block;
+  width: 80px;
+  height: 20px;
+  top: -168px;
+  left: 412px;
+}
+.navigation
+{
+  position:absolute;
+  top:20px;
+}
+.sponsors
+{
+  position: relative;
+  height: 76px;
+  width: 540px;
+  bottom: 80px;
+  left: 490px;
+  display: inline-block;
+}
+.sponsors a
+{
+  display:inline-block;
+  height:55px;
+}
+#jim_beam
+{
+  width:115px;
+}
+#ic_gov
+{
+  width:75px;
+}
+#ic_cor
+{
+  width:45px;
+}
+#moen
+{
+  width:90px;
+}
+#ic_down
+{
+  width:50px;
+}
+#mcgins
+{
+  width:80px;
+}
+#sheraton
+{
+  width:55px;
+}
+.info_nav
+{
+  display:none;
+  height: 25px;
+  width: 248px;
+  bottom: 196px;
+  position: relative;
+  left: 550px;
+}
+.info_nav a
+{
+  display:inline-block;
+  height:25px;
+}
+.general_nav
+{
+  width:73px;
+}
+.pass_nav
+{
+  width:80px;
+}
+.back_nav
+{
+  width:80px;
+}
+
