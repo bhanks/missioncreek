@@ -1,0 +1,55 @@
+@import 'fonts';
+body
+{
+  background-color:black;
+  font: Whitney;
+}
+#credit_union
+{
+  position: relative;
+  display: inline-block;
+  top: -620px;
+  left: 732px;
+  width: 144px;
+  height: 61px;
+}
+.container{
+  background-image:url('../2014_img/base.jpg');
+  background-repeat: no-repeat; 
+  width:900px;
+  height:700px;
+  margin:auto;
+
+}
+#more_info
+{
+  position: relative;
+  display: inline-block;
+  width: 80px;
+  height: 20px;
+  top: -168px;
+  left: 412px;
+}
+.more_info
+{
+  position:absolute;
+  top:20px;
+}
+.sponsors
+{
+  position: relative;
+  height: 76px;
+  width: 540px;
+  top: -160px;
+  left: 280px;
+}
+.sponsors a
+{
+  display:inline-block;
+  position:absolute;
+  height:55px;
+}
+#jim_beam
+{
+  width:115px;
+}
