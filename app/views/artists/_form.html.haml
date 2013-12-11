@@ -11,4 +11,12 @@
       = f.text_field :name, :class=>"form-control"
     .field.form-group
       = f.label :bio
-      = f.text_area :bio, {:class=>"form-control", :rows=>"20"}
+      = f.text_area :bio,:id=>'artist_bio',:class => "tinymce", :rows => 20, :cols => 60
+      = tinymce
+    .field.form-group
+      = f.label :youtube_ur
+      = f.text_field :youtube_url, :as => :url, :class=>"form-control"
+
+    .field.form-group
+    .field.form-group
+    .field.form-group

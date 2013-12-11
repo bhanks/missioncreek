@@ -33,6 +33,7 @@ gem 'bootstrap-sass', '~> 3.0.2.0'
 gem 'twitter-typeahead-rails'
 gem 'hogan_assets'
 gem 'rabl'
+gem 'tinymce-rails'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do

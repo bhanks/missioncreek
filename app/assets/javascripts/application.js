@@ -19,4 +19,5 @@
 //= require twitter/typeahead.min
 //= require hogan.js
 //= require underscore-min
+//= require tinymce
 
