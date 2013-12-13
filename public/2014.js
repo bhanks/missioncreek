@@ -12,7 +12,7 @@ $(document).ready(function(){
     else
       current += 'passes';
     $('.primary, '+current+', .info_nav, #credit_union, #credit_info').toggle();
-    $('.navigation').attr('src', '2014_img/first.png');
+    $('.navigation').attr('src', '2014_img/second.png');
 
   });
   $('.general_nav').on('click', function(){
