@@ -39,6 +39,9 @@ GEM
       activemodel (>= 3.2.0)
       activesupport (>= 3.2.0)
       json (>= 1.7)
+    ckeditor (4.0.6)
+      mime-types
+      orm_adapter
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
       railties (~> 3.2.0)
@@ -192,6 +195,7 @@ DEPENDENCIES
   RedCloth
   bootstrap-sass (~> 3.0.2.0)
   carrierwave
+  ckeditor
   coffee-rails (~> 3.2.1)
   combined_time_select (~> 1.0.1)
   debugger

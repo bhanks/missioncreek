@@ -11,12 +11,20 @@
       = f.text_field :name, :class=>"form-control"
     .field.form-group
       = f.label :bio
-      = f.text_area :bio,:id=>'artist_bio',:class => "tinymce", :rows => 20, :cols => 60
-      = tinymce
+      = f.cktext_area :bio,:id=>'artist_bio',:ckeditor => {:toolbar=>"Custom"}
     .field.form-group
-      = f.label :youtube_ur
+      = f.label :youtube_url
       = f.text_field :youtube_url, :as => :url, :class=>"form-control"
-
     .field.form-group
+      = f.label :tier
+      = f.select :tier,  1..3, :class=>"form-control"
     .field.form-group
+      = f.label :image
+      = f.file_field :image, :class=>"form-control"
     .field.form-group
+      = f.submit 'Save', :class=>"btn btn-primary"
+  .current-images
+    %h3 Current Image For This Artist:
+    - if @artist.image.url
+      %img{:src=> @artist.image.medium.url}
+    = link_to "Re-Crop Original",crop_artist_path(@artist), :class=>'btn btn-primary'

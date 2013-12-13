@@ -15,6 +15,7 @@
 //= require jquery_ujs
 //= require bootstrap
 //= require jquery.Jcrop
+//= require ckeditor/init
 //= require_tree .
 //= require twitter/typeahead.min
 //= require hogan.js

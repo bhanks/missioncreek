@@ -12,7 +12,7 @@ Missioncreek::Application.routes.draw do
 
   #get "dashboard/index"
 
-  devise_for :users, :path => 'users', :path_names => { :sign_in =>"login", :sign_out=>"logout"}
+  devise_for :users, :path => 'users', :path_names => { :sign_in =>"login", :sign_out=>"logout"}, :controllers => {registrations: "registrations"}
   resources :users
   resources :artists do
     collection do
