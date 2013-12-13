@@ -9,6 +9,12 @@ body
   background-color:black;
   font-family: Whitney;
 }
+.wrapper
+{
+  width: 900px;
+margin: auto;
+height: auto;
+}
 .general
 {
   display:none;
@@ -50,7 +56,7 @@ body
   position: relative;
   display: inline-block;
   top: -620px;
-  left: 300px;
+  left: 88px;
   width: 144px;
   height: 61px;
 }
@@ -61,7 +67,7 @@ body
   width: 144px;
   height: 61px;
   top: -725px;
-  left: 940px;
+  left: 730px;
 }
 .container{
   background-image:url('../2014_img/base.jpg');
@@ -100,7 +106,7 @@ body
   height: 76px;
   width: 640px;
   bottom: 80px;
-  left: 460px;
+  left: 250px;
   display: inline-block;
 }
 .sponsors a
@@ -147,7 +153,7 @@ body
   width: 248px;
   bottom: 196px;
   position: relative;
-  left: 530px;
+  left: 340px;
 }
 .info_nav a
 {
