@@ -84,7 +84,16 @@ height: auto;
   width: 80px;
   height: 20px;
   top: -168px;
-  left: 412px;
+  left: 367px;
+}
+#buy
+{
+  position: relative;
+  display: inline-block;
+  width: 80px;
+  height: 20px;
+  top: -168px;
+  left: 364px;
 }
 .navigation
 {
