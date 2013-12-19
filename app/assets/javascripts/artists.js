@@ -77,8 +77,8 @@ $(document).ready(function(){
 
 
     $("#artist_crop button").bind('click',function(){
-      minWidth = 300;//Replace with real value
-      minHeight = 200;//Replace with real value
+      minWidth = 450;//Replace with real value
+      minHeight = 300;//Replace with real value
       width = $("#crop_w").attr('value');
       height = $("#crop_h").attr('value');
       if(width < minWidth || height < minHeight)

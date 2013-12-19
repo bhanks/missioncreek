@@ -40,7 +40,17 @@ class ArtistsController < ApplicationController
     
     if @artist.save
       if params[:artist][:image]
-        redirect_to action: "crop", :id => @artist.id
+        img = ::Magick::Image::read(@artist.image).first 
+        width = img.columns
+        height = img.rows
+        unless(height <= 300 || width <= 450)
+          redirect_to action: "crop", :id => @artist.id
+        else
+          @artist.remove_image!
+          @artist.save!
+          @artist.errors.add :image, "must be at least 450x300"
+          render action: "new", :layout => "dashboard" 
+        end
       else
         redirect_to artists_dashboard_index_url, notice: 'Artist was successfully created.'
       end 
