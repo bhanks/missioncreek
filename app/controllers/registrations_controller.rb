@@ -1,9 +1,10 @@
 class RegistrationsController < Devise::RegistrationsController
 
   def create
-    build_resource
+    @user = User.new
     unless Whitelist.exists?(:email => params[:user][:email])
-      resource.errors.add :email, "is not on our beta list"
+      @user.errors.add :email, "#{params[:user][:email]} is not allowed to register."
+      render action: "new"
     else
       super  
     end

@@ -2,7 +2,7 @@
   %h1 Crop Image
   = image_tag @artist.image.url
 
-  %h4 Minimum Size: 300x200
+  %h4 Minimum Size: 450x300
   #selection Current Selection (w X h):
   =form_for @artist do
     =hidden_field(:crop, :x1)
