@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131212213644) do
+ActiveRecord::Schema.define(:version => 20131219184111) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -63,6 +63,7 @@ ActiveRecord::Schema.define(:version => 20131212213644) do
     t.integer  "event_id"
     t.boolean  "headliner"
     t.integer  "event_order"
+    t.boolean  "lit_fest"
   end
 
   add_index "artists", ["slug"], :name => "index_artists_on_slug"

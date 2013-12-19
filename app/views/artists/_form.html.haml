@@ -14,9 +14,13 @@
     .field.form-group
       = f.label :youtube_url
       = f.text_field :youtube_url, :as => :url, :class=>"form-control"
-    .field.form-group
-      = f.label :tier
-      = f.select :tier,  1..3, :class=>"form-control"
+    .row
+      .col-md-6.field.form-group
+        = f.label :tier
+        = f.select :tier,  1..3, :class=>"form-control"
+      .col-md-6.field.form-group
+        = f.label :lit_fest
+        = f.check_box :lit_fest, :class=> "form-control"
     .field.form-group
       = f.label :image
       = f.file_field :image, :class=>"form-control"
