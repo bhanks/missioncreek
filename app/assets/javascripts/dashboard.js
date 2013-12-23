@@ -6,6 +6,15 @@ $(document).ready(function(){
       $("#venue-modal").modal();
     });
   }
+  if($('.lineup'))
+  {
+    $('.lineup').sortable().on('sortupdate', function(){
+      var inputs = $('input.lineup-order');
+      $.each(inputs, function(i){
+        $(inputs[i]).val(i);
+      });
+    });
+  }
   if($('.typeahead'))
   {
     groups = ['headliners', 'support']

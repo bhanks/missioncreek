@@ -1,0 +1,11 @@
+%h1 Lineup Order
+
+
+= form_tag(controller: "artists", action:"update_order") do |f|
+  .lineup.col-md-6{:style=>"margin-bottom:50px"}
+    - @artists.each do |artist|
+      .well.well-sm
+        %input.lineup-order{:type=>"hidden", :name=>"artist[#{artist.id}]", :id=>"artist_#{artist.id}"}
+        = artist.name
+    %input{:type=>"submit",:class=>"btn btn-primary"}
+

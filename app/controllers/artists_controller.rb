@@ -63,7 +63,6 @@ class ArtistsController < ApplicationController
 
   def edit
     @artist = Artist.find(params[:id])
-    @tier = tier_radio(@artist)
     render :layout => "dashboard"
   end
 
@@ -96,11 +95,6 @@ class ArtistsController < ApplicationController
     end
   end
 
-  def match_artists_with_events
-    @artists = Artist.all
-
-    render "match", :layout => "dashboard"
-  end
 
   def crop
     @artist = Artist.find(params[:id])
@@ -108,53 +102,6 @@ class ArtistsController < ApplicationController
   end
 
   
-  def update_artists_events
-    @artists = Artist.find(params[:artist_ids])
-    render "update_with_event", :layout =>"dashboard"
-  end
-
-  def update_events
-
-    event = Event.find(params[:artist][:event_id])
-
-    event.artists.each do |artist|
-      artist.headliner = false
-      puts "Setting headliner for #{artist.name} to false "
-      artist.save!
-    end
-
-    @artists = Artist.find(params[:artist_ids])
-    event.artists = @artists
-    event.save!
-    #debugger
-    headliners = params[:headliner_ids].map(&:to_i)
-    @artists.each do |artist|
-
-      if(headliners.include?(artist.id))
-        artist.headliner = true
-      else
-        artist.headliner = false
-      end   
-    end
-    @artists.map(&:save!)
-    puts "#{event.artists.map(&:name).join(' ')}"
-    #debugger
-    redirect_to match_artists_with_events_dashboard_index_url
-  end
-
-
-
-  def tier_radio(artist)
-    tier = []
-    [1, 2, 3].each do |t|
-      if(artist.tier == t)
-        tier[t] = "checked"
-      else
-        tier[t] = ""
-      end
-    end
-    tier
-  end
 
   def store_front_page_artists()
     #debugger
@@ -173,17 +120,19 @@ class ArtistsController < ApplicationController
       format.json { render :text => "Saved"}
     end
   end
-  def store_display_order()
-    #debugger
 
-    params[:artists].each_pair do |display_order, artist_id|
-      artist = Artist.find(artist_id.first.to_i)
-      artist.display_order = display_order.to_i
+  def lineup_order
+    @artists = Artist.order("display_order, created_at")
+    render :layout => "dashboard"
+  end
+
+  def update_order
+    params[:artist].each_pair do |id, value|
+      artist = Artist.find(id)
+      artist.display_order = value
       artist.save!
     end
-    respond_to do |format|
-      format.json { render :text => "Saved"}
-    end
+    redirect_to dashboard_index_path, notice: 'Lineup Order was successfully updated.' 
   end
 
   def artist_thumb()

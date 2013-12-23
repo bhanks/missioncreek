@@ -18,6 +18,8 @@ Missioncreek::Application.routes.draw do
     collection do
       put "update_artists_events"
       put "update_events"
+      get "lineup_order"
+      post "update_order"
     end
     member do
       get "crop"

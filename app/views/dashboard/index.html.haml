@@ -1,5 +1,17 @@
-.jumbotron
-  %ul.actions
-    %li=link_to "Manage Artists", artists_dashboard_index_path, :class=>'btn btn-lrg btn-primary'
-    %li=link_to "Manage Events", events_dashboard_index_path, :class=>'btn btn-lrg btn-primary'
-    %li=link_to "Manage Venues", venues_dashboard_index_path, :class=>'btn btn-lrg btn-primary'
+- if flash[:notice]
+  .col-md-4.col-md-offset-4
+    .alert.alert-success
+      %button.close{:type=>"button", :data=>{:dismiss=>"alert"}}×
+      = flash[:notice]
+#dashboard
+  .col-md-4.col-md-offset-4
+    .row
+      %h3 Manage Artists
+      .col-md-6.col-sm-6= link_to "Artist Info", artists_dashboard_index_path, :class=>'btn btn-lrg btn-primary'
+      .col-md-6.col-sm-6= link_to "Lineup Order", lineup_order_artists_path, :class=>'btn btn-lrg btn-primary'
+    .row
+      %h3 Manage Events
+      .col-md-12= link_to "Manage Events", events_dashboard_index_path, :class=>'btn btn-lrg btn-primary'
+    .row
+      %h3 Manage Venues
+      .col-md-12=link_to "Manage Venues", venues_dashboard_index_path, :class=>'btn btn-lrg btn-primary'

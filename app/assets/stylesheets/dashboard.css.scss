@@ -20,6 +20,7 @@
     margin-bottom: 10px;
   }
 }
+/*
 ul.actions
 {
   list-style-type: none;
@@ -30,6 +31,23 @@ ul.actions
   li a{
     font-size:1.5em;
     width:100%;
+  }
+}
+*/
+.lineup .well:hover
+{
+  cursor:pointer;
+}
+#dashboard
+{
+  text-align:center;
+  h3
+  {
+    padding-bottom:3px;
+  }
+  .row
+  {
+    margin-bottom:10px;
   }
 }
 .dashboard-lookup .tt-hint
