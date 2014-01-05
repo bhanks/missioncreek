@@ -5,7 +5,6 @@
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <% if(request.domain == 'missionfreak.com') %>
 		<%= render :partial => 'base/analytics' %>
 	<% end %>
@@ -15,18 +14,10 @@
 </head>
 <body>
 
-<header class='banner container'>
-	<%= link_to image_tag("mcf-black.png"), root_path, :class=>"logo", :title=>"Look at banner, Michael!" %>
-	<%= link_to image_tag("uiccu-b.png"), "http://uiccu.org", :class=>"uiccu" %>
-
-</header>
 
 <div class="container main">
 	
-	<%= image_tag("dates.png", :class=>"dates") unless @no_dates %>
-	<%= render :partial => 'base/nav' unless @no_dates %>
 	<%= yield %>
-	<%= render :partial => 'base/sponsors' %>
 </div>
 </body>
 </html>

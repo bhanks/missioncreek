@@ -1,21 +1,3 @@
-.padding
-	.row-fluid
-		.span5
-			%h2.front=link_to raw("ARTISTS&raquo;"), artists_path
-			= render :partial => 'artists'
-		.span7
-			%h2.front Announcements
-			= render :partial => 'announcements'
-			%h2.front Ticket Information
-			= render :partial => 'tickets'
-	.row-fluid.second
-		.span4
-			=render :partial => 'twitter'
-		.span3
-			= render :partial => 'mailchimp'
-		.span5
-			%h3.front Read More
-			= render :partial => "features"
 #overlay.modal.hide.fade
 	.modal-body
 		%a{:href=>"javascript:void(0)", :data => {:dismiss=>"modal"}}
