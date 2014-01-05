@@ -5,7 +5,7 @@
   .lineup.col-md-6{:style=>"margin-bottom:50px"}
     - @artists.each do |artist|
       .well.well-sm
-        %input.lineup-order{:type=>"hidden", :name=>"artist[#{artist.id}]", :id=>"artist_#{artist.id}"}
+        %input.lineup-order{:type=>"hidden", :name=>"artist[#{artist.id}]", :id=>"artist_#{artist.id}", :value=>artist.display_order}
         = artist.name
     %input{:type=>"submit",:class=>"btn btn-primary"}
 

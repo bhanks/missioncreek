@@ -30,7 +30,6 @@ class ArtistsController < ApplicationController
 
   def new
     @artist = Artist.new
-    @tier = tier_radio(@artist)
     render :layout => "dashboard"
   end
 
@@ -55,7 +54,6 @@ class ArtistsController < ApplicationController
         redirect_to artists_dashboard_index_url, notice: 'Artist was successfully created.'
       end 
     else
-      @tier = tier_radio(@artist)
       render action: "new", :layout => "dashboard" 
     end
   
@@ -122,7 +120,7 @@ class ArtistsController < ApplicationController
   end
 
   def lineup_order
-    @artists = Artist.order("display_order, created_at")
+    @artists = Artist.where("display_order IS NOT NULL").order("display_order") + Artist.where("display_order IS NULL")
     render :layout => "dashboard"
   end
 

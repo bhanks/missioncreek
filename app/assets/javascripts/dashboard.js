@@ -14,6 +14,10 @@ $(document).ready(function(){
         $(inputs[i]).val(i);
       });
     });
+    var inputs = $('input.lineup-order');
+    $.each(inputs, function(i){
+      $(inputs[i]).val(i);
+    });
   }
   if($('.typeahead'))
   {
