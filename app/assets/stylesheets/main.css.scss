@@ -1,6 +1,8 @@
+@import "colors";
 .main
 {
   padding-top:35px;
+  color: #94918a;
   .mcf-logo
   {
     margin-left:350px;
@@ -10,5 +12,73 @@
     margin-left:170px;
   }
 
+  .navigation
+  {
+    margin-top:30px;
+    margin-bottom:25px;
+  }
+  .navigation .internal
+  {
+    text-align:right;
+    a
+    {
+      color: #94918a;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 17px;
+      margin: 0px 20px; 
+    }
+  }
+  .navigation .external
+  {
+    text-align:right;
+    img, a
+    {
+      display:inline-block;
+      height:24px;
+      margin-left:2px;
+    } 
+    span
+    {
+      font-family: Whitney;
+      font-weight: bold;
+      font-size: 10px;
+      opacity: 0.6;
+      position: relative;
+      top: 2px;
+    }
+  }
+  .content
+  {
+    min-height:500px;
+  }
+  .sponsors
+  {
+    min-height: 200px;
+    border-top: 4px solid #f0f0f0;
+    border-top: 4px solid rgba(251,251,251, .4);
+  }
 }
+.carousel-indicators
+{
+  text-align:right;
+  margin-left:-15%;
+  li
+  {
+    background-color:white;
+    &:active
+    {
+      border:1px solid $pepto;
+      background-color:$pepto;
+    }
+  }
+  li.active
+  {
+    border:1px solid $pepto;
+    background-color:$pepto;
+  }
+
+}
+
+
 

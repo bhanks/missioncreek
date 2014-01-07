@@ -21,9 +21,28 @@
     <img src="/assets/uiccu.png" class='uiccu'/>
   </div>
   <div class="row navigation">
-    <a href="#">About</a>
+    <div class="col-xs-9 internal">
+      <a href="#">About</a><span>/</span>
+      <a href="#">Tickets</a><span>/</span>
+      <a href="#">Lineup</a><span>/</span>
+      <a href="#">Calendar</a><span>/</span>
+      <a href="#">Sponsors</a><span>/</span>
+      <a href="#">Tech Conference</a>
+    </div>
+    <div class="col-xs-3 external">
+      <span>STAY CONNECTED</span>
+      <a href="#"><img src="/assets/fb.png"/></a> 
+      <a href="#"><img src="/assets/twitter.png"/></a> 
+      <a href="#"><img src="/assets/instagram.png"/></a> 
+    </div>
   </div>
-	<%= yield %>
+  <div class="row content">
+    <%= yield %>
+  </div>
+  <div class="row sponsors">
+    <div class="col-xs-12">
+    </div>
+  </div>
 </div>
 </body>
 </html>
