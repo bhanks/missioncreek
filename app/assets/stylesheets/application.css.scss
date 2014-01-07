@@ -9,13 +9,18 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require jquery.Jcrop
+ *= require fonts
  *= require_self
+ *= require main
  */
 @charset "UTF-8";
 @import 'bootstrap';
-@import 'fonts';
 @import 'colors';
-
+body
+{
+  background-color:#fbfbfb;
+  font-family:Whitney;
+}
 // Typeahead styles
 
 .twitter-typeahead .tt-hint
