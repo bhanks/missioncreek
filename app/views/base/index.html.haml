@@ -32,7 +32,8 @@
       .field.form-group
         %input#mce-EMAIL.form-control.email{:type=>"email", :value=>"", :name=>"EMAIL",:placeholder=>"email address"}
         %button.btn{:type=>"submit", :value=>"Subscribe", :name=>"subscribe", :id=>"mc-embedded-subscribe"}Submit
-  .twitter
+  .twitter{:style=>"margin-top:15px"}
+    = render partial: "twitter"
 
   
 #overlay.modal.hide.fade
@@ -52,4 +53,3 @@
     $.cookie("overlay", "true",{expires: date})
     /*$("#overlay").modal()*/
   }
-		
