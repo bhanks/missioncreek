@@ -57,6 +57,53 @@
     min-height: 200px;
     border-top: 4px solid #f0f0f0;
     border-top: 4px solid rgba(251,251,251, .4);
+    span
+    {
+      text-transform:uppercase;
+      font-weight:bold;
+      font-size:9px;
+    }
+    a
+    {
+      margin-right:10px;
+    }
+    .jim-beam img
+    {
+        margin-left:3px;
+        height:50px;
+    }
+    .idt img
+    {
+      height:25px;
+    }
+    .city-of-ic img
+    {
+      height:65px;
+    }
+    .ic-visitors img
+    {
+      height:60px;
+    }
+    .moen img
+    {
+      height:12px;
+    }
+    .ic-downtown img
+    {
+      height:50px;
+    }
+    .mcgins img
+    {
+      height:15px;
+    }
+    .sheraton img
+    {
+      height:50px;
+    }
+    .new-belgium img
+    {
+      height:50px;
+    }
   }
 }
 .carousel-indicators
