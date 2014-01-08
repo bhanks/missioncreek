@@ -14,6 +14,19 @@
     .field.form-group
       = f.label :youtube_url
       = f.text_field :youtube_url, :as => :url, :class=>"form-control"
+      .alert.alert-warning{:style=>"margin-top:3px"} Copy the URL as it appears in your address bar.  Don't copy the embed code.
+    .field.form-group
+      = f.label :spotify_uri
+      = f.text_field :spotify_url, :class=>"form-control"
+      .alert.alert-warning{:style=>"margin-top:3px"}
+        %span A Spotify URI should look like this: 
+        %span{:style=>"font-weight:bold"}spotify:album:1iw1gr9TPYhIwmgoLPcRRG
+    .field.form-group
+      = f.label :facebook_url
+      = f.text_field :facebook_url, :as => :url, :class=>"form-control"
+    .field.form-group
+      = f.label :twitter_url
+      = f.text_field :twitter_url, :as => :url, :class=>"form-control"
     .row
       .col-md-6.field.form-group
         = f.label :tier

@@ -2,6 +2,7 @@ class Artist < ActiveRecord::Base
   extend FriendlyId
   friendly_id :name, use: [:slugged, :history]
   attr_accessible :name, :bio, :soundcloud_url, :official_url, :youtube_url, :display_order, :tier, :image, :spotify_url, :headliner, :event_id, :lit_fest, :event_order, :featured
+  attr_accessible :facebook_url, :twitter_url
   attr_accessor :crop_x, :crop_y, :crop_w, :crop_h
   validates_presence_of :name
   belongs_to :event
