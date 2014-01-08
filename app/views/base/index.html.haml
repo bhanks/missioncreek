@@ -1,6 +1,5 @@
-.col-xs-8
+.col-xs-8.home
   #carousel-front-page.row.carousel
-    
     %ol.carousel-indicators
       %li.active{:data=>{"slide-to" =>"0", :target => "#carousel-front-page"}}
       %li{:data=>{"slide-to" =>"1", :target => "#carousel-front-page"}}
@@ -14,8 +13,25 @@
         %img{:src=>"/assets/third.png"}
 
   .row.info
+    .col-xs-6{:style=>"padding:0px"}
+      .circles
+      .left
+        %h2 What's Happening?
+        %a{:href=>"#"}Learn more about the fest
+        %span.glyphicon.glyphicon-circle-arrow-right
+    .col-xs-6
+      .circles
+      .right
+        %h2 Join us!
+        %a{:href=>"#"}Find prices & buy tickets
+        %span.glyphicon.glyphicon-circle-arrow-right
 .col-xs-4
   .mailing-list
+    %p Subscribe to Our Email List
+    %form#mc-embedded-subscribe-form{:action => "http://missionfreak.us4.list-manage.com/subscribe/post?u=f1315fe04847b80e18a6d573f&amp;id=8cd3e1e60d", :method =>"post", :target=>"_blank"}
+      .field.form-group
+        %input#mce-EMAIL.form-control.email{:type=>"email", :value=>"", :name=>"EMAIL",:placeholder=>"email address"}
+        %button.btn{:type=>"submit", :value=>"Subscribe", :name=>"subscribe", :id=>"mc-embedded-subscribe"}Submit
   .twitter
 
   

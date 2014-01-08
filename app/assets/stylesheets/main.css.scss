@@ -126,6 +126,64 @@
   }
 
 }
-
-
-
+.home .info
+{
+  margin-top:10px;
+  text-align:center;
+  .circles
+  {
+    background-image: url("/assets/circles.png");
+    background-repeat: no-repeat;
+    height: 100px;
+    background-position: center;
+  }
+  .left, .right
+  {
+    background-color:#fbfbfb;
+    background-color: rgba(251, 251, 251, 0.9);
+    padding: 8px;
+    position: relative;
+    bottom: 80px;
+  }
+  h2
+  {
+    font-size:18px;
+    margin:0px;
+    font-family:Mercury;
+  }
+  a, span
+  {
+    color: #eaa534;
+  }
+  a
+  {
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+}
+.mailing-list
+{
+  background-color:#fbfbfb;
+  background-color: rgba(251,251,251,0.9);
+  padding:10px;
+  #mce-EMAIL
+  {
+    width:68%;
+    display:inline-block;
+    margin-right:4px;
+  }
+  button
+  {
+    text-transform:uppercase;
+    font-weight:bold;
+    background-color: #f9f2e7;
+    border: 1px solid grey;
+    color: #eaa534;
+  }
+  p
+  {
+    font-family:Whitney;
+    font-weight:bold;
+  }
+}
