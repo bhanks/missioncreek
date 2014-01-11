@@ -8,6 +8,9 @@ class BaseController < ApplicationController
 		render :layout => "application"
 	end
 
+  def tickets
+		render :layout => "application"
+  end
 
 
 

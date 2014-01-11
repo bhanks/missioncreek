@@ -52,7 +52,7 @@ Missioncreek::Application.routes.draw do
   match "/check" => "Base#index"
   match "2013" => "Base#index" 
   resources :posts
-
+  match "tickets" => "Base#tickets"
   
 
   # The priority is based upon order of creation:

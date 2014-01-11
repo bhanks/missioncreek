@@ -53,3 +53,13 @@
     $.cookie("overlay", "true",{expires: date})
     /*$("#overlay").modal()*/
   }
+  var twitterCheck = setInterval(function(){
+    if($('iframe.twitter-timeline'))
+    {
+      twitter = $('iframe.twitter-timeline').contents();
+      $('.timeline', twitter).css("border-radius", "0px").css("background-color","rgba(251,251,251,.9)");
+    }
+  },500);    
+  setTimeout(function(){
+    clearTimeout(twitterCheck);
+  },3000);

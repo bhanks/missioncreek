@@ -1,4 +1,11 @@
 @import "colors";
+h1
+{
+  color:$truck;
+  font-family: Mercury;
+  font-size:40px;
+  font-weight:bold;
+}
 .main
 {
   padding-top:35px;
@@ -190,5 +197,136 @@
 .twitter iframe
 {
   height:260px;
+}
+
+.fine-print
+{
+  p
+  {
+    font-family:Mercury;
+    font-style:italic;
+    color:#f04e25;
+    font-size:11px;
+  }
+  span
+  {
+    font-family:Whitney;
+    font-style:normal;
+    font-weight:bold;
+  }
+}
+$silver:#b7cfd2;
+$deluxe:#c95569;
+$individual:#e1aa44;
+.passes
+{
+  color:white;
+  text-transform:uppercase;
+  font-size:14px;
+  line-height:42px;
+  text-align:center;
+  a
+  {
+    color:white;
+    font-weight:bold;
+    &:hover
+    {
+      text-decoration:none;
+    }
+  }
+  .row
+  {
+    margin-bottom:20px;
+  }
+  .silver
+  {
+    background-color:$silver;
+  }
+  .deluxe
+  {
+    background-color:$deluxe;
+  }
+  .individual
+  {
+    background-color:$individual;
+  }
+}
+.info p
+{
+  font-size: 18px;
+  padding-right: 20px;
+  margin-bottom:15px;
+  span
+  {
+    font-style:italic; 
+  } 
+
+}
+.pass.row
+{
+  margin-bottom:30px
+}
+.pass h2
+{
+  display:inline-block;
+  text-align: center;
+  margin: 0px;
+  color:white;
+  border-radius: 50%;
+  font-family: Whitney;
+  font-size: 50px;
+}
+.pass h2.silver
+{
+  padding: 46px 25px;
+  background-color: $silver;
+}
+.pass h2.deluxe
+{
+  padding: 46px 16px;
+  background-color:#c65467;
+}
+.pass h3
+{
+  display: inline-block;
+  vertical-align: top;
+  margin: 0px;
+  font-size: 22px;
+}
+.pass h3.silver
+{
+  color:#869ea0;
+}
+.pass h3.deluxe
+{
+  color:#c65467;
+}
+.pass p
+{
+  font-size:14px;
+  span
+  {
+    font-weight:bold;
+    font-style:normal;
+  }
+  a
+  {
+    font-weight:bold;
+    text-transform:uppercase;
+    margin-left:5px;
+    &:hover
+    {
+      text-decoration:none;
+    }
+  }
+  a, span.glyphicon
+  {
+    color:black;
+  }
+  span.glyphicon
+  {
+    margin-left:4px;  
+    font-size:12px;
+  }
 }
 
