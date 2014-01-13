@@ -8,6 +8,14 @@ class BaseController < ApplicationController
 		render :layout => "application"
 	end
 
+  def about
+    @content = "about"
+		render :layout => "application"
+  end
+
+  def tickets
+		render :layout => "application"
+  end
 
 
 

@@ -1,0 +1,14 @@
+.row.title
+  %h1.about About
+  %ul
+    %li
+      %a{:href=>"#"}History
+    %li
+      %a{:href=>"#"}Staff
+    %li
+      %a{:href=>"#"}Archive
+.row.body
+  .col-xs-8
+    = render partial: "base/about/#{@content}" 
+  .col-xs-4.sidebar
+    = render partial: "passes"

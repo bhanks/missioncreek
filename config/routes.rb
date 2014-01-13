@@ -47,13 +47,13 @@ Missioncreek::Application.routes.draw do
   match "artists/artist_thumb" => 'artists#artist_thumb', :via => :post
   match "interim" => "events#interim_events", :via => :get
 
-  root :to => "events#interim_events"
+  root :to => "Base#index"
 
   match "/check" => "Base#index"
   match "2013" => "Base#index" 
   resources :posts
-
-  
+  match "tickets" => "Base#tickets"
+  match "about" => "base#about" 
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -1,59 +1,209 @@
-@import "fonts";
 @import "colors";
-body
-{
-
-	background-color: $charcoal;
-}
-
 h1
 {
-	color:$pool;
+  color:$truck;
+  font-family: Mercury;
+  font-size:40px;
+  font-weight:bold;
+}
+.main
+{
+  padding-top:35px;
+  color: #94918a;
+  .mcf-logo
+  {
+    margin-left:350px;
+  }
+  .uiccu
+  {
+    margin-left:170px;
+  }
+
+  .navigation
+  {
+    margin-top:30px;
+    margin-bottom:25px;
+  }
+  .navigation .internal
+  {
+    text-align:right;
+    a
+    {
+      color: #94918a;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 17px;
+      margin: 0px 20px; 
+      &:hover
+      {
+        color:$truck;
+      }
+    }
+    a.active
+    {
+      color:$truck;
+    }
+  }
+  .navigation .external
+  {
+    text-align:right;
+    img, a
+    {
+      display:inline-block;
+      height:24px;
+      margin-left:2px;
+    } 
+    span
+    {
+      font-family: Whitney;
+      font-weight: bold;
+      font-size: 10px;
+      opacity: 0.6;
+      position: relative;
+      top: 2px;
+    }
+  }
+  .content
+  {
+    min-height:500px;
+  }
+  .sponsors
+  {
+    min-height: 200px;
+    border-top: 4px solid #f0f0f0;
+    border-top: 4px solid rgba(251,251,251, .4);
+    span
+    {
+      text-transform:uppercase;
+      font-weight:bold;
+      font-size:9px;
+    }
+    a
+    {
+      margin-right:10px;
+    }
+    .jim-beam img
+    {
+        margin-left:3px;
+        height:50px;
+    }
+    .idt img
+    {
+      height:25px;
+    }
+    .city-of-ic img
+    {
+      height:65px;
+    }
+    .ic-visitors img
+    {
+      height:60px;
+    }
+    .moen img
+    {
+      height:12px;
+    }
+    .ic-downtown img
+    {
+      height:50px;
+    }
+    .mcgins img
+    {
+      height:15px;
+    }
+    .sheraton img
+    {
+      height:50px;
+    }
+    .new-belgium img
+    {
+      height:50px;
+    }
+  }
+}
+.carousel-indicators
+{
+  text-align:right;
+  margin-left:-15%;
+  li
+  {
+    background-color:white;
+    &:active
+    {
+      border:1px solid $pepto;
+      background-color:$pepto;
+    }
+  }
+  li.active
+  {
+    border:1px solid $pepto;
+    background-color:$pepto;
+  }
+
+}
+.home .info
+{
+  margin-top:10px;
+  text-align:center;
+  .circles
+  {
+    background-image: url("/assets/circles.png");
+    background-repeat: no-repeat;
+    height: 100px;
+    background-position: center;
+  }
+  .left, .right
+  {
+    background-color:#fbfbfb;
+    background-color: rgba(251, 251, 251, 0.9);
+    padding: 8px;
+    position: relative;
+    bottom: 80px;
+  }
+  h2
+  {
+    font-size:18px;
+    margin:0px;
+    font-family:Mercury;
+  }
+  a, span
+  {
+    color: #eaa534;
+  }
+  a
+  {
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+}
+.mailing-list
+{
+  background-color:#fbfbfb;
+  background-color: rgba(251,251,251,0.9);
+  padding:10px;
+  #mce-EMAIL
+  {
+    width:68%;
+    display:inline-block;
+    margin-right:4px;
+  }
+  button
+  {
+    text-transform:uppercase;
+    font-weight:bold;
+    background-color: #f9f2e7;
+    border: 1px solid grey;
+    color: #eaa534;
+  }
+  p
+  {
+    font-family:Whitney;
+    font-weight:bold;
+  }
+}
+.twitter iframe
+{
+  height:260px;
 }
 
-h2
-{
-	color:$olive;
-	font-weight:normal;
-}
-
-h2 a
-{
-	color:$olive;
-	font-weight:normal;
-	&:hover{
-		color:$pool;
-		text-decoration:none;
-	};
-}
-h3
-{
-	color: $pepto;
-}
-
-a
-{
-	color:$truck;
-	&:hover
-	{
-		color:$sea;
-	}
-}
-
-.modal
-{
-	height:575px;
-	width:680px;
-}
-
-.modal-body {
-    max-height: 700px;
-    max-width:700px;
-    height:550px;
-	width:650px;
-}
-img.overlay
-{
-	height:550px;
-	width:650px;
-}
