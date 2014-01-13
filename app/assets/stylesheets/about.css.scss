@@ -1,0 +1,31 @@
+$silver:#b7cfd2;
+h1.about
+{
+  display:inline-block;
+  
+}
+.title ul
+{
+  list-style-type:none;
+  display:inline-block;
+  li
+  {
+    display:inline-block;
+    margin-right:20px;
+    text-transform:uppercase;
+    font-weight:bold;
+    a
+    {
+      background-color:$silver;
+      color:white;
+      padding: 2px 8px;
+      font-size: 12px;
+      letter-spacing: 1.3px;
+      &:hover
+      {
+        text-decoration:none;
+        background-color:#444542;
+      }
+    }
+  }
+}

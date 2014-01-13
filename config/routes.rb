@@ -53,7 +53,7 @@ Missioncreek::Application.routes.draw do
   match "2013" => "Base#index" 
   resources :posts
   match "tickets" => "Base#tickets"
-  
+  match "about" => "base#about" 
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
