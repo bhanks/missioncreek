@@ -1,7 +1,7 @@
 <style>
   <% @artists.each do |artist| %> 
-    #artist_<%=artist.id%>:hover{
-      background-image: url("<%= artist.image.medium.url %>");
+    #artist_<%=artist.id%>{
+      background-image: url("<%= artist.image.small.url %>");
       background-repeat:no-repeat;
       background-size:226px;
       background-position:center;
