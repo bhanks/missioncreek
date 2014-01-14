@@ -5,11 +5,11 @@ class ArtistsController < ApplicationController
   before_filter :authenticate_user!, :except => [:index, :show]
   
   def index
-    @artists = Artist.all
+    @artists = Artist.order("display_order")
     @meta_title = "Lineup : "
-    @tier1 = Artist.where(:tier=>1).order("display_order")
-    @tier2 = Artist.where(:tier=>2).order("display_order")
-    @tier3 = Artist.where(:tier=>3).order("created_at")
+    # @tier1 = Artist.where(:tier=>1).order("display_order")
+    # @tier2 = Artist.where(:tier=>2).order("display_order")
+    # @tier3 = Artist.where(:tier=>3).order("created_at")
      
 
     respond_to do |format|

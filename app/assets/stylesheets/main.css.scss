@@ -125,6 +125,7 @@ h1
 {
   text-align:right;
   margin-left:-15%;
+  bottom:10px;
   li
   {
     background-color:white;
@@ -140,6 +141,24 @@ h1
     background-color:$pepto;
   }
 
+}
+.carousel .constant
+{
+  position:absolute;
+  z-index:2;
+  bottom:20px;
+  left:15px;
+  a
+  {
+    font-size:16px;
+    color:white;
+    text-transform:uppercase;
+    margin-right:5px;
+  }
+  span
+  {
+    color:#eaa534;
+  }
 }
 .home .info
 {
@@ -207,3 +226,34 @@ h1
   height:260px;
 }
 
+$silver:#b7cfd2;
+h1.sub
+{
+  display:inline-block;
+  
+}
+.title ul
+{
+  list-style-type:none;
+  display:inline-block;
+  li
+  {
+    display:inline-block;
+    margin-right:20px;
+    text-transform:uppercase;
+    font-weight:bold;
+    a
+    {
+      background-color:$silver;
+      color:white;
+      padding: 2px 8px;
+      font-size: 12px;
+      letter-spacing: 1.3px;
+      &:hover
+      {
+        text-decoration:none;
+        background-color:#444542;
+      }
+    }
+  }
+}
