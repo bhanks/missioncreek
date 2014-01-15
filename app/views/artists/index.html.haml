@@ -5,7 +5,7 @@
     .row
       - artists.each do |artist|
         .col-xs-3.artist{:id=>"artist_#{artist.id}"}
-          %a{:href=>artist_path(artist.id)}= artist.name
+          %a{:href=>artist_path(artist)}= artist.name
 
 = render partial: "hovers", :locals => {:artists => @artists}
    
