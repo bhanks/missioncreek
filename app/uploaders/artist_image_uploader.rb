@@ -42,6 +42,11 @@ class ArtistImageUploader < CarrierWave::Uploader::Base
     process :resize_to_fit => [150, 100]
   end
 
+  version :small do
+    process :crop
+    process :resize_to_fit => [300, 200]
+  end
+
   version :large do
     process :crop
     process :resize_to_fit => [600, 400]

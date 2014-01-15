@@ -1,7 +1,7 @@
 .padding 
   .row-fluid.artist
     .span6
-      - image_url = (@artist.image.url) ? @artist.image.url : asset_path("no-image.png")
+      - image_url = (@artist.image.url) ? @artist.image.medium.url : asset_path("no-image.png")
       %img.artist{:src => image_url}
     .span6
       %h2.artist_name=@artist.name

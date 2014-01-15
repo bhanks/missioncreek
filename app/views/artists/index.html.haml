@@ -1,20 +1,11 @@
-%h2.tickets
-	%a{:href=>"http://www.midwestix.com/organizations/mission-creek-festival", :target=> "_other"}GET TICKETS
-%ul.tier1
-	-@tier1.each_with_index do |artist, index|
-		%li= link_to artist.name, artist_path(artist)
-		-unless (index+1)==@tier1.length
-			%li
-				%i.icon-chevron-right.artist_spacer
-%ul.tier2
-	-@tier2.each_with_index do |artist, index|
-		%li= link_to artist.name, artist_path(artist)
-		-unless (index+1)==@tier2.length
-			%li
-				%i.icon-chevron-right.artist_spacer
-%ul.tier3
-	-@tier3.each_with_index do |artist, index|
-		%li= link_to artist.name, artist_path(artist)
-		-unless (index+1)==@tier3.length
-			%li
-				%i.icon-chevron-right.artist_spacer
+.row.title
+  %h1 2014 Lineup
+.row.body
+  - @artists.each_slice(4) do |artists|
+    .row
+      - artists.each do |artist|
+        .col-xs-3.artist{:id=>"artist_#{artist.id}"}
+          %a{:href=>artist_path(artist)}= artist.name
+
+= render partial: "hovers", :locals => {:artists => @artists}
+   
