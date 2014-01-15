@@ -27,13 +27,13 @@
     .field.form-group
       = f.label :twitter_url
       = f.text_field :twitter_url, :as => :url, :class=>"form-control"
+    .field.form-group
+      = f.label :oficial_url
+      = f.text_field :official_url, :as => :url, :class=>"form-control"
     .row
       .col-md-6.field.form-group
-        = f.label :tier
-        = f.select :tier,  1..3, :class=>"form-control"
-      .col-md-6.field.form-group
-        = f.label :lit_fest
-        = f.check_box :lit_fest, :class=> "form-control"
+        = f.label :category
+        = f.select :category,  ["music", "literature","film","food","misc"], :class=>"form-control"
     .field.form-group
       = f.label :image
       = f.file_field :image, :class=>"form-control"

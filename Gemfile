@@ -35,6 +35,7 @@ gem 'hogan_assets'
 gem 'rabl'
 gem 'tinymce-rails'
 gem 'ckeditor'
+gem 'acts-as-taggable-on'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
