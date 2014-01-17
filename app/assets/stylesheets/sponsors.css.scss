@@ -1,0 +1,17 @@
+.body.sponsors
+{
+  border:none; 
+  display:table;
+  a
+  {
+    display: table-cell;
+    height: 120px;
+    vertical-align: middle;
+    background-color: white;
+    padding: 15px;
+  }
+  img
+  {
+    width:100%;
+  }  
+}

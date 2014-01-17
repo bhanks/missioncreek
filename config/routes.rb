@@ -41,11 +41,16 @@ Missioncreek::Application.routes.draw do
 
   end
 
+  match "lineup" => "artists#index", :via => :get
   match "schedule" => "events#index", :via => :get
   match "artists/front_page_selections" => 'artists#store_front_page_artists', :via => :post
   match "artists/store_display_order" => 'artists#store_display_order', :via => :post
   match "artists/artist_thumb" => 'artists#artist_thumb', :via => :post
   match "interim" => "events#interim_events", :via => :get
+  match "about/history" => "base#history", :via => :get
+  match "about/staff" => "base#staff", :via => :get
+  match "about/archive" => "base#archive", :via => :get
+  match "sponsors" => "base#sponsors", :via => :get
 
   root :to => "Base#index"
 

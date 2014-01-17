@@ -22,7 +22,7 @@
     <tr>
       <th><%= model_class.human_attribute_name(:name) %></th>
       <th><%= model_class.human_attribute_name(:bio) %></th>
-      <th>Tier</th>
+      <th>Category</th>
       <th><%= model_class.human_attribute_name(:youtube_url) %></th>
       <th>Images</th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
@@ -34,7 +34,7 @@
       <tr>
         <td class='artist-name'><%= link_to artist.name, edit_artist_path(artist) %></td>
         <td class='artist-bio'><%= raw popup(artist.bio,'popover', "Bio") %></td>
-        <td><strong><%= artist.tier %></strong></td>
+        <td><strong><%= artist.category.first.name %></strong></td>
         <td><%= raw url_present(artist.youtube_url)%></td>
         <td class='confirm-image'><%= raw url_present(artist.image.url)%></td>
         <td>

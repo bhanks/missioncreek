@@ -1,0 +1,6 @@
+%h3 Staff
+.staff
+  - @staff.each do |person|
+    %h4
+      %span.title= person[:title]+"-"
+      %span.name= person[:name]

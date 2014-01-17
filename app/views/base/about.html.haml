@@ -1,13 +1,10 @@
-.row.title
-  %h1.sub About
+.row.title.col-xs-12
+  %h1.sub=@title
   %ul
-    %li
-      %a{:href=>"#"}History
-    %li
-      %a{:href=>"#"}Staff
-    %li
-      %a{:href=>"#"}Archive
-.row.body
+    - @paths.each_pair do |page, path|
+      %li
+        %a{:href=>Rails.application.routes.url_helpers.send(path)}=page
+.row.body.about
   .col-xs-8
     = render partial: "base/about/#{@content}" 
   .col-xs-4.sidebar
