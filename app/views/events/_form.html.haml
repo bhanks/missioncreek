@@ -14,20 +14,22 @@
         = f.label :headliners
         %input.typeahead.headliners.form-control
         .headliners-list
-          - @headliners.each do |artist|
-            .well.well-sm.artist-added
-              %button.close{:type=>"button",:data=>{:dismiss=>"alert"}, :aria => {:hidden=>'true'}}×
-              %input{:type => 'hidden', :name => "headliners[#{artist.id}]", :id => "headliners_#{artist.id}"}
-              = artist.name
+          - if @headliners
+            - @headliners.each do |artist|
+              .well.well-sm.artist-added
+                %button.close{:type=>"button",:data=>{:dismiss=>"alert"}, :aria => {:hidden=>'true'}}×
+                %input{:type => 'hidden', :name => "headliners[#{artist.id}]", :id => "headliners_#{artist.id}"}
+                = artist.name
       .field.col-md-6.form-group.dashboard-lookup
         = f.label :support
         %input.typeahead.support.form-control
         .support-list
-          - @support.each do |artist|
-            .well.well-sm.artist-added
-              %button.close{:type=>"button",:data=>{:dismiss=>"alert"}, :aria => {:hidden=>'true'}}×
-              %input{:type => 'hidden', :name => "support[#{artist.id}]", :id => "support_#{artist.id}"}
-              = artist.name
+          - if @support
+            - @support.each do |artist|
+              .well.well-sm.artist-added
+                %button.close{:type=>"button",:data=>{:dismiss=>"alert"}, :aria => {:hidden=>'true'}}×
+                %input{:type => 'hidden', :name => "support[#{artist.id}]", :id => "support_#{artist.id}"}
+                = artist.name
     .field.form-group
       = f.label :title
       = f.text_field :title, :class=>"form-control"

@@ -1,4 +1,17 @@
 @import "colors";
+$music:#f73063;
+$literature:#2d7372;
+$film:#fdaa17;
+$misc:#ff2200;
+$food:#00be4b;
+@mixin cells($red, $green, $blue)
+{
+  background-color:rgba($red, $green, $blue, 1.0);
+  &:hover
+  {
+    background-color:rgba($red, $green, $blue, .4);
+  }
+}
 td.confirm-large-image
 {
 	color:green;
@@ -16,7 +29,6 @@ td.artist-name
   a
   {
     width:100%;
-    background-color: rgba(201, 88, 109, 1);
     color:white;
     display: table-cell;
     text-align: center;
@@ -25,10 +37,14 @@ td.artist-name
     &:hover
     {
       text-decoration:none;
-      background-color: rgba(201, 88, 109, .4);
       color:rgba(255,255,255, .3); 
     }
   }
+  a.music{@include cells(201,88,109);}
+  a.literature{@include cells(45, 115, 114);}
+  a.food{@include cells(0,190,75)};
+  a.film{@include cells(253,170,23)};
+  a.misc{@include cells(255,34,0)};
 }
 
 .artist_bio
@@ -37,4 +53,31 @@ td.artist-name
   margin-top: 15px;
   font-size: 18px;
 }
-// 2013
+
+span.circle
+{
+  width:12px;
+  height:12px;
+  border-radius:50%;
+  display:inline-block;
+}
+li.music span.circle
+{
+  background-color:$music;
+}
+li.literature span.circle
+{
+  background-color:$literature;
+}
+li.food span.circle
+{
+  background-color:$food;
+}
+li.film span.circle
+{
+  background-color:$film;
+}
+li.misc span.circle
+{
+  background-color:$misc;
+}

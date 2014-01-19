@@ -1,11 +1,27 @@
 .row.title
-  %h1 2014 Lineup
+  %h1.sub 2014 Lineup
+  %ul
+    %li.music 
+      %span.circle
+      %span.text Music
+    %li.literature 
+      %span.circle
+      %span.text Literature
+    %li.food
+      %span.circle
+      %span.text Food
+    %li.film 
+      %span.circle
+      %span.text Film
+    %li.misc
+      %span.circle
+      %span.text Misc
 .row.body
   - @artists.each_slice(4) do |artists|
     .row
       - artists.each do |artist|
         .col-xs-3.artist{:id=>"artist_#{artist.id}"}
-          %a{:href=>artist_path(artist)}= artist.name
+          %a{:class=>artist.category.first,:href=>artist_path(artist)}= artist.name
 
 = render partial: "hovers", :locals => {:artists => @artists}
    

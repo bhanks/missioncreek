@@ -141,4 +141,9 @@ class BaseController < ApplicationController
   def tech_info
     render layout: "application"
   end
+
+  def tech_schedule
+    render layout: "application"
+  end
+
 end
