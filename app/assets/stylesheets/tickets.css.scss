@@ -49,6 +49,14 @@ $individual:#e1aa44;
   {
     background-color:$individual;
   }
+  .artist-tickets
+  {
+    background-color:#00be4a; 
+  }
+  .tech
+  {
+    background-color:#ff2500;
+  }
 }
 .info p
 {
@@ -129,3 +137,42 @@ $individual:#e1aa44;
   }
 }
 
+@mixin social-media($image){
+  background-image:url($image);
+  background-size:24px 24px;
+  background-position:center; 
+}
+
+.external
+{
+  a
+  {
+    width:24px;
+    height:24px;
+    vertical-align:middle
+  }
+  .instagram
+  {
+    @include social-media("/assets/instagram.png");
+    &:hover
+    {
+      @include social-media("/assets/instagram_hover.png");
+    }
+  }
+  .twitter
+  {
+    @include social-media("/assets/twitter.png");
+    &:hover
+    {
+      @include social-media("/assets/twitter_hover.png");
+    }
+  }
+  .facebook
+  {
+    @include social-media("/assets/fb.png");
+    &:hover
+    {
+      @include social-media("/assets/fb_hover.png");
+    }
+  }
+}

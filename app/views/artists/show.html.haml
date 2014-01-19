@@ -1,22 +1,33 @@
-.padding 
-  .row-fluid.artist
-    .span6
-      - image_url = (@artist.image.url) ? @artist.image.medium.url : asset_path("no-image.png")
-      %img.artist{:src => image_url}
-    .span6
-      %h2.artist_name=@artist.name
-      - if @artist.official_url != ""
-        %a{:href=>@artist.official_url}="#{@artist.name} on the web"
-      %p.artist_bio=raw RedCloth.new(@artist.bio).to_html
+.row.title
+  .col-xs-7
+    %h1.sub.artist_name=@artist.name
+  .col-xs-5
+    %h1
+      %ul{:style=>"margin-bottom:0px"}
+        %li
+          %a{:href=>"#"} Website
+        %li
+          %a{:href=>"#"} Twitter
+        %li
+          %a{:href=>"#"} Facebook
+.row.body
+  .col-xs-7
+    - image_url = (@artist.image.url) ? @artist.image.medium.url : asset_path("no-image.png")
+    %img{:src => image_url}
+    .artist_bio=@artist.bio.html_safe
+  .col-xs-5
+    .passes.media
+      .row.artist-tickets
+        %a{:href=>"#"}Buy Tickets
+        %span.glyphicon.glyphicon-circle-arrow-right
+      .row
+        - if @artist.youtube_url != ""
+          - url = @artist.youtube_url.gsub(/watch[?]v[=]/, "embed/")
+          %iframe.youtube{:width => "400", :height =>"315", :src=> url, :frameborder => "0"}
+      .row
+        - if @artist.spotify_url != ""
+          %iframe.spotify{:width=>"400", :height=>"80", :frameborder => "no", :src=>"https://embed.spotify.com/?uri=#{@artist.spotify_url}", :allowtransparency=>'true'}
+        
 
-  .row-fluid.artist_media
-    .span6
-      - if @artist.youtube_url != ""
-        %iframe.youtube{:width => "400", :height =>"315", :src=> @artist.youtube_url, :frameborder => "0"}
-    .span6
-      - if @artist.spotify_url != ""
-        %iframe.spotify{:width=>"100%", :height=>"336", :frameborder => "no", :src=>"https://embed.spotify.com/?uri=#{@artist.spotify_url}", :allowtransparency=>'true'}
-      - elsif @artist.soundcloud_url
-        %iframe{:width=>"100%", :height=>"380px", :frameborder => "no", :src=>@artist.soundcloud_url}
 
 

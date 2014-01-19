@@ -51,6 +51,8 @@ Missioncreek::Application.routes.draw do
   match "about/staff" => "base#staff", :via => :get
   match "about/archive" => "base#archive", :via => :get
   match "sponsors" => "base#sponsors", :via => :get
+  match "2014" => "base#index", :via => :get
+  match "tech" => "base#tech_info", :via => :get
 
   root :to => "Base#index"
 

@@ -137,4 +137,8 @@ class BaseController < ApplicationController
     @content = "staff"
     render :action => "about"
   end
+
+  def tech_info
+    render layout: "application"
+  end
 end
