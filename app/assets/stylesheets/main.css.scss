@@ -16,6 +16,13 @@ h1
 }
 .main
 {
+
+  #overlay .modal-content
+  {
+    width: 650px;
+    background-color:#6F6D69;
+    left: -40px;
+  }
   padding-top:35px;
   color: #6F6D69;
   .mcf-logo

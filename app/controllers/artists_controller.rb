@@ -35,7 +35,8 @@ class ArtistsController < ApplicationController
   end
 
   def create
-    @artist = Artist.new(params[:artist])
+    @artist = Artist.new(params[:artist].except(:category))
+    @artist.category_list = params[:artist][:category]
 
     
     if @artist.save
