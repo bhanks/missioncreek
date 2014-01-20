@@ -6,6 +6,13 @@
     %a{:href=>"#"}Buy Deluxe pass
     %span.glyphicon.glyphicon-circle-arrow-right
   .row.individual
-    %a{:href=>"#"}Buy individual tickets
+    %a{:href=>"#",:class=>"nfs",:title=>"Individual tickets not for sale at this time",:data=>{:toggle=>"tooltip"}}Buy individual tickets
     %span.glyphicon.glyphicon-circle-arrow-right
+ 
+:javascript
+  $(document).ready(function(){
+    $(".nfs").each(function(){
+      $(this).tooltip();
+    });
   
+  });

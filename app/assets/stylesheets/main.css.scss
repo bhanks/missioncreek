@@ -6,6 +6,14 @@ h1
   font-size:40px;
   font-weight:bold;
 }
+.nfs
+{
+  text-decoration:line-through !important;
+  &:hover
+  {
+    text-decoration:line-through !important;
+  }
+}
 .main
 {
   padding-top:35px;
@@ -194,6 +202,7 @@ h1
     font-size: 18px;
     font-weight: bold;
     text-transform: uppercase;
+    letter-spacing:.8px;
   }
 }
 .mailing-list
@@ -212,7 +221,7 @@ h1
     text-transform:uppercase;
     font-weight:bold;
     background-color: #f9f2e7;
-    border: 1px solid grey;
+    border: 1px solid #cccccc;
     color: #eaa534;
   }
   p

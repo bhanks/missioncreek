@@ -9,11 +9,13 @@ class BaseController < ApplicationController
 	end
 
   def sponsors
+    @sponsors="active"
 		render :layout => "application"
   end
 
   def about
     @content = "about"
+    @about = "active"
     @title = "About"
     @style = "font-size:18px"
     @paths = {:history => "about_history_path",
@@ -24,6 +26,7 @@ class BaseController < ApplicationController
   
   def history
     @title= "History"
+    @about = "active"
     @style = "font-size:15px"
     @paths = {:about => "about_path",
               :staff => "about_staff_path",
@@ -57,11 +60,13 @@ class BaseController < ApplicationController
   end
 
   def tickets
+    @tickets="active"
 		render :layout => "application"
   end
 
   def archive
     @title= "Archive"
+    @about = "active"
     @style = "font-size:15px"
     @paths = {:about => "about_path",
               :history => "about_history_path",
@@ -74,6 +79,7 @@ class BaseController < ApplicationController
 
   def staff
     @title= "Staff"
+    @about = "active"
     @style = "font-size:15px"
     @staff = [
       {
@@ -113,6 +119,10 @@ class BaseController < ApplicationController
         :title=>"Web Developer"
       },
       {
+        :name=>"Wes Beary",
+        :title=>"Associate Producer - Tech + Innovation"
+      },
+      {
         :name=>"Courtenay Bouvier",
         :title=>"Assistant Producer"
       },
@@ -139,10 +149,12 @@ class BaseController < ApplicationController
   end
 
   def tech_info
+    @tech="active"
     render layout: "application"
   end
 
   def tech_schedule
+    @tech="active"
     render layout: "application"
   end
 

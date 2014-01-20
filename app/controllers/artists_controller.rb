@@ -6,6 +6,7 @@ class ArtistsController < ApplicationController
   
   def index
     @artists = Artist.order("display_order")
+    @lineup="active"
     @meta_title = "Lineup : "
     # @tier1 = Artist.where(:tier=>1).order("display_order")
     # @tier2 = Artist.where(:tier=>2).order("display_order")

@@ -22,12 +22,12 @@
   </div>
   <div class="row navigation">
     <div class="col-xs-9 internal">
-      <a href="<%= about_path %>">About</a><span>/</span>
-      <a href="<%= tickets_path %>">Tickets</a><span>/</span>
-      <a href="<%= lineup_path %>">Lineup</a><span>/</span>
-      <a href="#">Calendar</a><span>/</span>
-      <a href="<%= sponsors_path %>">Sponsors</a><span>/</span>
-      <a href="<%= tech_path %>">Tech Conference</a>
+      <a href="<%= about_path %>" class="<%= @about%>">About</a><span>/</span>
+      <a href="<%= tickets_path %>" class="<%= @tickets%>">Tickets</a><span>/</span>
+      <a href="<%= lineup_path %>" class="<%= @lineup%>">Lineup</a><span>/</span>
+      <a href="#" class="<%=@calendar%>">Calendar</a><span>/</span>
+      <a href="<%= sponsors_path %>" class="<%=@sponsors%>">Sponsors</a><span>/</span>
+      <a href="<%= tech_path %>" class="<%= @tech%>">Tech Conference</a>
     </div>
     <div class="col-xs-3 external">
       <span>STAY CONNECTED</span>

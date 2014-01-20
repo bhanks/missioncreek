@@ -5,13 +5,13 @@ class EventsController < ApplicationController
   def index
     @events = {}
     days = {
-      "monday" => Date.parse("01/04/2013"),
-      "tuesday" => Date.parse("02/04/2013"),
-      "wednesday" => Date.parse("03/04/2013"),
-      "thursday" => Date.parse("04/04/2013"),
-      "friday" => Date.parse("05/04/2013"),
-      "saturday" => Date.parse("06/04/2013"),
-      "sunday" => Date.parse("07/04/2013")
+      "monday" => Date.parse("31/03/2014"),
+      "tuesday" => Date.parse("01/04/2014"),
+      "wednesday" => Date.parse("02/04/2014"),
+      "thursday" => Date.parse("03/04/2014"),
+      "friday" => Date.parse("04/04/2014"),
+      "saturday" => Date.parse("05/04/2014"),
+      "sunday" => Date.parse("06/04/2014")
     }
     
     days.each_key do |key|
@@ -19,7 +19,7 @@ class EventsController < ApplicationController
     end
 
     respond_to do |format|
-      format.html {render :layout =>"schedule"}
+      format.html {render :layout =>"application"}
       format.json { render json: @events }
     end
   end
