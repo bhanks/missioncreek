@@ -13,6 +13,11 @@ class BaseController < ApplicationController
 		render :layout => "application"
   end
 
+  def calendar
+    @calendar="active"
+    render :layout=>"application" 
+  end
+
   def about
     @content = "about"
     @about = "active"

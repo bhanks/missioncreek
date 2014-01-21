@@ -42,7 +42,6 @@ Missioncreek::Application.routes.draw do
   end
 
   match "lineup" => "artists#index", :via => :get
-  match "schedule" => "events#index", :via => :get
   match "artists/front_page_selections" => 'artists#store_front_page_artists', :via => :post
   match "artists/store_display_order" => 'artists#store_display_order', :via => :post
   match "artists/artist_thumb" => 'artists#artist_thumb', :via => :post
@@ -54,6 +53,7 @@ Missioncreek::Application.routes.draw do
   match "2014" => "base#index", :via => :get
   match "tech" => "base#tech_info", :via => :get
   match "tech_schedule" => "base#tech_schedule", :via => :get
+  match "calendar" => "base#calendar", :via=> :get
 
   root :to => "Base#index"
 

@@ -4,12 +4,15 @@
   .col-xs-5
     %h1
       %ul{:style=>"margin-bottom:0px"}
-        %li
-          %a{:href=>"#"} Website
-        %li
-          %a{:href=>"#"} Twitter
-        %li
-          %a{:href=>"#"} Facebook
+        - if @artist.official_url
+          %li
+            %a{:href=>@artist.official_url,:target=>"_other"} Website
+        - if @artist.twitter_url
+          %li
+            %a{:href=>@artist.twitter_url,:target=>"_other"} Twitter
+        - if @artist.facebook_url
+          %li
+            %a{:href=>@artist.facebook_url, :target=>"_other"} Facebook
 .row.body
   .col-xs-7
     - image_url = (@artist.image.url) ? @artist.image.medium.url : asset_path("no-image.png")
@@ -18,7 +21,7 @@
   .col-xs-5
     .passes.media
       .row.artist-tickets
-        %a{:href=>"#"}Buy Tickets
+        %a{:href=>"#",:class=>"nfs",:title=>"Individual tickets on sale January 31st",:data=>{:toggle=>"tooltip"}}Buy individual tickets
         %span.glyphicon.glyphicon-circle-arrow-right
       .row
         - if @artist.youtube_url != ""
@@ -28,6 +31,13 @@
         - if @artist.spotify_url != ""
           %iframe.spotify{:width=>"400", :height=>"80", :frameborder => "no", :src=>"https://embed.spotify.com/?uri=#{@artist.spotify_url}", :allowtransparency=>'true'}
         
+:javascript
+  $(document).ready(function(){
+    $(".nfs").each(function(){
+      $(this).tooltip();
+    });
+  
+  });
 
 
 
