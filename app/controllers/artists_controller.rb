@@ -76,12 +76,18 @@ class ArtistsController < ApplicationController
       @artist.crop_w = params[:crop][:w]
       @artist.crop_h = params[:crop][:h]
     end
-    @artist.category_list = params[:artist][:category]
+    if params[:artist] && params[:artist][:category]
+      @artist.category_list = params[:artist][:category]
+    end
     respond_to do |format|
-      if @artist.update_attributes(params[:artist].except(:category))
+      if params[:artist]
+        if @artist.update_attributes(params[:artist].except(:category))
+          format.html { redirect_to artists_dashboard_index_url, notice: 'Artist was successfully updated.' }
+        else
+          format.html { render action: "edit", :layout => 'dashboard' }
+        end
+      elsif params[:crop]
         format.html { redirect_to artists_dashboard_index_url, notice: 'Artist was successfully updated.' }
-      else
-        format.html { render action: "edit", :layout => 'dashboard' }
       end
     end
   end
