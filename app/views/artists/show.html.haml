@@ -16,7 +16,7 @@
 .row.body
   .col-xs-7
     - image_url = (@artist.image.url) ? @artist.image.medium.url : asset_path("no-image.png")
-    %img{:src => image_url}
+    %img{:src => image_url,:style=>"max-width:450px"}
     .artist_bio=@artist.bio.html_safe
   .col-xs-5
     .passes.media
