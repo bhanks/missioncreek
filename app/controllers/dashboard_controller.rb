@@ -18,7 +18,7 @@ class DashboardController < ApplicationController
 	end
 
 	def artists
-		@artists = Artist.find(:all, :order => "tier, name")
+		@artists = Artist.order(:display_order)
 		@artist_active = "active"
 		#render 'artists/admin_index'
 	end
