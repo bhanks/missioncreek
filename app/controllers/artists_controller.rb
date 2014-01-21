@@ -82,7 +82,21 @@ class ArtistsController < ApplicationController
     respond_to do |format|
       if params[:artist]
         if @artist.update_attributes(params[:artist].except(:category))
-          format.html { redirect_to artists_dashboard_index_url, notice: 'Artist was successfully updated.' }
+          if params[:artist][:image]
+            img = ::Magick::Image::read(@artist.image).first 
+            width = img.columns
+            height = img.rows
+            unless(height <= 300 || width <= 450)
+              format.html {redirect_to action: "crop", :id => @artist.id}
+            else
+              @artist.remove_image!
+              @artist.save!
+              @artist.errors.add :image, "must be at least 450x300"
+              format.html{ render action: "new", :layout => "dashboard"}
+            end
+          else
+            format.html { redirect_to artists_dashboard_index_url, notice: 'Artist was successfully updated.' }
+          end
         else
           format.html { render action: "edit", :layout => 'dashboard' }
         end
