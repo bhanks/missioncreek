@@ -3,84 +3,27 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import "colors";
 
-
-.container.main.schedule
-{
-	//background-image:url('black.png');
-	background-image:none;
-	background-color:rgba(0,0,0,.7);
-}
-
-$border: 6px;
-
 .schedule
 {
-	a
-	{
-		color:$sea;
-	}
-	text-align:center;
-	color:white;
-	h2
-	{
-		text-align:center;
-		font-size:1.3em;
-	}
-	.event
-	{	
-		width:175px;
-		background-color:$charcoal;
-		display:inline-block;
-		margin-right:8px;
-		margin-bottom:10px;
-		border: 1px solid $linen;
-	}
-	.top
-	{
-		height:120px;
-	}
-	.bottom
-	{
-		height:20px;
-	}
-	.name
-	{
-		color:$pepto;
-	}
-	ul.nav
-	{
-		margin-top:15px;
-	}
-}
-.event-detail
-{
-	h2
-	{
-		font-size:2.2em;
-
-	}
-	.date, .time, .cost
-	{
-		font-size:1.6em;
-		color: $pepto;
-		margin:10px;
-	}
-	.event-tickets
-	{
-		font-size:2em;
-		line-height:1.5em;
-		margin:10px;
-	}
-	.more ul
-	{
-		list-style-type:none;
-	}
-	.more ul li
-	{
-		display:inline-block;
-		font-size:1.3em;
-		margin-right:15px;
-	}
+  h2{
+    color: #e44921;
+    font-family: Mercury;
+    font-size: 24px;
+    font-weight: bold;
+  } 
+  ul.events
+  {
+    padding:0px;
+    list-style-type:none;
+    div
+    {
+      display:inline-block;
+    }
+    li
+    {
+      padding:0px 12px;
+    }
+  }
 }
 
 

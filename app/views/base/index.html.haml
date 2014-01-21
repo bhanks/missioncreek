@@ -1,9 +1,10 @@
+- mwt = "http://www.midwestix.com/organizations/mission-creek-festival"
 .col-xs-8.home
   #carousel-front-page.row.carousel
     .constant
-      %a{:href=>"#"} All Past Artists
+      %a{:href=>mwt,:target=>"_other"} Festival Passes
       %span.glyphicon.glyphicon-circle-arrow-right
-      %a{:href=>"#"} 2014 Lineup 
+      %a{:href=>lineup_path,:style=>"margin-left:10px;"} 2014 Lineup 
       %span.glyphicon.glyphicon-circle-arrow-right
     %ol.carousel-indicators
       %li.active{:data=>{"slide-to" =>"0", :target => "#carousel-front-page"}}
@@ -11,24 +12,30 @@
       %li{:data=>{"slide-to" =>"2", :target => "#carousel-front-page"}}
     .carousel-inner
       .item.active
-        %img{:src=>"/assets/first.png"}
+        %img{:src=>"/assets/fp/headandheart.jpg"}
+        .carousel-caption
+          %h2 The Head and the Heart
       .item
-        %img{:src=>"/assets/second.png"}
+        %img{:src=>"/assets/fp/philip_glass.jpg"}
+        .carousel-caption
+          %h2 Philip Glass
       .item
-        %img{:src=>"/assets/third.png"}
+        %img{:src=>"/assets/fp/rachel_kushner.jpg"}
+        .carousel-caption
+          %h2 Rachel Kushner
 
   .row.info
     .col-xs-6{:style=>"padding:0px"}
       .circles
       .left
         %h2 What's Happening?
-        %a{:href=>"#"}Learn more about the fest
+        %a{:href=>about_path}Learn more about the fest
         %span.glyphicon.glyphicon-circle-arrow-right
     .col-xs-6
       .circles
       .right
         %h2 Join us!
-        %a{:href=>"#"}Find prices & buy tickets
+        %a{:href=>mwt, :target=>"_other"}Find prices & buy tickets
         %span.glyphicon.glyphicon-circle-arrow-right
 .col-xs-4
   .mailing-list
@@ -49,7 +56,7 @@
 
 :javascript
   $('.carousel').carousel({
-    interval: false
+    interval: 5000
   });
   if(!/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent))// && !$.cookie("overlay"))
   {
@@ -57,7 +64,7 @@
     var minutes = 1;
     date.setTime(date.getTime() + (minutes * 60 * 1000));
     //$.cookie("overlay", "true",{expires: date})
-    $("#overlay").modal();
+    //$("#overlay").modal();
   }
   var twitterCheck = setInterval(function(){
     if($('iframe.twitter-timeline'))

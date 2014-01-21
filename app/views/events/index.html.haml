@@ -1,37 +1,54 @@
-%h2.tickets
-	%a{:href=>"http://www.midwestix.com/organizations/mission-creek-festival", :target=> "_other"}GET TICKETS
-%h2 Monday, April 1
-%ul.events.monday
-	- unless @events["monday"] == nil
-		-@events["monday"].each do |event|
-			= render "event_macro", :event => event
-%h2 Tuesday, April 2
-%ul.events.tuesday
-	- unless @events["tuesday"] == nil
-		- @events["tuesday"].each do |event|
-			= render "event_macro", :event => event
-%h2 Wednesday, April 3
-%ul.events.wednesday
-	- unless @events["wednesday"] == nil
-		- @events["wednesday"].each do |event|
-			= render "event_macro", :event => event
-%h2 Thursday, April 4
-%ul.events.thursday
-	- unless @events["thursday"] == nil
-		-@events["thursday"].each do |event|
-			= render "event_macro", :event => event
-%h2 Friday, April 5
-%ul.events.friday
-	- unless @events["friday"] == nil
-		- @events["friday"].each do |event|
-			= render "event_macro", :event => event
-%h2 Saturday, April 6
-%ul.events.saturday
-	- unless @events["friday"] == nil
-		- @events["saturday"].each do |event|
-			= render "event_macro", :event => event
-%h2 Sunday, April 7
-%ul.events.sunday
-	- unless @events["saturday"] == nil
-		- @events["sunday"].each do |event|
-			= render "event_macro", :event => event
+.row.title
+  %h1.sub 2014 Schedule
+  %ul
+    %li.music 
+      %span.circle
+      %span.text Music
+    %li.literature 
+      %span.circle
+      %span.text Literature
+    %li.food
+      %span.circle
+      %span.text Food
+    %li.film 
+      %span.circle
+      %span.text Film
+    %li.misc
+      %span.circle
+      %span.text Misc
+.row.schedule
+  %h2 Monday, April 1
+  %ul.events.monday
+    - unless @events["monday"] == nil
+      -@events["monday"].each do |event|
+        = render "event_macro", :event => event
+  %h2 Tuesday, April 2
+  %ul.events.tuesday
+    - unless @events["tuesday"] == nil
+      - @events["tuesday"].each do |event|
+        = render "event_macro", :event => event
+  %h2 Wednesday, April 3
+  %ul.events.wednesday
+    - unless @events["wednesday"] == nil
+      - @events["wednesday"].each do |event|
+        = render "event_macro", :event => event
+  %h2 Thursday, April 4
+  %ul.events.thursday
+    - unless @events["thursday"] == nil
+      -@events["thursday"].each do |event|
+        = render "event_macro", :event => event
+  %h2 Friday, April 5
+  %ul.events.friday
+    - unless @events["friday"] == nil
+      - @events["friday"].each do |event|
+        = render "event_macro", :event => event
+  %h2 Saturday, April 6
+  %ul.events.saturday
+    - unless @events["friday"] == nil
+      - @events["saturday"].each do |event|
+        = render "event_macro", :event => event
+  %h2 Sunday, April 7
+  %ul.events.sunday
+    - unless @events["saturday"] == nil
+      - @events["sunday"].each do |event|
+        = render "event_macro", :event => event
