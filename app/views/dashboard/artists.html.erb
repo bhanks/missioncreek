@@ -21,10 +21,8 @@
   <thead>
     <tr>
       <th><%= model_class.human_attribute_name(:name) %></th>
-      <th><%= model_class.human_attribute_name(:bio) %></th>
       <th>Category</th>
-      <th><%= model_class.human_attribute_name(:youtube_url) %></th>
-      <th>Images</th>
+      <th>Visible</th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
 
@@ -33,10 +31,13 @@
     <% @artists.each do |artist| %>
       <tr>
         <td class='artist-name'><%= link_to artist.name, edit_artist_path(artist) %></td>
-        <td class='artist-bio'><%= raw popup(artist.bio,'popover', "Bio") %></td>
         <td><strong><%= (artist.category != [])? artist.category.first.name : "" %></strong></td>
-        <td><%= raw url_present(artist.youtube_url)%></td>
-        <td class='confirm-image'><%= raw url_present(artist.image.url)%></td>
+        <% if artist.visible%>
+          <td><span class="glyphicon glyphicon-ok" style="color:green"></span></td>
+        <% else %>
+          <td><span class="glyphicon glyphicon-remove" style="color:red"></span></td>
+        <% end %>
+
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_artist_path(artist), :class => 'btn btn-mini' %>
