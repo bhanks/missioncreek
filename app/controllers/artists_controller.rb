@@ -5,7 +5,7 @@ class ArtistsController < ApplicationController
   before_filter :authenticate_user!, :except => [:index, :show]
   
   def index
-    @artists = Artist.order("display_order")
+    @artists = Artist.where(:visible=>true).order("display_order")
     @lineup="active"
     @meta_title = "Lineup : "
     # @tier1 = Artist.where(:tier=>1).order("display_order")
