@@ -3,26 +3,59 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import "colors";
 
+$music:$pepto;
+$lit:#2d7372;
+$food:#00be4b;
+$film:#fdaa17;
+$misc:#ff2200;
+
 .schedule
 {
   h2{
     color: #e44921;
-    font-family: Mercury;
+    font-family:Mercury;
     font-size: 24px;
     font-weight: bold;
+    text-align:center;
   } 
-  ul.events
+  .event
   {
-    padding:0px;
-    list-style-type:none;
-    div
+    font-size:20px;
+    text-align:center;
+    font-family:Whitney;
+    padding:10px 0px;
+    vertical-align:middle;
+    color:white;
+  }
+  .event.music{background-color:$music;}
+  .event.lit{background-color:$lit;}
+  .event.food{background-color:$food;}
+  .event.film{background-color:$film;}
+  .event.misc{background-color:$misc;}
+
+  .glyphicon
+  {
+    font-size:18px;
+    &:hover
     {
-      display:inline-block;
+      cursor:pointer;
     }
-    li
-    {
-      padding:0px 12px;
-    }
+  }
+  .time, .location, .support
+  {
+    font-style:italic;
+  }
+  .support
+  {
+    font-size:16px;
+    margin-bottom: 5px;
+  }
+  .summary
+  {
+    font-size:15px;
+    text-align:left;
+    width:95%;
+    margin-top:5px;
   }
 }
 

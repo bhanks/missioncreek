@@ -1,9 +1,20 @@
-%li.event
+.col-xs-12.event.music
   - name = (event.show_title) ? event.title : event.headliners.map(&:name).join(" & ")
-  .name=name
-  .location=event.venue.name
-  .time=event.door_time.strftime("%l %P")
-  .details
-    %a Details
-    %span.glyphicon.glyphicon-plus-sign
-  .tickets
+  .row
+    .col-xs-4.name
+      %span.glyphicon.glyphicon-plus-sign
+      %span=name 
+    .col-xs-4 
+      - door_time = event.door_time.strftime("%l %P") 
+      - start_time = event.start_time.strftime("%l %P") 
+      .location="#{event.venue.name} / #{door_time} doors / #{start_time} start "
+    .col-xs-4.tickets
+      %a{:href=>"#", :target=>"_new"} Tickets
+  .row.details
+    .col-xs-4
+      - support = (event.support == [])? "" : "w/ " + event.support.map(&:name).join(", ")
+      .support=support
+      %img{:src=>event.headliners.first.image.small,:style=>"width:240px"}
+    .col-xs-8
+      - summary = (event.description == "")? event.headliners.first.bio : event.description
+      .summary=summary
