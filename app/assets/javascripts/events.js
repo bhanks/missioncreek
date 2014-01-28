@@ -1,10 +1,15 @@
 $(document).ready(function(){
 
-  if($('#calender_page')!=[])
+  if($('#calendar_page').length > 0)
   {
+    $('body').css("background-color","#fbfbfb");
+    $("body").css("font-family","Whitney");
+    $("body").css("background","url('/assets/bg-solid.png') no-repeat center 170px");
+    $("body").css("background-size","cover");
     $('span.glyphicon-plus-sign').each(function(){
       var event = $(this).closest(".event");
       $(this).on("click", function(){
+        console.log($(this));
         if($(this).hasClass("glyphicon-plus-sign"))
         {
           $(this).removeClass("glyphicon-plus-sign");
