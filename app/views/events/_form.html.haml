@@ -11,7 +11,7 @@
     .row
       .field.col-md-6.form-group.dashboard-lookup
         = f.label :headliners
-        %input.typeahead.headliners.form-control
+        %input.typeahead.headliners.form-control.event
         .headliners-list
           - if @headliners
             - @headliners.each do |artist|
@@ -21,7 +21,7 @@
                 = artist.name
       .field.col-md-6.form-group.dashboard-lookup
         = f.label :support
-        %input.typeahead.support.form-control
+        %input.typeahead.support.form-control.event
         .support-list
           - if @support
             - @support.each do |artist|

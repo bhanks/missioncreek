@@ -17,9 +17,9 @@
     %li.misc
       %span.circle
       %span.text Misc
-.row.col-xs-4.col-xs-offset-4.filters
+.row.col-xs-6.col-xs-offset-3.filters
   .btn-group
-    %button.btn.btn-default.dropdown-toggle{:type=>"button",:data=>{:toggle=>"dropdown"}}
+    %button#day-filter.btn.btn-default.dropdown-toggle{:type=>"button",:data=>{:toggle=>"dropdown"}}
       ="Select a Day"
       %span.caret
     %ul.dropdown-menu{:role=>"menu"}
@@ -27,8 +27,21 @@
         %a{:href=>"#", :onclick=>"filterByDay('monday')"}Monday
       %li
         %a{:href=>"#", :onclick=>"filterByDay('tuesday')"}Tuesday
+      %li
+        %a{:href=>"#", :onclick=>"filterByDay('wednesday')"}Wednesday
+      %li
+        %a{:href=>"#", :onclick=>"filterByDay('thursday')"}Thursday
+      %li
+        %a{:href=>"#", :onclick=>"filterByDay('friday')"}Friday
+      %li
+        %a{:href=>"#", :onclick=>"filterByDay('Saturday')"}Saturday
+      %li
+        %a{:href=>"#", :onclick=>"filterByDay('sunday')"}Sunday
+      %li.divider
+      %li
+        %a{:href=>"#", :onclick=>"$('.day').show();$('#day-filter').html('Select a Day <span class=\"caret\"></span>');"}Show All
   .btn-group
-    %button.btn.btn-default.dropdown-toggle{:type=>"button",:data=>{:toggle=>"dropdown"}}
+    %button#category-filter.btn.btn-default.dropdown-toggle{:type=>"button",:data=>{:toggle=>"dropdown"}}
       ="Select a Category"
       %span.caret
     %ul.dropdown-menu{:role=>"menu"}
@@ -44,47 +57,50 @@
         %a{:href=>"#", :onclick=>"filterByCategory('misc')"}Misc
       %li.divider
       %li
-        %a{:href=>"#", :onclick=>"$('.event').show()"}Show All
+        %a{:href=>"#", :onclick=>"$('.event').show(); $('#category-filter').html('Select a Category <span class=\"caret\"></span>');"}Show All
+  .search
+    %input.typeahead.form-control.calendar{:placeholder=>"find an artist"}
+    %span#clear-typeahead.glyphicon.glyphicon-remove-sign{:style=>"display:none"}
 
 
 .row.schedule.col-xs-12
-  .row.col-xs-12
+  .row.col-xs-12.monday.day
     %h2 Monday, March 31
     .events.monday
       - unless @events["monday"] == nil
         -@events["monday"].each do |event|
           = render "event_macro", :event => event
-  .row.col-xs-12
+  .row.col-xs-12.tuesday.day
     %h2 Tuesday, April 1
     .events.tuesday
       - unless @events["tuesday"] == nil
         - @events["tuesday"].each do |event|
           = render "event_macro", :event => event
-  .row.col-xs-12
+  .row.col-xs-12.wednesday.day
     %h2 Wednesday, April 2
     .events.wednesday
       - unless @events["wednesday"] == nil
         - @events["wednesday"].each do |event|
           = render "event_macro", :event => event
-  .row.col-xs-12
+  .row.col-xs-12.thursday.day
     %h2 Thursday, April 3
     .events.thursday
       - unless @events["thursday"] == nil
         -@events["thursday"].each do |event|
           = render "event_macro", :event => event
-  .row.col-xs-12
+  .row.col-xs-12.friday.day
     %h2 Friday, April 4
     .events.friday
       - unless @events["friday"] == nil
         - @events["friday"].each do |event|
           = render "event_macro", :event => event
-  .row.col-xs-12
+  .row.col-xs-12.saturday.day
     %h2 Saturday, April 5
     .events.saturday
       - unless @events["friday"] == nil
         - @events["saturday"].each do |event|
           = render "event_macro", :event => event
-  .row.col-xs-12
+  .row.col-xs-12.sunday.day
     %h2 Sunday, April 6
     .events.sunday
       - unless @events["saturday"] == nil

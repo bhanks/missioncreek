@@ -6,6 +6,9 @@ class ArtistsController < ApplicationController
   
   def index
     @artists = Artist.where(:visible=>true).order("display_order")
+    if(params[:with_event])
+      @artists = @artists.where("event_id IS NOT NULL");
+    end
     @lineup="active"
     @meta_title = "Lineup : "
     # @tier1 = Artist.where(:tier=>1).order("display_order")

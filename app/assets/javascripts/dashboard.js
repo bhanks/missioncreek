@@ -19,7 +19,7 @@ $(document).ready(function(){
       $(inputs[i]).val(i);
     });
   }
-  if($('.typeahead'))
+  if($('.typeahead.event'))
   {
     groups = ['headliners', 'support']
     $.each(groups, function(index){

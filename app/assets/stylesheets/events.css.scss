@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import "colors";
-
+@import "typeahead";
 $music:$pepto;
 $lit:#2d7372;
 $food:#00be4b;
@@ -59,9 +59,28 @@ $misc:#ff2200;
     margin-top:5px;
   }
 }
+.search
+{
+  width:auto;
+  display:inline-block;
+  .twitter-typeahead{
+    width:auto;
+    vertical-align:middle;
+  }
+}
 
-
-
+#clear-typeahead
+{
+  color: black;
+  font-size: 21px;
+  position: relative;
+  top: 8px;
+  right: 30px;
+  &:hover
+  {
+    cursor:pointer;
+  }
+}
 
 
 
