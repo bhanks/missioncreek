@@ -22,3 +22,16 @@ $(document).ready(function(){
   }
 
 });
+
+
+function filterByCategory(category)
+{
+  var categories=["music", "literature","film","food","misc"]
+  var selectors = []
+  $(categories).each(function(){
+    if( this != category)
+      selectors.push(".event."+this);
+  });
+  $('.event').show();
+  $(selectors.join(",")).hide();
+}

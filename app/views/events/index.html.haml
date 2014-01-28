@@ -24,18 +24,29 @@
       %span.caret
     %ul.dropdown-menu{:role=>"menu"}
       %li
-        %a{:href=>"#"}Monday
+        %a{:href=>"#", :onclick=>"filterByDay('monday')"}Monday
       %li
-        %a{:href=>"#"}Tuesday
+        %a{:href=>"#", :onclick=>"filterByDay('tuesday')"}Tuesday
   .btn-group
     %button.btn.btn-default.dropdown-toggle{:type=>"button",:data=>{:toggle=>"dropdown"}}
       ="Select a Category"
       %span.caret
     %ul.dropdown-menu{:role=>"menu"}
       %li
-        %a{:href=>"#"}Monday
+        %a{:href=>"#", :onclick=>"filterByCategory('music')"}Music
       %li
-        %a{:href=>"#"}Tuesday
+        %a{:href=>"#", :onclick=>"filterByCategory('literature')"}Literature
+      %li
+        %a{:href=>"#", :onclick=>"filterByCategory('food')"}Food
+      %li
+        %a{:href=>"#", :onclick=>"filterByCategory('film')"}Film
+      %li
+        %a{:href=>"#", :onclick=>"filterByCategory('misc')"}Misc
+      %li.divider
+      %li
+        %a{:href=>"#", :onclick=>"$('.event').show()"}Show All
+
+
 .row.schedule.col-xs-12
   .row.col-xs-12
     %h2 Monday, March 31
