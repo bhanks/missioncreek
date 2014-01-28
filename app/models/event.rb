@@ -35,13 +35,13 @@ class Event < ActiveRecord::Base
   def headliners
     artists = self.artists
     headliners = self.artists.partition{|a| a.headliner}
-    sorted =  headliners[0].sort{|a,b| a[:display_order] <=> b[:display_order]}
+    sorted =  headliners[0].sort{|a,b| a[:event_order] <=> b[:event_order]}
   end
 
   def support
     artists = self.artists
     support = self.artists.partition{|a| a.headliner}
-    sorted =  support[1].sort{|a,b| a[:tier] <=> b[:tier]}
+    sorted =  support[1].sort{|a,b| a[:event_order] <=> b[:event_order]}
   end
 
 end
