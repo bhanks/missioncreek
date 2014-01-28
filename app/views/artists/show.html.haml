@@ -4,15 +4,15 @@
   .col-xs-5
     %h1
       %ul{:style=>"margin-bottom:0px"}
-        - if @artist.official_url != ""
+        - if @artist.official_url != "" && @artist.official_url.nil? == false
           %li
             - official = (@artist.official_url.match(/^http:\/\//).nil?)? "http://#{@artist.official_url} " : @artist.official_url
             %a{:href=>official,:target=>"_other"} Website
-        - if @artist.twitter_url != ""
+        - if @artist.twitter_url != "" && @artist.twitter_url.nil? == false
           %li
             - twitter = (@artist.twitter_url.match(/^http:\/\//).nil?)? "http://#{@artist.twitter_url} " : @artist.twitter_url
             %a{:href=>twitter,:target=>"_other"} Twitter
-        - if @artist.facebook_url != ""
+        - if @artist.facebook_url != "" && @artist.facebook_url.nil? == false
           %li
             - facebook = (@artist.facebook_url.match(/^http:\/\//).nil?)? "http://#{@artist.facebook_url} " : @artist.facebook_url
             %a{:href=>facebook, :target=>"_other"} Facebook
