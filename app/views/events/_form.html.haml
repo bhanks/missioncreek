@@ -84,6 +84,13 @@
       .field.form-group.col-md-4.col-sm-4
         = f.label "Display with Title"
         = f.check_box :show_title, :class=>"form-control"
+    .row
+      .col-md-6.field.form-group
+        = f.label :category
+        = f.select :category,  ["music", "literature","film","food","misc"], :class=>"form-control"
+      .col-md-6.field.form-group
+        = f.label :visible
+        = f.check_box :visible
     .field.form-group
       = f.label :description
       = f.text_area :description, :class=>"form-control"

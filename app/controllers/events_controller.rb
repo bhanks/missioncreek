@@ -57,7 +57,8 @@ class EventsController < ApplicationController
     params[:event].parse_time_select! :start_time
     params[:event].parse_time_select! :door_time
 
-    @event = Event.new(params[:event])
+    @event = Event.new(params[:event].except(:category))
+    @event.category_list = params[:event][:category]
     associate_artists(params[:headliners], @event, true) if params[:headliners]
     associate_artists(params[:support], @event) if params[:support]
 
@@ -79,6 +80,11 @@ class EventsController < ApplicationController
     params[:event].parse_time_select! :start_time
     params[:event].parse_time_select! :door_time
     @event = Event.find(params[:id])
+
+    if params[:event] && params[:event][:category]
+      @event.category_list = params[:event][:category]
+    end
+
     associate_artists(params[:headliners], @event, true) if params[:headliners]
     associate_artists(params[:support], @event) if params[:support]
 
@@ -94,7 +100,7 @@ class EventsController < ApplicationController
       artist.save!
     end 
     respond_to do |format|
-      if @event.update_attributes(params[:event])
+      if @event.update_attributes(params[:event].except(:category))
         format.html { redirect_to events_dashboard_index_url, notice: 'Event was successfully updated.' }
         format.json { head :no_content }
       else
