@@ -1,4 +1,4 @@
-.col-xs-12.event.music
+.col-xs-12.event{:class=>event.category.first.name,:id=>"event_#{event.id}"}
   - name = (event.show_title) ? event.title : event.headliners.map(&:name).join(" & ")
   .row
     .col-xs-4.name
@@ -10,7 +10,7 @@
       .location="#{event.venue.name} / #{door_time} doors / #{start_time} start "
     .col-xs-4.tickets
       %a{:href=>"#", :target=>"_new"} Tickets
-  .row.details
+  .row.details{:style=>"display:none", :class=>"event_#{event.id}"}
     .col-xs-4
       - support = (event.support == [])? "" : "w/ " + event.support.map(&:name).join(", ")
       .support=support
