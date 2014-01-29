@@ -112,8 +112,16 @@ $misc:#ff2200;
   width:auto;
   display:inline-block;
   .twitter-typeahead{
-    width:auto;
+    width:200px;
     vertical-align:middle;
+  }
+  .tt-hint
+  {
+    width:100%;
+  }
+  .tt-dropdown-menu
+  {
+    width:185px;
   }
 }
 

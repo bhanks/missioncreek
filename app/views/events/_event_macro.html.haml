@@ -9,7 +9,7 @@
       - start_time = event.start_time.strftime("%l %P") 
       .location="#{event.venue.name} / #{door_time} doors / #{start_time} start "
     .col-xs-4.tickets
-      %a{:href=>"#", :target=>"_new"}Buy Tickets
+      %a.nfs{:href=>"#", :target=>"_new", :title=>"Individual tickets on sale January 31st",:data=>{:toggle=>"tooltip"}}Buy Tickets
       %span.glyphicon.glyphicon-circle-arrow-right
   .row.details{:style=>"display:none", :class=>"event_#{event.id}"}
     .col-xs-4

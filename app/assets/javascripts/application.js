@@ -21,4 +21,9 @@
 //= require hogan.js
 //= require underscore-min
 //= require tinymce
+$(document).ready(function(){
+  $(".nfs").each(function(){
+    $(this).tooltip();
+  });
 
+});
