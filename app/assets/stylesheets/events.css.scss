@@ -18,6 +18,18 @@ $misc:#ff2200;
     font-weight: bold;
     text-align:center;
   } 
+  .details
+  {
+    margin-top:10px;
+  }
+  .spacer:after{
+    display: block;
+    width: 15%;
+    height: 1px;
+    background-color: white;
+    content: "";
+    margin-bottom: 10px;
+  }
   .event
   {
     font-size:20px;
@@ -42,7 +54,19 @@ $misc:#ff2200;
       cursor:pointer;
     }
   }
-  .time, .location, .support
+  .name{
+    text-align:left;
+    padding-left:35px;
+  }
+  .headliner{
+    font-weight:bold;
+  }
+  .time, .location
+  {
+    font-family:Mercury;
+    
+  }
+  .time, .location
   {
     font-style:italic;
   }
@@ -50,6 +74,9 @@ $misc:#ff2200;
   {
     font-size:16px;
     margin-bottom: 5px;
+    font-style: normal;
+    text-align: left;
+    font-weight: bold;
   }
   .summary
   {
@@ -57,6 +84,27 @@ $misc:#ff2200;
     text-align:left;
     width:95%;
     margin-top:5px;
+  }
+  .tickets
+  {
+    text-transform:uppercase;
+    text-align:right;
+    color: #94918a;
+    a{
+      color: #94918a;
+      text-transform: uppercase;
+      font-size: 15px;
+      font-weight: bold;
+      padding: 6px 40px 6px 18px;
+      background-color: #fbfbfb;
+      letter-spacing:1.4px;
+    }
+    .glyphicon
+    {
+      position:relative;
+      right: 38px;
+      top: 4px;
+    }
   }
 }
 .search
