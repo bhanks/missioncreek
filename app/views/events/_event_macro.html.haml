@@ -19,4 +19,4 @@
       - support = (event.support == [])? "" : "w/ " + event.support.map(&:name).join(", ")
       .spacer
       .support=support
-      .summary=summary
+      .summary=summary.html_safe

@@ -93,7 +93,7 @@
         = f.check_box :visible
     .field.form-group
       = f.label :description
-      = f.text_area :description, :class=>"form-control"
+      = f.cktext_area :description,:id=>'event_description',:ckeditor => {:toolbar=>"Custom"}
     .actions
       = f.submit 'Save', :class=>"btn btn-primary"
-
+.space{:style=>"display:block; height:50px;"}
