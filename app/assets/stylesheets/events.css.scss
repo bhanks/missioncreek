@@ -21,6 +21,24 @@ $misc:#ff2200;
   .details
   {
     margin-top:10px;
+    h4
+    {
+      font-weight: normal;
+      letter-spacing: .6px;
+      font-size: 16px;
+      margin-bottom:0px;
+    }
+    ul
+    {
+      list-style-type:none;
+      padding:0px;
+      margin-bottom:0px;
+      font-size:14px;
+    }
+    li a
+    {
+      color:#fbfbfb;
+    }
   }
   .spacer:after{
     display: block;
@@ -71,7 +89,7 @@ $misc:#ff2200;
   {
     font-style:italic;
   }
-  .support
+  .support, .prices
   {
     font-size:16px;
     margin-bottom: 5px;

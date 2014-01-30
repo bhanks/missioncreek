@@ -23,20 +23,11 @@
       ="Select a Day"
       %span.caret
     %ul.dropdown-menu{:role=>"menu"}
-      %li
-        %a{:href=>"#", :onclick=>"filterByDay('monday')"}Monday
-      %li
-        %a{:href=>"#", :onclick=>"filterByDay('tuesday')"}Tuesday
-      %li
-        %a{:href=>"#", :onclick=>"filterByDay('wednesday')"}Wednesday
-      %li
-        %a{:href=>"#", :onclick=>"filterByDay('thursday')"}Thursday
-      %li
-        %a{:href=>"#", :onclick=>"filterByDay('friday')"}Friday
-      %li
-        %a{:href=>"#", :onclick=>"filterByDay('saturday')"}Saturday
-      %li
-        %a{:href=>"#", :onclick=>"filterByDay('sunday')"}Sunday
+      - days = Date::DAYNAMES.rotate(1)
+      - days.delete("Monday")
+      - days.each do |day|
+        %li
+          %a{:href=>"#", :onclick=>"filterByDay('#{day.downcase}')"}=day
       %li.divider
       %li
         %a{:href=>"#", :onclick=>"$('.day').show();$('#day-filter').html('Select a Day <span class=\"caret\"></span>');"}Show All
@@ -64,12 +55,6 @@
 
 
 .row.schedule.col-xs-12
-  .row.col-xs-12.monday.day
-    %h2 Monday, March 31
-    .events.monday
-      - unless @events["monday"] == nil
-        -@events["monday"].each do |event|
-          = render "event_macro", :event => event
   .row.col-xs-12.tuesday.day
     %h2 Tuesday, April 1
     .events.tuesday
