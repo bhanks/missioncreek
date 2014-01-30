@@ -36,12 +36,15 @@
       .field.col-md-6.col-sm-6.form-group
         = f.label Venue
         = f.collection_select :venue_id, Venue.all, :id, :name, {}, {:class=>"form-control venue-select"}
+    .row
       .field.form-group.col-md-3.col-sm-6
         = f.label "Price(low)"
         = f.number_field :price_advance, :class=>"form-control"
       .field.form-group.col-md-3.col-sm-6
         = f.label "Price(high)"
         = f.number_field :price_dayof, :class=>"form-control"
+    .row
+      .alert.alert-warning{:style=>"margin-top:3px"}If there is just one price, put it in both fields.
     .row
       .field.col-md-4.col-sm-6.form-group
         = f.label :date
