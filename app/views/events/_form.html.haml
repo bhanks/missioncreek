@@ -37,10 +37,10 @@
         = f.label Venue
         = f.collection_select :venue_id, Venue.all, :id, :name, {}, {:class=>"form-control venue-select"}
       .field.form-group.col-md-3.col-sm-6
-        = f.label "Advance"
+        = f.label "Price(low)"
         = f.number_field :price_advance, :class=>"form-control"
       .field.form-group.col-md-3.col-sm-6
-        = f.label "Day Of"
+        = f.label "Price(high)"
         = f.number_field :price_dayof, :class=>"form-control"
     .row
       .field.col-md-4.col-sm-6.form-group
