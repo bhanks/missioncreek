@@ -5,9 +5,9 @@
       %span.glyphicon.glyphicon-plus-sign
       %span.headliner=name 
     .col-xs-4.time 
-      - door_time = event.door_time.strftime("%l %P") 
-      - start_time = event.start_time.strftime("%l %P") 
-      .location="#{event.venue.name} / #{door_time} doors / #{start_time} start "
+      - door_time = event.format_door_time
+      - start_time = event.format_start_time
+      .location="#{event.venue.name} / #{door_time} "
     .col-xs-4.tickets
       - mwt_landing = "http://www.midwestix.com/organizations/mission-creek-festival"
       - ticket_url = (event.ticket_url.nil? || event.ticket_url == "")? mwt_landing : event.ticket_url
@@ -29,4 +29,5 @@
       - unless event.price_advance.nil? && event.price_dayof.nil?
         - prices = [event.price_advance, event.price_dayof].uniq.map{|e| "$#{e}"}
         .prices="#{prices.join(" - ")}"
+      .support="#{event.format_door_time} doors/ #{event.format_start_time} start"
       .summary=summary.html_safe

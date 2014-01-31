@@ -27,5 +27,4 @@ module DashboardHelper
 		html = "<i class='#{icon}'></i>"
     end
 
-
 end

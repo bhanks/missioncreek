@@ -12,7 +12,7 @@ class Event < ActiveRecord::Base
   	if(self.door_time.strftime("%M")=="00")
   		self.door_time.strftime("%l %P")
   	else
-  		self.door_time.strftime("%l%M %P")
+  		self.door_time.strftime("%l:%M %P")
   	end
   end
 
@@ -20,7 +20,7 @@ class Event < ActiveRecord::Base
   	if(self.start_time.strftime("%M")=="00")
   		self.start_time.strftime("%l %P")
   	else
-  		self.start_time.strftime("%l%M %P")
+  		self.start_time.strftime("%l:%M %P")
   	end
   end
 
