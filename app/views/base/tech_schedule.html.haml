@@ -10,5 +10,6 @@
   .col-xs-4
     .passes
       .row.tech
-        %a.nfs{:href=>"#", :title=>"Tech + Innovation passes on sale January 31st", :data=>{:toggle=>"tooltip"}}Buy Tech + Innovation Pass
+        - tech_pass = "http://www.midwestix.com/organizations/mission-creek-tech"
+        %a{:href=>tech_pass, :target=>"_new"}Buy Tech + Innovation Pass
         %span.glyphicon.glyphicon-circle-arrow-right

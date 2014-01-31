@@ -29,5 +29,5 @@
       - unless event.price_advance.nil? && event.price_dayof.nil?
         - prices = [event.price_advance, event.price_dayof].uniq.map{|e| "$#{e}"}
         .prices="#{prices.join(" - ")}"
-      .support="#{event.format_door_time} doors/ #{event.format_start_time} start"
+      .times="#{event.format_door_time} doors/ #{event.format_start_time} start"
       .summary=summary.html_safe
