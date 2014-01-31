@@ -147,7 +147,7 @@ $misc:#ff2200;
 
 #clear-typeahead
 {
-  color: black;
+  color:#94918a;
   font-size: 21px;
   position: relative;
   top: 8px;
@@ -156,6 +156,10 @@ $misc:#ff2200;
   {
     cursor:pointer;
   }
+}
+.caret
+{
+  color:#94918a;
 }
 
 

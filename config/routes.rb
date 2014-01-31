@@ -53,7 +53,7 @@ Missioncreek::Application.routes.draw do
   match "2014" => "base#index", :via => :get
   match "tech" => "base#tech_info", :via => :get
   match "tech_schedule" => "base#tech_schedule", :via => :get
-  match "calendar" => "base#calendar", :via=> :get
+  match "calendar" => "Events#index", :via=> :get
 
   root :to => "Base#index"
 
