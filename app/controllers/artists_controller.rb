@@ -5,7 +5,11 @@ class ArtistsController < ApplicationController
   before_filter :authenticate_user!, :except => [:index, :show]
   
   def index
-    @artists = Artist.where(:visible=>true).order("display_order")
+    unless params[:invisible]
+      @artists = Artist.where(:visible=>true).order("display_order")
+    else
+      @artists = Artist.order("display_order")
+    end
     if(params[:with_event])
       @artists = @artists.where("event_id IS NOT NULL");
     end

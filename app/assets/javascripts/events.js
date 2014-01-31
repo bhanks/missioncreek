@@ -30,6 +30,7 @@ $(document).ready(function(){
         valueKey: 'name',
         prefetch: {
           url:'/artists.json?with_event=true',
+          ttl: 60000
         },
         template:[
           '<p>{{name}}</p>'

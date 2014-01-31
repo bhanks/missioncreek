@@ -28,7 +28,10 @@ $(document).ready(function(){
         {
           name: 'artists', 
           valueKey: 'name',
-          prefetch: '/artists.json',
+          prefetch:{
+            url:'/artists.json?invisible=true',
+            ttl: 60000
+          },
           template:[
             '<p>{{name}}</p>'
           ].join(''),

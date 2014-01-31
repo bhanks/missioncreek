@@ -4,11 +4,11 @@
     .col-xs-4.name
       %span.glyphicon.glyphicon-plus-sign
       %span.headliner=name 
-    .col-xs-4.time 
+    .col-xs-5.time 
       - door_time = event.format_door_time
       - start_time = event.format_start_time
       .location="#{event.venue.name} / #{door_time} "
-    .col-xs-4.tickets
+    .col-xs-3.tickets
       - mwt_landing = "http://www.midwestix.com/organizations/mission-creek-festival"
       - ticket_url = (event.ticket_url.nil? || event.ticket_url == "")? mwt_landing : event.ticket_url
       %a{:href=>ticket_url, :target=>"_new"}Buy Tickets
