@@ -11,8 +11,12 @@
     .col-xs-3.tickets
       - mwt_landing = "http://www.midwestix.com/organizations/mission-creek-festival"
       - ticket_url = (event.ticket_url.nil? || event.ticket_url == "")? mwt_landing : event.ticket_url
-      %a{:href=>ticket_url, :target=>"_new"}Buy Tickets
-      %span.glyphicon.glyphicon-circle-arrow-right
+      - unless event.soldout
+        %a{:href=>ticket_url, :target=>"_new"}Buy Tickets
+        %span.glyphicon.glyphicon-circle-arrow-right
+      - else
+        %a.nfs{:href=>"#", :title=>"Tickets for this event are sold out",:data=>{:toggle=>"tooltip"}}Buy Tickets
+        %span.glyphicon.glyphicon-circle-arrow-right
   .row.details{:style=>"display:none", :class=>"event_#{event.id}"}
     .col-xs-4
       %img{:src=>event.headliners.first.image.small,:style=>"width:240px"}
