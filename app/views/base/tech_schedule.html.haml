@@ -6,7 +6,17 @@
         %a{:href=>tech_path}Tech Info
 .row.body
   .col-xs-8
-    %h3 Full schedule coming soon!
+    - @events.each do |event|
+      .col-xs-8.tech{:id=>"event_#{event.id}"}
+        - name = (event.show_title) ? event.title : event.headliners.map(&:name).join(" & ")
+        .row
+          .col-xs-4.time 
+            - door_time = event.format_door_time
+            - start_time = event.format_start_time
+            .location="#{door_time} - #{start_time} "
+          .col-xs-4.name
+            %span.headliner=name 
+            %span.glyphicon.glyphicon-plus-sign
   .col-xs-4
     .passes
       .row.tech
