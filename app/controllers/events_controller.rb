@@ -2,6 +2,8 @@ class EventsController < ApplicationController
   # GET /events
   # GET /events.json
   before_filter :authenticate_user!, :except => [:index, :show, :interim_events, :tech_schedule]
+  def index
+    @events = {} 
     days = {
       "monday" => Date.parse("31/03/2014"),
       "tuesday" => Date.parse("01/04/2014"),
