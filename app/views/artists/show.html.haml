@@ -23,10 +23,16 @@
     .artist_bio=@artist.bio.html_safe
   .col-xs-5
     .passes.media
-      .row.artist-tickets
-        - mwt_landing = "http://www.midwestix.com/organizations/mission-creek-festival"
-        %a{:href=>mwt_landing,:target=>"_new"}Buy individual tickets
-        %span.glyphicon.glyphicon-circle-arrow-right
+      - if @artist.category_list.first == "tech"
+        .row.tech
+          - tech_pass = "http://www.midwestix.com/organizations/mission-creek-tech"
+          %a{:href=>tech_pass, :target=>"_new"}Buy Tech + Innovation Pass
+          %span.glyphicon.glyphicon-circle-arrow-right
+      - else
+        .row.artist-tickets
+          - mwt_landing = "http://www.midwestix.com/organizations/mission-creek-festival"
+          %a{:href=>mwt_landing,:target=>"_new"}Buy individual tickets
+          %span.glyphicon.glyphicon-circle-arrow-right
       .row
         - if @artist.youtube_url != ""
           - url = @artist.youtube_url.gsub(/watch[?]v[=]/, "embed/")

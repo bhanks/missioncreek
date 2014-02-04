@@ -44,7 +44,7 @@ td.artist-name
   a.literature{@include cells(45, 115, 114);}
   a.food{@include cells(0,190,75)};
   a.film{@include cells(253,170,23)};
-  a.misc{@include cells(255,34,0)};
+  a.misc, a.tech{@include cells(255,34,0)};
 }
 
 .artist_bio
