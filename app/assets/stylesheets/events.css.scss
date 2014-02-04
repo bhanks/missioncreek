@@ -168,11 +168,17 @@ $misc:#ff2200;
 
 .tech
 {
-  .time, .name
+  .time, .name, .title
   {
     text-align:center;
     font-size:16px;
     padding:0px;
+    font-weight:bold;
+    letter-spacing:1px;
+  }
+  .time
+  {
+    margin-top:10px;
   }
   h3
   {
@@ -180,6 +186,16 @@ $misc:#ff2200;
     font-size:15px;
     margin-top:0px;
   }
+  .spacer:after{
+    display: block;
+    width: 20%;
+    height: 1px;
+    background-color: black;
+    content: "";
+    margin-bottom: 10px;
+    margin:auto;
+  }
+  margin-top:10px;
 
 }
 
