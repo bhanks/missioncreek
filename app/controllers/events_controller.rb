@@ -1,9 +1,9 @@
 class EventsController < ApplicationController
   # GET /events
   # GET /events.json
-  before_filter :authenticate_user!, :except => [:index, :show, :interim_events]
+  before_filter :authenticate_user!, :except => [:index, :show, :interim_events, :tech_schedule]
   def index
-    @events = {}
+    @events = {} 
     days = {
       "monday" => Date.parse("31/03/2014"),
       "tuesday" => Date.parse("01/04/2014"),
@@ -15,7 +15,7 @@ class EventsController < ApplicationController
     }
     
     days.each_key do |key|
-      @events[key] = Event.where(:date => days[key],:visible=>true).order(:door_time)
+      @events[key] = Event.where(:date => days[key],:visible=>true).tagged_with("tech",:exclude=>true).order(:door_time)
     end
 
     respond_to do |format|
@@ -135,6 +135,16 @@ class EventsController < ApplicationController
       artist.headliner = headliner
       artist.save!
     end
+  end
+
+  def tech_schedule
+    days = {
+      "friday" => Date.parse("04/04/2014"),
+      "saturday" => Date.parse("05/04/2014")
+    }
+    @events = {}
+    @events["friday"] = Event.where(:date=>days["friday"]).tagged_with("tech").order("date, door_time")
+    @events["saturday"] = Event.where(:date=>days["saturday"]).tagged_with("tech").order("date, door_time")
   end
 
 end

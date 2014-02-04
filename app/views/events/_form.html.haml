@@ -54,8 +54,8 @@
         = f.time_select :door_time,
           {:value => :start_time,
           :combined=>true, 
-          :minute_interval=>30,
-          :start_hour => 9,
+          :minute_interval=>10,
+          :start_hour => 8,
           :start_minute => 0,
           :end_hour => 22,
           :end_minute => 0,
@@ -67,13 +67,15 @@
         = f.time_select :start_time,
           {:value => :start_time, 
           :combined=>true, 
-          :minute_interval=>30,
-          :start_hour => 9,
+          :minute_interval=>10,
+          :start_hour => 8,
           :start_minute => 0,
           :end_hour => 22,
           :end_minute => 0,
           :default => Time.parse("21:00"), :ampm => true},
           {:class=>'form-control'}
+    .row
+      .alert.alert-warning{:style=>"margin-top:3px"}For tech events, treat "door time" and "start time" as "start time" and "end time"
     .row
       .field.form-group.col-md-4.col-sm-4
         = f.label :free
@@ -87,7 +89,7 @@
     .row
       .col-md-6.field.form-group
         = f.label :category
-        = f.select :category,  ["music", "literature","film","food","misc"], :class=>"form-control"
+        = f.select :category,  ["music", "literature","film","food","misc","tech"], :class=>"form-control"
       .col-md-6.field.form-group
         = f.label :visible
         = f.check_box :visible

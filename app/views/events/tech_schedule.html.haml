@@ -1,0 +1,45 @@
+.row.title
+  .col-xs-12
+    %h1.sub Tech Schedule
+    %ul
+      %li
+        %a{:href=>tech_path}Tech Info
+.row.body
+  .col-xs-8.schedule.tech{:style=>"margin-bottom:25px"}
+    .row
+      %h2 Friday, April 4
+      - @events["friday"].each do |event|
+        .col-xs-12.tech{:id=>"event_#{event.id}",:style=>"margin-top:0px"}
+          .row
+            .spacer
+            .col-xs-12.time 
+              - door_time = event.format_door_time
+              - start_time = event.format_start_time
+              .location="#{door_time} - #{start_time} "
+            - unless event.headliners == []
+              .col-xs-12.name
+                %span.headliner=link_to(event.headliners.first.name, artist_path(event.headliners.first))
+            .col-xs-12.title
+              %span=event.title
+    .row
+      %h2 Saturday, April 5
+      %h3=link_to("@ the John Pappajohn Business Building", "http://maps.uiowa.edu/pbb")
+      - @events["saturday"].each do |event|
+        .col-xs-12.tech{:id=>"event_#{event.id}"}
+          .row
+            .spacer
+            .col-xs-12.time 
+              - door_time = event.format_door_time
+              - start_time = event.format_start_time
+              .location="#{door_time} - #{start_time} "
+            - unless event.headliners == []
+              .col-xs-12.name
+                %span.headliner=link_to(event.headliners.first.name, artist_path(event.headliners.first))
+            .col-xs-12.title
+              %span=event.title
+  .col-xs-4
+    .passes
+      .row.tech
+        - tech_pass = "http://www.midwestix.com/organizations/mission-creek-tech"
+        %a{:href=>tech_pass, :target=>"_new"}Buy Tech + Innovation Pass
+        %span.glyphicon.glyphicon-circle-arrow-right
