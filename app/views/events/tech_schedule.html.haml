@@ -34,7 +34,8 @@
               .location="#{door_time} - #{start_time} "
             - unless event.headliners == []
               .col-xs-12.name
-                %span.headliner=link_to(event.headliners.first.name, artist_path(event.headliners.first))
+                - headliners = event.headliners.map{|a| link_to(a.name, artist_path(a))}
+                %span.headliner=headliners.join(", ").html_safe
             .col-xs-12.title
               %span=event.title
   .col-xs-4
