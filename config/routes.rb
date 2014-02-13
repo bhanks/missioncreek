@@ -27,7 +27,6 @@ Missioncreek::Application.routes.draw do
     end
   end
 
-  resources :pages
   resources :dashboard do
     collection do
       get 'artists'
