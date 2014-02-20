@@ -19,13 +19,14 @@
         %span.glyphicon.glyphicon-circle-arrow-right
   .row.details{:style=>"display:none", :class=>"event_#{event.id}"}
     .col-xs-4
-      - unless event.headliners.first.image.nil?
+      - unless event.headliners==[] || event.headliners.first.image.nil?
         %img{:src=>event.headliners.first.image.small,:style=>"width:240px"}
-      %h4 Read more about:
-      %ul
-        - all_artists = event.headliners + event.support
-        - all_artists.each do |artist|
-          %li= link_to(artist.name, artist_path(artist))
+      - unless event.headliners == [] && event.support == []
+        %h4 Read more about:
+        %ul
+          - all_artists = event.headliners + event.support
+          - all_artists.each do |artist|
+            %li= link_to(artist.name, artist_path(artist))
     .col-xs-8
       - summary = (event.description == "")? event.headliners.first.bio : event.description
       - support = (event.support == [])? "" : "w/ " + event.support.map(&:name).join(", ")
