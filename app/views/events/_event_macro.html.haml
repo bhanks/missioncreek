@@ -19,7 +19,8 @@
         %span.glyphicon.glyphicon-circle-arrow-right
   .row.details{:style=>"display:none", :class=>"event_#{event.id}"}
     .col-xs-4
-      %img{:src=>event.headliners.first.image.small,:style=>"width:240px"}
+      - unless event.headliners.first.image.nil?
+        %img{:src=>event.headliners.first.image.small,:style=>"width:240px"}
       %h4 Read more about:
       %ul
         - all_artists = event.headliners + event.support
