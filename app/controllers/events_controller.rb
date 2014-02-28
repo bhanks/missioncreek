@@ -20,7 +20,9 @@ class EventsController < ApplicationController
 
     respond_to do |format|
       format.html {render :layout =>"application"}
-      format.json { render json: @events }
+      format.json {
+        @events = Event.all
+      } 
     end
   end
 
