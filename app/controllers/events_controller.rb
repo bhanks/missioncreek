@@ -21,7 +21,7 @@ class EventsController < ApplicationController
     respond_to do |format|
       format.html {render :layout =>"application"}
       format.json {
-        @events = Event.where(:visible=>true).tagged_with("tech",:exclude=>true).order(:door_time)
+        @events = Event.where(:visible=>true).tagged_with("tech",:exclude=>true).order(:date, :door_time)
       } 
     end
   end
