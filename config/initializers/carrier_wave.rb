@@ -1,8 +1,8 @@
 CarrierWave.configure do |config|
   config.fog_credentials = {
     :provider               => 'AWS',      
-    :aws_access_key_id      => 'AKIAI75TAQ2ZVCMVTVLQ',       
-    :aws_secret_access_key  => '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'
+    :aws_access_key_id      => ENV['S3_KEY'],
+    :aws_secret_access_key  => ENV['S3_SECRET']
   }
   config.fog_directory  = 'missioncreek-assets'                     # required
   config.asset_host       = 'http://localhost:3001'            # optional, defaults to nil
