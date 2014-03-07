@@ -7,16 +7,19 @@
     .col-xs-5.time 
       - door_time = event.format_door_time
       - start_time = event.format_start_time
-      .location="#{event.venue.name} / #{door_time} "
+      .location="#{event.venue.name} / #{start_time} "
     .col-xs-3.tickets
       - mwt_landing = "http://www.midwestix.com/organizations/mission-creek-festival"
       - ticket_url = (event.ticket_url.nil? || event.ticket_url == "")? mwt_landing : event.ticket_url
-      - unless event.soldout
+      - if !event.soldout && !event.free
         %a{:href=>ticket_url, :target=>"_new"}Buy Tickets
         %span.glyphicon.glyphicon-circle-arrow-right
-      - else
+      - elsif event.soldout
         %a.nfs{:href=>"#", :title=>"Tickets for this event are sold out",:data=>{:toggle=>"tooltip"}}Buy Tickets
         %span.glyphicon.glyphicon-circle-arrow-right
+      -elsif event.free 
+        %a{:href=>"#", :target=>"_new"}Free
+        %span.glyphicon
   .row.details{:style=>"display:none", :class=>"event_#{event.id}"}
     .col-xs-4
       - unless event.headliners==[] || event.headliners.first.image.nil?
