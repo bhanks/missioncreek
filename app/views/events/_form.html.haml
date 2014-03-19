@@ -87,12 +87,20 @@
         = f.label "Display with Title"
         = f.check_box :show_title, :class=>"form-control"
     .row
-      .col-md-6.field.form-group
+      .field.form-group.col-md-4.col-sm-4
+        = f.label :reservations
+        = f.check_box :reservations, :class=>"form-control"
+      .field.form-group.col-md-4.col-sm-4
+        = f.label :visible
+        = f.check_box :visible, :class=>"form-control"
+    .row
+      .field.form-group
+        = f.label :reservation_url
+        = f.text_field :reservation_url, :class=>"form-control"
+    .row
+      .col-md-4.field.form-group
         = f.label :category
         = f.select :category,  ["music", "literature","film","food","misc","tech"], :class=>"form-control"
-      .col-md-6.field.form-group
-        = f.label :visible
-        = f.check_box :visible
     .field.form-group
       = f.label :description
       = f.cktext_area :description,:id=>'event_description',:ckeditor => {:toolbar=>"Custom"}
