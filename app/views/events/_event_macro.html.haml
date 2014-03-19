@@ -34,7 +34,8 @@
           - all_artists.each do |artist|
             %li= link_to(artist.name, artist_path(artist))
     .col-xs-8
-      - summary = (event.description == "")? event.headliners.first.bio : event.description
+      - unless event.description.blank? && event.headliners.first.nil?
+        - summary = (event.description == "")? event.headliners.first.bio : event.description
       - support = (event.support == [])? "" : "w/ " + event.support.map(&:name).join(", ")
       .spacer
       .support=support
@@ -42,4 +43,5 @@
         - prices = [event.price_advance, event.price_dayof].uniq.map{|e| "$#{e}"}
         .prices="#{prices.join(" - ")}"
       .times="#{event.format_door_time} doors/ #{event.format_start_time} start"
-      .summary=summary.html_safe
+      - unless summary.nil?
+        .summary=summary.html_safe
