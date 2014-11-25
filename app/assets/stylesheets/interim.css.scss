@@ -15,7 +15,7 @@ body.interim
   .event
   {
     margin-bottom:20px;
-    border-bottom: 1px dotted #bbb;
+    /*border-bottom: 1px dotted #bbb;*/
   }
   .event.last
   {
@@ -23,8 +23,9 @@ body.interim
   }
   header 
   {
+    padding-top:100px;
     text-align:center;
-    border-bottom:1px solid #ccc;
+    /*border-bottom:1px solid #ccc;*/
   }
   a.logo
   {
@@ -37,6 +38,8 @@ body.interim
   h2
   {
     @include type-base(.8, #555);
+    a
+    {color:#aaa}
   }
   h3
   {

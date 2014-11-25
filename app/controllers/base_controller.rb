@@ -160,4 +160,7 @@ class BaseController < ApplicationController
     render layout: "application"
   end
 
+  def announcement
+
+  end
 end
