@@ -1,5 +1,32 @@
-.event
-  %h1 March 31 - April 5, 2015
-  %h2{:style=>"color:#A42E31;font-family:Mercury"} Iowa City, IA
-  %h2.footer
-    %a{href:previous_path} 2014 Site
+.splash
+  .head
+    %img{src:"/assets/2015/header.png"}
+    %a{href:"https://www.uiccu.org/",style:"height: 100px;width: 90px; left: 775px; top: 10px;"}
+  .content
+    .announcement
+      %img{src:"/assets/2015/main.png",style:"margin-bottom:40px"}
+      %a.more_info{href:"#",style:"width: 77px; height: 27px;left: 362px; bottom: 55px;"}
+      %a{href:"http://midwestix.com", style:"width: 88px; height: 27px;left: 447px; bottom: 55px;", target:"_other"}
+    .general
+      %p
+        Celebrating its tenth year with the 2015 festival, Mission Creek is dedicated to inspiring and building the arts and culture community in Eastern Iowa. Programming focuses on literary readings, music performances, comedic performances, film screenings, public lectures, local food culture, and educational outreach. Each year the festival utilizes the existing cultural geography of Iowa City – bookstores, clothing stores, performance venues, and movie theaters – turning the downtown into an easily-navigated nexus of music, art, and transformative experiences. The festival dates are March 31 - April 5, 2015. Venues include but are not limited to: Blue Moose Taphouse, The Englert Theatre, Gabe’s, The Mill, Yacht Club, and Trumpet Blossom Cafe. Most events will be within about five minutes walking of other events.
+  
+.sponsors
+  %img{src:"/assets/2015/sponsors.png"}
+  %a{href:"http://downtowniowacity.com/",target:"_other",style:"left:166px; width:42px"}
+  %a{href:"http://www.icgov.org/",target:"_other",style:"left:240px; width:70px"}
+  %a{href:"http://iowapublicradio.org/",target:"_other",style:"left:340px; width:60px"}
+  %a{href:"http://littlevillagemag.com/",target:"_other",style:"left:430px; width:50px"}
+  %a{href:"http://hancher.uiowa.edu/",target:"_other",style:"left:512px; width:66px"}
+  %a{href:"http://www.icfilmscene.org/",target:"_other",style:"left:610px; width:75px"}
+  %a{href:"http://ateamlistens.com/",target:"_other",style:"left:700px; width:50px"}
+  %a{href:"http://tuesdayagency.com/",target:"_other",style:"left:780px; width:95px"}
+
+
+:javascript
+  $(document).ready(function(){
+    $("a.more_info").click(function(){
+      $(".announcement").hide();
+      $(".general").show();
+    });
+  });

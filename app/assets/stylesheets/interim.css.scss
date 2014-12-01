@@ -10,7 +10,8 @@
 body.interim
 {
   background-color:black;
-  background-image:none;
+  background:url('splash-bg.jpg') no-repeat center 0px;
+  background-size:cover;
 
   .event
   {
@@ -79,8 +80,31 @@ body.interim
   {
     margin: 15px;
   }
+  .sponsors
+  {
+    position:relative;
+    a{
+      height:46px;
+      bottom:38px;
+    }
+  }
+  .splash
+  {
+    margin-top:60px;
+    border:3px solid black;
+    width:900px;
+    position:relative;
+  }
 }
 
+.announce{
+  a{
+    display: inline-block;
+    position: absolute;
+    float:left;
+  }
+
+}
 
 
 
