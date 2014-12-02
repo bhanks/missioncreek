@@ -80,7 +80,7 @@
   $(document).ready(function(){
     $(".info, .contacts, .tickets").hide();
     $("a.more_info").click(function(){
-      $(".announcement").hide();
+      $(".announcement, .tickets, .contacts").hide();
       $(".info").show();
       $(".general").show();
     });
