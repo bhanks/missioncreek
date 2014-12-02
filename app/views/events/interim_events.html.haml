@@ -1,15 +1,67 @@
 .splash
   .head
     %img{src:"/assets/2015/header.png"}
+    %a{href:"#", onclick:"showMain()",style:"height:76px;width:100px;top:10px;left:400px"}
     %a{href:"https://www.uiccu.org/",style:"height: 100px;width: 90px; left: 775px; top: 10px;"}
   .content
-    .announcement
+    .announcement{style:"position:relative"}
       %img{src:"/assets/2015/main.png",style:"margin-bottom:40px"}
-      %a.more_info{href:"#",style:"width: 77px; height: 27px;left: 362px; bottom: 55px;"}
-      %a{href:"http://midwestix.com", style:"width: 88px; height: 27px;left: 447px; bottom: 55px;", target:"_other"}
-    .general
-      %p
-        Celebrating its tenth year with the 2015 festival, Mission Creek is dedicated to inspiring and building the arts and culture community in Eastern Iowa. Programming focuses on literary readings, music performances, comedic performances, film screenings, public lectures, local food culture, and educational outreach. Each year the festival utilizes the existing cultural geography of Iowa City – bookstores, clothing stores, performance venues, and movie theaters – turning the downtown into an easily-navigated nexus of music, art, and transformative experiences. The festival dates are March 31 - April 5, 2015. Venues include but are not limited to: Blue Moose Taphouse, The Englert Theatre, Gabe’s, The Mill, Yacht Club, and Trumpet Blossom Cafe. Most events will be within about five minutes walking of other events.
+      %a.more_info{href:"#",style:"width: 77px; height: 27px;left: 362px; top:290px"}
+      %a{href:"http://midwestix.com", style:"width: 88px; height: 27px;left: 447px; top: 290px;", target:"_other"}
+    .info
+      .switch{style:"text-align:center"}
+        %a{href:"#", onclick:"showInfo()"}General Info
+        %a{href:"#", onclick:"showContacts()"}Contacts
+        %a{href:"#", onclick:"showTickets()"}Tickets + Passes
+      
+      .general
+        %h2 General Info
+        %p
+          Celebrating its tenth year with the 2015 festival, Mission Creek is dedicated to inspiring and building the arts and culture community in Eastern Iowa. Programming focuses on literary readings, music performances, comedic performances, film screenings, public lectures, local food culture, and educational outreach. Each year the festival utilizes the existing cultural geography of Iowa City – bookstores, clothing stores, performance venues, and movie theaters – turning the downtown into an easily-navigated nexus of music, art, and transformative experiences. The festival dates are March 31 - April 5, 2015. Venues include but are not limited to: Blue Moose Taphouse, The Englert Theatre, Gabe’s, The Mill, Yacht Club, and Trumpet Blossom Cafe. Most events will be within about five minutes walking of other events.
+      .contacts
+        %h2 Contacts
+        %p
+          PR/Marketing: Jen; <a href="mailto:press@missionfreak.com">press@missionfreak.com</a>
+        %p
+          General FAQ: Andre; <a href="mailto:andre@missionfreak.com">andre@missionfreak.com</a>
+        %p
+          Volunteer Opportunities: Lexi; <a href="mailto:alexalmatthews@gmail.com">alexalmatthews@gmail.com</a>
+        %p
+          Mission Creek Innovation Conference (entrepreneurial and tech): Wes; <a href="mailto:">geemus@gmail.com</a>
+
+        %p
+          Note: The festival is curated by a small team of programmers - we do not accept unsolicited artist submissions
+      .tickets
+        %h2 Tickets + Passes
+        %p
+          You can attend Mission Creek shows with a Festival Pass or purchase tickets to individual events. 
+          Some events are free and open to the public. Festival Passes are on sale NOW. Tickets to individual 
+          shows will go on sale in January, 2015. Buy Festival Passes [here]
+        %h3 Silver Pass-$125
+        %p
+          The Silver Pass grants access to all Mission Creek Festival ticketed music and comedic performances. 
+          Entrance to ticketed events at the Englert and Blue Moose Tap House is guaranteed at all times. Entrance 
+          to other venues is subject to capacity. Screenings at FilmScene, culinary events, and Innovation 
+          conference events are not included in the Silver Pass and require the purchase of additional tickets.
+        %h3 Deluxe Pass-$350
+        %p
+          The Deluxe Pass guarantees entrance to all Mission Creek ticketed music and comedic events (free events 
+          are subject to capacity). The Deluxe Pass also includes the passholder’s choice of one film screening 
+          at FilmScene (SQÜRL’s engagement is available on an extremely limited basis), a complimentary dinner at 
+          one of the official Mission Creek dinners during the week (Motley Cow, Leaf Kitchen, and more), 
+          complimentary Sunday brunch on April 5 at the Mill, ten complimentary drink tickets for use at the Englert 
+          Theatre, and an invitation to a special VIP event during the festival.
+        %p
+          During the week of Mission Creek Festival (Mar 31 - Apr 5) all pass holders receive 15% discounts on meals 
+          from the following participating restaurants: 
+          <a href="http://elbanditosiowacity.com/">Banditos</a>, 
+          <a href="http://www.clintonstreetsocial.com/">Clinton Street Social Club</a>, 
+          <a href="http://www.devotay.net/">Devotay</a>, 
+          <a href="http://leafkitchen.weebly.com/">Leaf Kitchen</a>, 
+          <a href="http://www.motleycowcafe.com/">Motley Cow Cafe</a>, and 
+          <a href="http://trumpetblossom.com/">Trumpet Blossom Cafe</a>.
+        %p{style:"font-weight:normal;font-size:12px"}
+          All pass sales are final. No refunds or exchanges. All acts and performers are subject to change without notice. Lost or stolen passes cannot be replaced. Passholders are subject to the rules and regulations of any venue they attend as part of the festival. The management of each venue reserves the right to remove any person who violates the rules of the venue or any local, state, or federal laws.
   
 .sponsors
   %img{src:"/assets/2015/sponsors.png"}
@@ -21,12 +73,31 @@
   %a{href:"http://www.icfilmscene.org/",target:"_other",style:"left:610px; width:75px"}
   %a{href:"http://ateamlistens.com/",target:"_other",style:"left:700px; width:50px"}
   %a{href:"http://tuesdayagency.com/",target:"_other",style:"left:780px; width:95px"}
+  %a{href:previous_path,style:"position:relative;width:900px;text-align:center;bottom:auto;height:auto"}2014 site
 
 
 :javascript
   $(document).ready(function(){
+    $(".info, .contacts, .tickets").hide();
     $("a.more_info").click(function(){
       $(".announcement").hide();
+      $(".info").show();
       $(".general").show();
     });
   });
+  function showInfo(){
+    $(".contacts, .tickets").hide();
+    $(".general").show();
+  }
+  function showContacts(){
+    $(".general, .tickets").hide();
+    $(".contacts").show();
+  }
+  function showTickets(){
+    $(".general, .contacts").hide();
+    $(".tickets").show();
+  }
+  function showMain(){
+    $(".info").hide();
+    $(".announcement").show();
+  }

@@ -95,14 +95,56 @@ body.interim
     width:900px;
     position:relative;
   }
-  .general p
-  {
-    padding:15px;
-    font-size:18px;
-    text-align:justify;
+  .info{
+    p{
+        padding:15px;
+        font-size:18px;
+        text-align:justify;
+        font-weight:bold;
+        margin:0;
+    }
+    h2
+    {
+      font-family:Whitney;
+      font-weight:bold;
+    }
+    h3{
+      color:black; 
+      font-size:17px;
+      line-height: 17px;
+      margin: 0;
+    }
+    a
+    {
+      position:static;
+      float:none;
+    }
+    .tickets a, .contacts a
+    {
+      color:#777;
+    }
+  }
+  .switch {
+    margin-top:15px;
+    a
+    {
+      font-size:16px;
+      font-weight:bold;
+      color:white;
+      background-color:black;
+      padding:1px 9px;
+      margin:4px;
+      &:hover
+      {
+        text-decoration:none;
+      }
+      &:focus
+      {
+        text-decoration:none;
+      }
+    }
   }
 }
-
 .announce{
   a{
     display: inline-block;
