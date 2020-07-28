@@ -17,7 +17,7 @@ group :production do
 end
 
 
-gem 'json', '= 1.7.7'
+gem 'json', '2.3.0'
 gem 'fog'
 gem 'rmagick'
 gem 'RedCloth'
